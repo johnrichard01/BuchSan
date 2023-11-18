@@ -1,0 +1,92 @@
+/*font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Lobster', sans-serif;*/
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.navbar-brand{
+    color: #f77f00;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.navbar-all{
+    -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
+    -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+}
+.logo-hover:hover{
+    color: #3c1518;
+}
+.nav-hover{
+    border-bottom: 5px solid white;
+    color: #3c1518;
+}
+
+.nav-hover:hover{
+    border-color: #f77f00;    
+}
+.home-active{
+    border-color: #f77f00;
+}
+.nav-hover:active{
+    border-color: #f77f00;
+}
+.dd-hover{
+    color: #3c1518;
+}
+
+.dd-hover:hover{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.btn-signup{
+    border: 2px solid #f77f00;
+    color: #f77f00;
+}
+.btn-signup:hover{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.btn-login{
+    border: 2px solid #f77f00;
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.btn-login:hover{
+    background-color: #3c1518;
+    color: #f5f7fa;
+}
+
+
+
+
+
+.ftr{
+    background-color: #B36910;
+}
+.footer-logo{
+    color: #f5f7fa;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.footer-logo:hover{
+    color: #3c1518;
+}
+.footer-text{
+    color: #f5f7fa;
+    font-size: 1rem;
+}
+.footer-text:hover{
+    color: #3c1518;
+    
+}
+.btn-signup-ftr{
+    border: 2px solid #f5f7fa;
+    color: #f5f7fa;
+}
+.btn-signup-ftr:hover{
+    border-color: #3c1518;
+    color: #3c1518;
+}
