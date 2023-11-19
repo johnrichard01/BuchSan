@@ -16,7 +16,7 @@ font-family: 'Lobster', sans-serif;*/
     box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
 }
 .logo-hover:hover{
-    color: #3c1518;
+    color: #f77f00;
 }
 .nav-hover{
     border-bottom: 5px solid white;
@@ -84,6 +84,7 @@ font-family: 'Lobster', sans-serif;*/
 }
 .btn-signup-ftr{
     border: 2px solid #f5f7fa;
+    border-radius: 20px;
     color: #f5f7fa;
 }
 .btn-signup-ftr:hover{
