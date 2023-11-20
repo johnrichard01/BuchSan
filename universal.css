@@ -151,3 +151,31 @@ font-family: 'Lobster', sans-serif;*/
     padding-left:20px;
 
  }
+
+/*--ROMANCEBOOKS--*/
+
+.happy{
+    color:#f78400;
+    margin:0;
+    display:flex;
+    justify-content: end;
+    align-items: center;    
+}
+/*
+ .r_img{
+    border:2px solid black;
+    
+
+    
+ }
+ .flower{
+    border:2px solid black;
+    
+ }
+ */
+
+ .happy span {
+    font-size:23px;
+    font-weight:bold;
+    font-family: 'Segoe UI';
+ }
