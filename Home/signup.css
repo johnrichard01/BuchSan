@@ -3,16 +3,16 @@ body{
 
 }
 .form-box{
- width: 90%;
- max-width: 500px;
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%,-50%);
- background: #f5f7fa;
- padding: 50px 60px 70px;
- text-align: center;
- border-radius: 50px;
+    width: 90%;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #f5f7fa;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 50px;
 }
 .signup-title{
     margin-bottom: 60px;
