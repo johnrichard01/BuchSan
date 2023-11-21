@@ -65,7 +65,6 @@ body{
 }
 .error-message{
     color:red;
-    margin-top: 5px;
     display: none;
 }
 .error-print{
@@ -74,4 +73,7 @@ body{
 .in-field-invalid{
     background-color: #f8e5e5;
     border: 2px solid red;
+}
+#error-enter{
+    color:red;
 }
