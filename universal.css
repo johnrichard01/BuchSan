@@ -61,7 +61,6 @@ font-family: 'Lobster', sans-serif;*/
 
 
 
-
 .ftr{
     background-color: #B36910;
 }
@@ -91,3 +90,92 @@ font-family: 'Lobster', sans-serif;*/
     border-color: #3c1518;
     color: #3c1518;
 }
+
+/*--BestSellers--*/
+.card-img-top{
+    
+    padding: 8px;
+    border:none;
+    
+    
+}
+.price_addToCart{
+   
+    font-weight: bolder;
+    padding-left:20px;
+    
+  
+}
+.addToCart{
+    text-align:center; 
+    
+}
+
+.card{
+    border:none;
+    outline: none;
+    border-radius:0;
+  
+    
+    
+}
+.addToCart .btn{
+    border:1.5px solid #f77f00;
+    width:90%;
+    border-radius:0;
+    margin:4px;
+    color:#f77f00;
+    font-weight:bold; 
+    transition:.5s;  
+    
+}
+
+.addToCart .btn:hover{
+    background-color: #f77f00;
+    color:#f5f7fa;
+
+
+}
+ .card-title{
+    
+    margin:0;
+    padding-left:20px;
+ }
+
+ .card-body{
+    padding:0px;
+ }
+
+ .Author{
+    margin:0px;
+    padding-left:20px;
+
+ }
+
+/*--ROMANCEBOOKS--*/
+
+.happy{
+    color:#f78400;
+    margin:0;
+    display:flex;
+    justify-content: end;
+    align-items: center;    
+}
+/*
+ .r_img{
+    border:2px solid black;
+    
+
+    
+ }
+ .flower{
+    border:2px solid black;
+    
+ }
+ */
+
+ .happy span {
+    font-size:23px;
+    font-weight:bold;
+    font-family: 'Segoe UI';
+ }
