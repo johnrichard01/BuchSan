@@ -133,6 +133,7 @@ function saveData(){
             document.getElementById("password").value="";
             document.getElementById("confirmpassword").value="";
             message.innerHTML="";
+            openPopup();
             localStorage.setItem("users",JSON.stringify(user_records));
         }
     }
@@ -140,3 +141,13 @@ function saveData(){
 
 //event for submit button
 document.getElementById("submit").addEventListener("click",validate);
+
+document.getElementById("stayonPage").addEventListener("click",closePopup);
+//for popup 
+let popup = document.getElementById("popup");
+function openPopup(){
+    popup.classList.add("popup-open");
+}
+function closePopup(){
+    popup.classList.remove("popup-open");
+}
