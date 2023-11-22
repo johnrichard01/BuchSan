@@ -128,7 +128,8 @@ function saveData(){
                 "name": name,
                 "username": username,
                 "email": email,
-                "password": password
+                "password": password,
+                "profilepicture":"/images/profile-picture.png"
             })
             
             document.getElementById("fullname").value="";

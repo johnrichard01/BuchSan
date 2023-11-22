@@ -39,6 +39,7 @@ function saveData(){
         localStorage.setItem("name", current_user.name);
         localStorage.setItem("username", current_user.username);
         localStorage.setItem("email", current_user.email);
+        localStorage.setItem("profilepicture", current_user.profilepicture);
         window.location.href="../user.html";
     } else {
         document.getElementById("error-message").classList.add("error-print");
