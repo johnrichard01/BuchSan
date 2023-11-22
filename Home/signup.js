@@ -111,7 +111,7 @@ function saveData(){
     password=document.getElementById("password").value;
     
     let user_records=new Array();
-    user_records= JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+    user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
     if (user_records.some(function(v){
         return v.email==email;
     })){
@@ -139,7 +139,7 @@ function saveData(){
             document.getElementById("confirmpassword").value="";
             message.innerHTML="";
             openPopup();
-            localStorage.setItem("users",JSON.stringify(user_records));
+            sessionStorage.setItem("users",JSON.stringify(user_records));
         }
     }
 }

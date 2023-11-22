@@ -1,6 +1,6 @@
 //set admin accounts
 let admin_records=new Array();
-admin_records = JSON.parse(localStorage.getItem("admins"))?JSON.parse(localStorage.getItem("admins")):[];
+admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
 // Check if the data already exists in the array
 var newData = {
     "name": "jessica Pam Velasquez",
@@ -36,4 +36,4 @@ if (!newDataExists) {
     // Data doesn't exist, so push it into the array
     admin_records.push(newData);
 }
-localStorage.setItem("admins",JSON.stringify(admin_records));
+sessionStorage.setItem("admins",JSON.stringify(admin_records));

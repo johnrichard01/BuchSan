@@ -6,9 +6,9 @@ function saveData(){
     let password=document.getElementById("passwordLogin").value;
 
     let user_records=new Array();
-    user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[];
+    user_records=JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[];
     let admin_records=new Array();
-    admin_records = JSON.parse(localStorage.getItem("admins"))?JSON.parse(localStorage.getItem("admins")):[];
+    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
 
 
     if (!email || !password) {
@@ -28,18 +28,18 @@ function saveData(){
         let current_admin=admin_records.filter(function(v){
             return v.email=== email && v.password === password;
         })[0]
-        localStorage.setItem("name", current_admin.name);
-        localStorage.setItem("username", current_admin.username);
-        localStorage.setItem("email", current_admin.email);
+        sessionStorage.setItem("name", current_admin.name);
+        sessionStorage.setItem("username", current_admin.username);
+        sessionStorage.setItem("email", current_admin.email);
         window.location.href="../admin.html";
     }else if(matchedUser){
         let current_user=user_records.filter(function(v){
             return v.email===email && v.password===password;
         })[0]
-        localStorage.setItem("name", current_user.name);
-        localStorage.setItem("username", current_user.username);
-        localStorage.setItem("email", current_user.email);
-        localStorage.setItem("profilepicture", current_user.profilepicture);
+        sessionStorage.setItem("name", current_user.name);
+        sessionStorage.setItem("username", current_user.username);
+        sessionStorage.setItem("email", current_user.email);
+        sessionStorage.setItem("profilepicture", current_user.profilepicture);
         window.location.href="../user.html";
     } else {
         document.getElementById("error-message").classList.add("error-print");
