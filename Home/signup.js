@@ -158,6 +158,7 @@ function saveData(){
             message.innerHTML="";
             openPopup();
             sessionStorage.setItem("users",JSON.stringify(user_records));
+
         }
     }
 }
@@ -166,12 +167,20 @@ function saveData(){
 document.getElementById("submit").addEventListener("click",validate);
 document.getElementById("confirmpassword").addEventListener("input",realtimeCheck);
 document.getElementById("password").addEventListener("input",realtimeCheck);
-document.getElementById("stayonPage").addEventListener("click",closePopup);
+
 //for popup 
 let popup = document.getElementById("popup");
 function openPopup(){
+    document.getElementById("overlayWhole").classList.add("overlay");
     popup.classList.add("popup-open");
+    document.getElementById("overlay").classList.add("hide-content");
+    setTimeout(closePopup, 5000);
 }
 function closePopup(){
     popup.classList.remove("popup-open");
+    document.getElementById("overlay").classList.remove("hide-content");
+    document.getElementById("overlayWhole").classList.remove("overlay");
 }
+
+    
+
