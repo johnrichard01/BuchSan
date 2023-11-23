@@ -29,6 +29,7 @@ function contactformValidation(event){
         document.getElementById("contactusName").value="";
         document.getElementById("contactusEmail").value="";
         document.getElementById("contactusMessage").value="";
+        setTimeout(removeError, 2000);
         successSentt();
     }
     
@@ -65,6 +66,7 @@ function errorText(){
 function successSentt(){
     document.getElementById("errormessage3").innerHTML="Message succesfully sent."
     document.getElementById("errormessage3").classList.add("successful-print");
+    
 }
 document.getElementById("contactusName").addEventListener("input",removeError);
 document.getElementById("contactusEmail").addEventListener("input", removeError);

@@ -57,9 +57,62 @@ font-family: 'Lobster', sans-serif;*/
     background-color: #3c1518;
     color: #f5f7fa;
 }
-
-
-
+/*For newsletter*/
+.news-field{
+    background: #eaeaea;
+    margin: 20px 20px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.in-box-news{
+    width: 90%;
+    background: transparent;
+    border: 0;
+    border-radius: 10px;
+    outline: 0;
+    padding: 15px 15px;
+}
+.input-icon-news{
+    margin-left: 15px;
+    color: #f77f00;
+}
+.btn-subscribe{
+    margin: 20px 20px 0;
+    border-radius: 20px;
+    border: 2px solid #f5f7fa;
+    background-color: #f5f7fa;
+    width: 80%;
+    color: #f77f00;
+    height: 44px;
+}
+.btn-subscribe:hover{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.news-txt{
+    color: #f5f7fa;
+}
+.news-txt-p{
+    color: #f5f7fa;
+    text-indent: 20px;
+}
+.newsfield-error{
+    border: 2px solid red;
+}
+.newsfield-succ{
+    border: 2px solid green;
+}
+.newsletter-printerror{
+    font-weight: 900;
+    color: red;
+    background-color: #f5f7fa;
+}
+.newsletter-printsucc{
+    font-weight: 900;
+    color: green;
+    background-color: #f5f7fa;
+}
 
 .ftr{
     background-color: #B36910;
