@@ -1,0 +1,116 @@
+.contactus-bg{
+    background-image: url("../images/contactus-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: 0;
+    padding: 0;
+    height: 165vh;
+}
+
+.title-txt{
+    margin-top: 20px;
+    color: #f77f00;
+    margin-bottom: 60px;
+    position: relative;
+}
+.title-txt::after{
+    content: "";
+    width: 250px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #f77f00;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.contactus-box{
+    height: 560px;
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(247, 127, 0, 0.8);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    color: #f5f7fa;
+}
+.contactus-form{
+    height: 560px;
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(245, 247, 250, 0.8);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.grid-box2{
+    grid-area: 2 / 2 / 3 / 3;
+}
+.input-field{
+    background: #eaeaea;
+    margin: 20px 20px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.in-box{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 15px 15px;
+}
+.input-icon{
+    margin-left: 15px;
+    color: #f77f00;
+}
+.contactus-submit{
+    border: 2px solid #f77f00;
+    border-radius: 20px;
+    color: #f77f00;
+    width: 50%;
+}
+.contactus-submit:hover{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.error-message{
+    color:red;
+    margin-top: 5px;
+    display: none;
+    min-height: 20px;
+}
+.error-print{
+    display: inline-block;
+}
+.successful-print{
+    display: inline-block;
+    color: green;
+}
+.in-field-invalid{
+    background-color: #f8e5e5;
+    border: 2px solid red;
+}
+@media(max-width:992px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .grid-box2{
+        grid-area: 2/ 1 / 3 / 2;
+    }
+}
