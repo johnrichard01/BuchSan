@@ -26,7 +26,6 @@ function contactformValidation(event){
         errorText();
         isValid=false;
     } if(isValid){
-        
         document.getElementById("contactusName").value="";
         document.getElementById("contactusEmail").value="";
         document.getElementById("contactusMessage").value="";
@@ -48,7 +47,7 @@ function errorName(){
     document.getElementById("errormessage1").classList.add("error-print");
 }
 function errorNameEmpty(){
-    document.getElementById("errormessage1").innerHTML="Please input a name"
+    document.getElementById("errormessage1").innerHTML="Please enter your name"
     document.getElementById("errormessage1").classList.add("error-print");
 }
 function errorEmail(){
