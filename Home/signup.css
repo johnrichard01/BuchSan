@@ -132,3 +132,18 @@ body{
     background-color: #f8e5e5;
     border: 2px solid red;
 }
+.btn-redirectlogin{
+    margin: 20px 20px 0;
+    border-radius: 20px;
+    border: 2px solid #f77f00;
+    background-color: #f77f00;
+    width: 80%;
+    height: 44px;
+    color: #f5f7fa;
+}
+
+.btn-redirectlogin:hover{
+    border: 2px solid #f77f00;
+    background-color: #f5f7fa;
+    color: #f77f00;
+}
