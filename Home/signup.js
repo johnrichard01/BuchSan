@@ -13,7 +13,9 @@ function isValidPassword(password) {
     return passwordRegex.test(password);
 }
 function passwordsMatch(password, confirmPassword) {
-    return password === confirmPassword;
+    
+        return password === confirmPassword;
+    
   }
 //whole submit validation function
 function validate(event){
@@ -51,19 +53,22 @@ function validate(event){
         isValid=false;
     } if(!isValidPassword(passwordVal)){
         event.preventDefault();
+        document.getElementById("error-message4").innerHTML="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.";
         document.getElementById("error-message4").classList.add("error-print");
         document.getElementById("infieldError4").classList.add("in-field-invalid");
         isValid=false;
     } if(confirmpasswordVal==empty){
-        event.preventDefault();
-        document.getElementById("error-message5").classList.add("error-print");
-        document.getElementById("infieldError5").classList.add("in-field-invalid");
-        isValid=false;
-    } if(!passwordsMatch(passwordVal, confirmpasswordVal)){
-        event.preventDefault();
-        document.getElementById("error-message5").classList.add("error-print");
-        document.getElementById("infieldError5").classList.add("in-field-invalid");
-        isValid=false;
+        let x=document.getElementById("message").innerHTML;
+        if(x==""){
+            event.preventDefault();
+            document.getElementById("error-message5").classList.add("error-print");
+            document.getElementById("infieldError5").classList.add("in-field-invalid");
+            isValid=false;
+        }else{
+            event.preventDefault();
+            isValid=false;
+        }
+        
     } if(isValid){
         saveData();
     }
@@ -87,22 +92,35 @@ document.getElementById("password").addEventListener("input",function(){
     document.getElementById("error-message4").classList.remove("error-print");
     document.getElementById("infieldError4").classList.remove("in-field-invalid");
 });
-document.getElementById("confirmpassword").addEventListener("input",function(){
+function realtimeCheck(){
     document.getElementById("error-message5").classList.remove("error-print");
     document.getElementById("infieldError5").classList.remove("in-field-invalid");
     let passwordVal=document.getElementById("password").value;
     let confirmpasswordVal=document.getElementById("confirmpassword").value;
     let message=document.getElementById("message")
 
-    if(passwordVal===confirmpasswordVal){
+    if (passwordVal.trim() === "" && confirmpasswordVal.trim() === "") {
+        
+        document.getElementById("error-message4").innerHTML="Please enter a password";
+        document.getElementById("error-message4").classList.add("error-print");
+        document.getElementById("infieldError4").classList.add("in-field-invalid");
+    }
+    else if(passwordVal===confirmpasswordVal){
         message.innerHTML="Password match.";
         message.style.color="green";
     } else {
-        message.innerHTML="Password does not match.";
-        message.style.color="red";
+        if(document.getElementById("infieldError5").classList.contains("in-field-invalid")){
+            console.log("true");
+        }else{
+            document.getElementById("infieldError5").classList.add("in-field-invalid");
+            message.innerHTML="Password does not match.";
+            message.style.color="red";
+        }
+        
+        
     }
-});
-//save data for local storage
+};
+//save data for session storage
 function saveData(){
     let name, username, email, password;
     name=document.getElementById("fullname").value;
@@ -146,7 +164,8 @@ function saveData(){
 
 //event for submit button
 document.getElementById("submit").addEventListener("click",validate);
-
+document.getElementById("confirmpassword").addEventListener("input",realtimeCheck);
+document.getElementById("password").addEventListener("input",realtimeCheck);
 document.getElementById("stayonPage").addEventListener("click",closePopup);
 //for popup 
 let popup = document.getElementById("popup");
