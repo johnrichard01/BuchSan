@@ -171,6 +171,7 @@ document.getElementById("password").addEventListener("input",realtimeCheck);
 //for popup 
 let popup = document.getElementById("popup");
 function openPopup(){
+    document.getElementById("miniFooter").style.visibility="hidden";
     document.getElementById("overlayWhole").classList.add("overlay");
     popup.classList.add("popup-open");
     document.getElementById("overlay").classList.add("hide-content");
@@ -180,6 +181,7 @@ function closePopup(){
     popup.classList.remove("popup-open");
     document.getElementById("overlay").classList.remove("hide-content");
     document.getElementById("overlayWhole").classList.remove("overlay");
+    document.getElementById("miniFooter").style.visibility="visible";
 }
 
     
