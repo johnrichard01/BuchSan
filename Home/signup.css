@@ -1,6 +1,5 @@
 body{
     background-color: #FFBB5C;
-
 }
 .popup{
     width: 90%;
@@ -82,7 +81,7 @@ body{
 }
 .in-field{
     background: #eaeaea;
-    margin: 20px 20px 0;
+    margin: 15px 20px 0;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -152,4 +151,15 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: block; /* Initially hidden */
+}
+.mini-footer{
+    background-color: #B36910;
+    
+}
+.mini-footer-text{
+    color: #f5f7fa;
+}
+.mini-footer-text:hover{
+    color: #3c1518;
+    scale: 1.05;
 }

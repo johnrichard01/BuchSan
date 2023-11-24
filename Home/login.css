@@ -77,3 +77,17 @@ body{
 #error-enter{
     color:red;
 }
+.mini-footer{
+    background-color: #B36910;
+    
+}
+.mini-footer-text{
+    color: #f5f7fa;
+}
+.mini-footer-text{
+    color: #f5f7fa;
+}
+.mini-footer-text:hover{
+    color: #3c1518;
+    scale: 1.05;
+}

@@ -17,6 +17,12 @@ body{
     font-size: 2rem;
     font-weight: 600;
 }
+.offcanvas-body{
+    background-color: #f5f7fa;
+}
+.offcanvas-title{
+    color: #f77f00;
+}
 .navbar-all{
     -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
     -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
@@ -31,7 +37,8 @@ body{
 }
 
 .nav-hover:hover{
-    border-color: #f77f00;    
+    border-color: #f77f00;
+    scale: 1.05;   
 }
 .home-active{
     border-color: #f77f00;
@@ -61,7 +68,7 @@ body{
     color: #f5f7fa;
 }
 .btn-login:hover{
-    background-color: #3c1518;
+    background-color: #d26e04;
     color: #f5f7fa;
 }
 /*For newsletter*/
@@ -120,7 +127,7 @@ body{
     color: green;
     background-color: #f5f7fa;
 }
-
+/* footer */
 .ftr{
     background-color: #B36910;
 }
@@ -139,6 +146,7 @@ body{
 }
 .footer-text:hover{
     color: #3c1518;
+    scale: 1.05;
     
 }
 .btn-signup-ftr{

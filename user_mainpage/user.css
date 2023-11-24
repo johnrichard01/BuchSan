@@ -18,10 +18,9 @@
     position: relative;
     color: #f77f00;
     padding: 6px;
-    border-bottom: 5px solid #f5f7fa;
 }
 .addto-cart:hover{
-    border-color:  #f77f00;
+    scale: 1.05;
 }
 .cart-amount{
     position: absolute;
@@ -32,4 +31,14 @@
     color: #f5f7fa;
     padding: 3px;
     border-radius: 5px;
+}
+.profile-display{
+    border-radius: 50%;
+}
+.profile-display:hover{
+    scale: 1.05;
+    background-color: #eaeaea;
+}
+.profile-display::after{
+    content: none;
 }
