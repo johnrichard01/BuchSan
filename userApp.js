@@ -12,3 +12,14 @@ function generateName(){
     return fullName.innerHTML= `Hi!  ${sessionStorage.getItem("username")}`;
 }
 generateName();
+
+
+function logOut(){
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("profilepicture");
+    window.location.href="index.html";
+
+}
+document.getElementById("logOut").addEventListener("click",logOut);
