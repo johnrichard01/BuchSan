@@ -40,7 +40,7 @@ function saveData(){
         sessionStorage.setItem("username", current_user.username);
         sessionStorage.setItem("email", current_user.email);
         sessionStorage.setItem("profilepicture", current_user.profilepicture);
-        window.location.href="../user.html";
+        window.location.href="../user_mainpage/user.html";
     } else {
         document.getElementById("error-message").classList.add("error-print");
         document.getElementById("in-group1").classList.add("in-field-invalid");
