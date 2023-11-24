@@ -147,7 +147,7 @@ function saveData(){
                 "username": username,
                 "email": email,
                 "password": password,
-                "profilepicture":"images/profile-picture.png"
+                "profilepicture":"/images/profile-picture.png"
             })
             
             document.getElementById("fullname").value="";

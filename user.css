@@ -14,3 +14,22 @@
 .dropdown-menu > li:hover > .dropdown-submenu {
     display: block;
 }
+.addto-cart{
+    position: relative;
+    color: #f77f00;
+    padding: 6px;
+    border-bottom: 5px solid #f5f7fa;
+}
+.addto-cart:hover{
+    border-color:  #f77f00;
+}
+.cart-amount{
+    position: absolute;
+    top: -8px;
+    right: 0px;
+    font-size: 16px;
+    background-color: red;
+    color: #f5f7fa;
+    padding: 3px;
+    border-radius: 5px;
+}
