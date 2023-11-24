@@ -8,7 +8,7 @@ function adminOne(){
         "username": "pam",
         "email": "pam@buchsan.com",
         "password": "12345678",
-        "profilepicture":"/images/profile-picture.png"
+        "profilepicture":"images/profile-picture.png"
     };
 
     var newDataExists = admin_records.some(function (admin) {
@@ -29,7 +29,7 @@ function adminTwo(){
         "username": "Richard",
         "email": "richard@buchsan.com",
         "password": "12345678",
-        "profilepicture":"/images/profile-picture.png"
+        "profilepicture":"images/profile-picture.png"
     };
     
    let newDataExists = admin_records.some(function (admin) {
