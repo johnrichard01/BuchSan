@@ -19,7 +19,7 @@ function logOut(){
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("email");
     sessionStorage.removeItem("profilepicture");
-    window.location.href="index.html";
+    window.location.href="../index.html";
 
 }
 document.getElementById("logOut").addEventListener("click",logOut);
