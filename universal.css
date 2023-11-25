@@ -432,13 +432,13 @@ background:#B36910;
     font-family:'Lucida Sans';
     color:#f77f00;
 }
-.shopcart::after{
+.shopcart h2::after{
     content:"";
     background:#f77f00;
     display:block;
     height:3px;
     width:65px;
-    margin-top:-8px;
+    
     
 }.cart-info i{
     color:rgb(207, 57, 57);
@@ -448,4 +448,18 @@ background:#B36910;
 
 .btn-remove{
     font-size:small;
+}
+
+.relative-books h2{
+    font-weight:bolder;
+    font-family:'Lucida Sans';
+    color:#f77f00;
+}
+
+.relative-books h2::after{
+    content:"";
+    background:#f77f00;
+    display:block;
+    height:3px;
+    width:65px;
 }
