@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="universal.css">
     <link rel="stylesheet" href="styles.css">
     <title>Home</title>
@@ -106,12 +107,216 @@
         </div>
     </nav>
 
-
 <!--Homepage Content-->
+    <!-- Carousel Section -->
+    <div class="carousel slide mb-5 carousel-fade" id="sectionCarousel" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button class="active" type="button" data-bs-target="#sectionCarousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#sectionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#sectionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item main-carousel active" data-bs-interval="2000">
+                <div class="overlay-image1">
+                </div>
+                <div class="container carousel-content ">
+                    <h1 class="col-12 col-lg-6">Example Headline</h1>
+                    <p class="lead col-12 col-lg-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eius officia temporibus commodi architecto reprehenderit animi cum veniam error autem? Nesciunt nostrum eius a. Iusto veritatis obcaecati nihil esse ad!</p>
+                    <a href="#" class="btn btn-lg btn-primary">
+                        sign up now!
+                    </a> 
+                </div>
+            </div>
+            <div class="carousel-item main-carousel" data-bs-interval="2000">
+                <div class="overlay-image2">
+                </div>
+                <div class="container carousel-content">
+                    <h1 class="col-12 col-lg-6">Example Headline</h1>
+                    <p class="lead col-12 col-lg-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eius officia temporibus commodi architecto reprehenderit animi cum veniam error autem? Nesciunt nostrum eius a. Iusto veritatis obcaecati nihil esse ad!</p>
+                    <a href="#" class="btn btn-lg btn-primary">
+                        sign up now!
+                    </a> 
+                </div>
+            </div>
+            <div class="carousel-item main-carousel" data-bs-interval="2000">
+                <div class="overlay-image3">
+                </div>
+                <div class="container carousel-content">
+                    <h1 class="col-12 col-lg-6">Example Headline</h1>
+                    <p class="lead col-12 col-lg-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero eius officia temporibus commodi architecto reprehenderit animi cum veniam error autem? Nesciunt nostrum eius a. Iusto veritatis obcaecati nihil esse ad!</p>
+                    <a href="#" class="btn btn-lg btn-primary">
+                        sign up now!
+                    </a> 
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <!-- Popular Categ Cards -->
+    <div class="container-fluid">
+        <div class="container my-5">
+            <h1 class="display-3 sectio-title fw-bold mb-5 pt-5">Popular Categories</h1>
+            <div class="row py-3">
+                <div class="col-12 col-lg-12 col-xl mb-5 mb-xl-0  d-flex flex-wrap justify-content-center w-100">
+                    <a href="#" class="card-hover ">
+                        <div class="card h-100 card-pop" style="width: 20rem;">
+                            <img src="./images/child_1.png" class="card-img card-image" alt="...">
+                            <div class="content h-100 w-100 d-flex align-items-center justify-content-center">
+                                <h1 class="fw-bold text-center">Children</h1>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="col-12 col-lg-12 col-xl mb-5 mb-xl-0  d-flex flex-wrap justify-content-center w-100">
+                    <a href="#"  class="card-hover">
+                        <div class="card h-100 card-pop" style="width: 20rem;">
+                            <img src="./images/ficiton_8.png" class="card-img card-image" alt="...">
+                            <div class="content h-100 w-100 d-flex align-items-center justify-content-center">
+                                <h1 class="fw-bold text-center">Fiction</h1>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="col-12 col-lg-12 col-xl mb-5 mb-xl-0  d-flex flex-wrap justify-content-center w-100">
+                    <a href="#"  class="card-hover ">
+                        <div class="card card-pop h-100" style="width: 20rem;">
+                            <img src="./images/romance_10.png" class="card-img card-image" alt="...">
+                            <div class="content h-100 w-100 d-flex align-items-center justify-content-center">
+                                <h1 class="fw-bold text-center">Romance</h1>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New Arrival -->
+    <div class="container-fluid new-arrival-bg bg-body-tertiary py-5">
+        <div class="container">
+            <h1 class="new-arrival-title fw-bold display-3 pt-5">
+                New Arrivals
+            </h1>
+        </div>
+        <div class="container d-flex flex-wrap justify-content-center pb-5" id="cardContainerNew">
+               
+        </div>
+    </div>
     
+    <div class="modal fade" id="newArrivalModal" tabindex="-1" aria-labelledby="newArrivalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title h4 w-100 text-center fw-bold" id="newArrivalModalLabel">Book Details</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body row" id="modalgenerateBody">
+              <!-- <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center align-content-center">
+                <img src="./images/newarrival_1.png" class="modal-cover-image" alt="">
+              </div>
+              <div class="col-12 col-lg-6 pe-5" >
 
+                    <h1 class="display-3 fw-bold mt-5 mb-3 text-center text-lg-start">Godly Heathens: A Novel (The Ouroboros, 1)</h1>
+                    <h4 class="mb-3 text-center text-lg-start">Edgmon, H.E.</h4>
+                    <div class="d-flex justify-content-lg-start justify-content-center">
+                        <div class="rating-box bg-body-secondary d-flex flex-wrap justify-content-center mb-3">
+                            <div class="outer-star">
+                                <div class="inner-star" ></div>
+                            </div>
+                            <div class=" rating-number d-flex flex-wrap align-items-center pt-2 ms-3">
+                                <h1 class="fw-bold rating-text">5.00</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addtocardModal mb-3">
+                        <a href="./Home/login.html" type="button" class="btn btn-lg btn-addtocard-modal fw-bold w-100 py-3">ADD TO CART</a>
+                    </div>
+                     <div class="accordion" id="synopsisAccordion">
+                        <div class="accordion-item">
+                          <h4 class="accordion-header" id="synopsisHeading">
+                            <button class="accordion-button p-3 fs-5 fw-bold collapsed text-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#synopsisCollapse" aria-expanded="false" aria-controls="synopsisCollapse">
+                              <span class="d-flex justify-content-center align-items-center w-100">Synopsis</span>
+                            </button>
+                          </h4>
+                          <div id="synopsisCollapse" class="accordion-collapse collapse" aria-labelledby="synopsisHeading" data-bs-parent="#synopsisAccordion">
+                            <div class="accordion-body">
+                              <div class="synopsis-body container">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam modi nisi, quis, quam eaque voluptatem necessitatibus eveniet alias harum tenetur perferendis hic sit! Iste, saepe doloribus. Porro explicabo libero in!
+                        
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos impedit officia hic quisquam sed. Nobis voluptatem sunt deleniti quam, eius recusandae repudiandae vel sint sequi quibusdam fugit est dolorum assumenda!
+                                
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempore quia doloremque qui vero, asperiores laborum velit molestiae pariatur, expedita accusantium minima, minus veritatis eum. Iure fugiat ab sapiente commodi?
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ex rem iure. Aspernatur ex amet vero dolores commodi voluptatem asperiores modi culpa, quibusdam rem consequatur tempore explicabo? Amet, iste quaerat?
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, velit, praesentium quam, accusantium dolor nemo at fuga quae possimus quaerat iure blanditiis ut repellat quis optio laudantium exercitationem ex facere.
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa voluptatibus perferendis, facere nostrum minima vero voluptate quo incidunt ab quaerat modi neque error eaque enim numquam mollitia delectus cum laboriosam.
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus dolore maxime obcaecati porro adipisci architecto similique et praesentium, excepturi, eaque harum ducimus velit nobis. Et quo provident quasi mollitia officia.
 
-
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Testimonials Section -->
+    <div class="container-fluid testimonial-bg my-5 d-flex flex-column align-items-center justify-content-center align-content-center">
+        <div class="container mb-5">
+            <h1 class="display-3 fw-bold col-12">Testimonials</h1>
+        </div>
+        <div class="container d-flex flex-wrap align-items-center justify-content-center">
+            <div class="testimonials swiper">
+                <div class="testi-content swiper-wrapper">
+                    <div class="slide swiper-slide">
+                       <img src="images/profile-picture.png" alt="" class="image">
+                       
+                       
+                       <p class="testi-comment fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique sed quasi debitis, sit exercitationem laudantium accusamus officiis vero cupiditate praesentium officia necessitatibus aliquid qui rem vitae amet! Laborum, itaque aliquam.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-quote quote-icon" viewBox="0 0 16 16">
+                            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                        </svg>
+                        <div class="details d-flex flex-column align-items-center">
+                            <span class="name fw-bold h4">J.R Sumagui</span>
+                        </div>
+                    </div>
+                    <div class="slide swiper-slide">
+                        <img src="images/profile-picture.png" alt="" class="image">
+                        
+                        
+                        <p class="testi-comment fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique sed quasi debitis, sit exercitationem laudantium accusamus officiis vero cupiditate praesentium officia necessitatibus aliquid qui rem vitae amet! Laborum, itaque aliquam.</p>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-quote quote-icon" viewBox="0 0 16 16">
+                             <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                         </svg>
+                         <div class="details d-flex flex-column align-items-center">
+                             <span class="name fw-bold h4">J.R Sumagui</span>
+                         </div>
+                     </div>
+                     <div class="slide swiper-slide">
+                        <img src="images/profile-picture.png" alt="" class="image">
+                        
+                        
+                        <p class="testi-comment fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique sed quasi debitis, sit exercitationem laudantium accusamus officiis vero cupiditate praesentium officia necessitatibus aliquid qui rem vitae amet! Laborum, itaque aliquam.</p>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-quote quote-icon" viewBox="0 0 16 16">
+                             <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                         </svg>
+                         <div class="details d-flex flex-column align-items-center">
+                             <span class="name fw-bold h4">J.R Sumagui</span>
+                         </div>
+                     </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
     <!--Footer-->
     <div class="ftr container-fluid">
         <div class="container pt-5">
@@ -226,7 +431,10 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./src/Universal.js"></script>
+    <script src="./src/new-arrival-data.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
