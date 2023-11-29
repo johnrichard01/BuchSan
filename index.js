@@ -2,24 +2,19 @@ let cardContainerNew= document.getElementById("cardContainerNew");
 
 
 function generateCards(x){
-    return(cardContainerNew.innerHTML= newArrivalData.map(function(x){
+    return(cardContainerNew.innerHTML= newArrivalData.slice(-5).map(function(x){
         return`
-        <div class="card col-12 col-md-6 col-lg-3 mt-5" id=""product${x.id}>
-
-        <a  type="button" onclick="generateModal(${x.id})"  data-bs-toggle="modal" data-bs-target="#newArrivalModal">
-            <img id="${x.id}" src="${x.cover}" class="card-img-top">
-        </a>
-
-        <div class="card-body">
-            <p class="card-title">${x.title}</p>
-            <p class="Author">${x.author}</p>
-            
+        <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick="generateModal(${x.id})"  data-bs-toggle="modal" data-bs-target="#newArrivalModal">        
+            <img id="${x.id}" src="${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+        <div class="card-body d-flex flex-wrap justify-content-between mt-2">
+            <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
+            <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
         </div>
         <div class="price_addToCart">
             <span> &#8369; ${x.price}</span>
         </div>    
         <div class="addToCart">    
-           <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
+           <a href="./Home/login.html"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
         </div>
         </div>`
     }).join(""))
@@ -56,11 +51,11 @@ const swiper = new Swiper('.swiper', {
         console.log
          modal.innerHTML = `
           <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center align-content-center">
-            <img src="${bookFind.cover}" class="modal-cover-image" alt="">
+            <img src="${bookFind.cover}" class="modal-cover-image" alt="book cover"  loading="lazy">
           </div>
           <div class="col-12 col-lg-6 pe-5">
             <h1 class="display-3 fw-bold mt-5 mb-3 text-center text-lg-start">${bookFind.title}</h1>
-            <h4 class="mb-3 text-center text-lg-start">${bookFind.author}</h4>
+            <h4 class="mb-3 text-center text-lg-start fst-italic">${bookFind.author}</h4>
             <div class="d-flex justify-content-lg-start justify-content-center">
               <div class="rating-box bg-body-secondary d-flex flex-wrap justify-content-center mb-3">
                 <div class="outer-star">
@@ -71,6 +66,7 @@ const swiper = new Swiper('.swiper', {
                 </div>
               </div>
             </div>
+            <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; ${bookFind.price}</h4>
             <div class="addtocardModal mb-3">
               <a href="./Home/login.html" type="button" class="btn btn-lg btn-addtocard-modal fw-bold w-100 py-3">ADD TO CART</a>
             </div>
@@ -78,7 +74,7 @@ const swiper = new Swiper('.swiper', {
               <div class="accordion-item">
                 <h4 class="accordion-header" id="synopsisHeading">
                   <button class="accordion-button p-3 fs-5 fw-bold collapsed text-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#synopsisCollapse" aria-expanded="false" aria-controls="synopsisCollapse">
-                    <span class="d-flex justify-content-center align-items-center w-100">Synopsis</span>
+                    <span class="d-flex justify-content-center align-items-center w-100">Description</span>
                   </button>
                 </h4>
                 <div id="synopsisCollapse" class="accordion-collapse collapse" aria-labelledby="synopsisHeading" data-bs-parent="#synopsisAccordion">

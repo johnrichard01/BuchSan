@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../universal.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="books.css">
     <title>Fiction</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="col-8 ">
-                            <ul class="navbar-nav justify-content-start flex-grow-1 gap-5"> 
+                            <ul class="navbar-nav justify-content-start flex-grow-1 gap-4"> 
                                     <li class="nav-item nav-hover ">
                                     <a href="../index.html" class="nav-link fw-bold " aria-current="page">
                                         Home
@@ -74,6 +74,11 @@
                                     <li class="nav-item nav-hover">
                                         <a href="../Home/sale.html" class="nav-link  fw-bold ">
                                         Sale
+                                        </a>
+                                    </li>
+                                    <li class="nav-item nav-hover">
+                                        <a href="../Home/new.html" class="nav-link  fw-bold">
+                                        New!
                                         </a>
                                     </li>
                                     <li class="nav-item dropdown dropdown-center nav-hover">
@@ -121,183 +126,30 @@
         </div>
     </div>
       
-    <div class="row row-cols-1 row-cols-md-5 g-4 pb-4">
-        <div class="col">
-            <div class="card">
-                <img src="../images/fiction_1.png" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-title">Description</p>
-                    <p class="Author">Author</p>   
-                </div>
-                <div class="price_addToCart">
-                    <span> &#8369; 180.00</span>
-                </div>    
-                <div class="addToCart">    
-                   <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                </div>
-            </div>
+    <div class="row-cols-1 row-cols-lg-5 d-flex flex-wrap justify-content-center pb-3" id="generatePage">
+        
+
+    </div>
+        <div class="page-btn ">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>&#8594;</span>
+        </div> 
+</div>                    
+<div class="modal fade" id="generatepageModal" tabindex="-1" aria-labelledby="generateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header book-details">
+          <h1 class="modal-title display-5  w-100 text-center fw-bold" id="generateModalLabel">Book Details</h1>
+          <button type="button" class="btn-close btn-close-white fw-bold fs-3" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body row" id="generateBody">
 
-        <div class="col">
-            <div class="card">
-                <img src="../images/fiction_2.png" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-title">Description</p>
-                    <p class="Author">Author</p>
-                    
-                </div>
-                <div class="price_addToCart">
-                    <span> &#8369; 180.00</span>
-                </div>    
-                <div class="addToCart">    
-                   <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card">
-                    <img src="../images/fiction_3.png" class="card-img-top">
-                    <div class="card-body">
-                        <p class="card-title">Description</p>
-                        <p class="Author">Author</p>
-                        
-                    </div>
-                    <div class="price_addToCart">
-                        <span> &#8369; 180.00</span>
-                    </div>    
-                    <div class="addToCart">    
-                       <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <img src="../images/fiction_4.png" class="card-img-top">
-                        <div class="card-body">
-                            <p class="card-title">Description</p>
-                            <p class="Author">Author</p>
-                            
-                        </div>
-                        <div class="price_addToCart">
-                            <span> &#8369; 180.00</span>
-                        </div>    
-                        <div class="addToCart">    
-                           <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card">
-                            <img src="../images/fiction_5.png" class="card-img-top">
-                            <div class="card-body">
-                                <p class="card-title">Description</p>
-                                <p class="Author">Author</p>
-                                
-                            </div>
-                            <div class="price_addToCart">
-                                <span> &#8369; 180.00</span>
-                            </div>    
-                            <div class="addToCart">    
-                               <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card">
-                                <img src="../images/fiction_6.png" class="card-img-top">
-                                <div class="card-body">
-                                    <p class="card-title">Description</p>
-                                    <p class="Author">Author</p>
-                                    
-                                </div>
-                                <div class="price_addToCart">
-                                    <span> &#8369; 180.00</span>
-                                </div>    
-                                <div class="addToCart">    
-                                   <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                                </div>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="card">
-                                    <img src="../images/fiction_7.png" class="card-img-top">
-                                    <div class="card-body">
-                                        <p class="card-title">Description</p>
-                                        <p class="Author">Author</p>
-                                        
-                                    </div>
-                                    <div class="price_addToCart">
-                                        <span> &#8369; 180.00</span>
-                                    </div>    
-                                    <div class="addToCart">    
-                                       <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card">
-                                        <img src="../images/ficiton_8.png" class="card-img-top">
-                                        <div class="card-body">
-                                            <p class="card-title">Description</p>
-                                            <p class="Author">Author</p>
-                                            
-                                        </div>
-                                        <div class="price_addToCart">
-                                            <span> &#8369; 180.00</span>
-                                        </div>    
-                                        <div class="addToCart">    
-                                           <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                                        </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col">
-                                        <div class="card">
-                                            <img src="../images/ficiton_9.png" class="card-img-top">
-                                            <div class="card-body">
-                                                <p class="card-title">Description</p>
-                                                <p class="Author">Author</p>
-                                                
-                                            </div>
-                                            <div class="price_addToCart">
-                                                <span> &#8369; 180.00</span>
-                                            </div>    
-                                            <div class="addToCart">    
-                                               <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                                            </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col">
-                                            <div class="card">
-                                                <img src="../images/fiction_10.png" class="card-img-top">
-                                                <div class="card-body">
-                                                    <p class="card-title">Description</p>
-                                                    <p class="Author">Author</p>
-                                                    
-                                                </div>
-                                                <div class="price_addToCart">
-                                                    <span> &#8369; 180.00</span>
-                                                </div>    
-                                                <div class="addToCart">    
-                                                   <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                         </div>
-                                    <div class="page-btn">
-                                        <span>1</span>
-                                        <span>2</span>
-                                        <span>3</span>
-                                        <span>&#8594;</span>
-                                    </div> 
-                                </div>
+        </div>
+      </div>
+    </div>
+</div>
                             
 
 
@@ -382,6 +234,9 @@
                                 <a href="../Home/sale.html" class="nav-link footer-text fw-bold">Sale</a>
                             </li>
                             <li class="nav-item">
+                                <a href="../Home/new.html" class="nav-link footer-text fw-bold">New!</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="../Help/faq.html" class="nav-link footer-text fw-bold">FAQ's</a>
                             </li>
                             <li class="nav-item">
@@ -419,6 +274,8 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../src/data.js"></script>
     <script src="../src/Universal.js"></script>
+    <script src="./fiction.js"></script>
 </body>
 </html>

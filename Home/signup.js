@@ -1,7 +1,3 @@
-
-
-
-
 //email validation
 function isValidEmail(email) {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
