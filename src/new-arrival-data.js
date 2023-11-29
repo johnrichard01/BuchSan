@@ -165,10 +165,10 @@ let newArrivalData =[
         genre:"fiction",
         synop:`<p class="synopsis-text">A royal huntsman. An illegitimate daughter. And one heart — delivered on a platter.</p>
         <p class="synopsis-text">Max is training to become the royal huntsman, a respected position his lineage has held for generations. Orphaned Snow is an unremarkable palace servant of questionable origins.</p> 
-        <p class="synopsis-text">Although Max banters with Snow every morning, and she can sense his mood at a single glance, the best friends are thrown apart when the king winds up dead. Under the queen’s rule, the kingdom devolves into chaos — and Snow is a threat to be eliminated. When Snow is betrayed, Max risks everything to save her life, despite the painful discovery of the secrets she’s been hiding. With the help of seven dwarven allies, they must all work together to dethrone the mad queen.
-        But as the queen’s magic strengthens, so do the risks.</p> 
-        <p class="synopsis-text">The longer Max juggles the traitors, lies, and unstable queen, the more he realizes he must choose between his family and the woman he's grown to love. And it’s painfully clear that he can't save both.</p> 
-        <p class="synopsis-text">The key to saving the kingdom may lie in Snow’s unraveling of her past, but her heart lies in the hands of the queen’s huntsman.</p> 
+        <p class="synopsis-text">Although Max banters with Snow every morning, and she can sense his mood at a single glance, the best friends are thrown apart when the king winds up dead. Under the queen's rule, the kingdom devolves into chaos — and Snow is a threat to be eliminated. When Snow is betrayed, Max risks everything to save her life, despite the painful discovery of the secrets she's been hiding. With the help of seven dwarven allies, they must all work together to dethrone the mad queen.
+        But as the queen's magic strengthens, so do the risks.</p> 
+        <p class="synopsis-text">The longer Max juggles the traitors, lies, and unstable queen, the more he realizes he must choose between his family and the woman he's grown to love. And it's painfully clear that he can't save both.</p> 
+        <p class="synopsis-text">The key to saving the kingdom may lie in Snow's unraveling of her past, but her heart lies in the hands of the queen's huntsman.</p> 
         <p class="synopsis-text">The Poisoned Prince is a best friends to forbidden romance retelling of Snow White and is book 6 of Once Upon A Prince , a multi-author series of clean fairy tale retellings. Each standalone story features a swoony prince fighting for his happily ever after.</p> `,
         rating:"4.14"
     },
