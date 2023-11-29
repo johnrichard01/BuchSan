@@ -15,7 +15,7 @@ function generatePage(){
                 <div class="card d-flex position-relative h-100 generated-hover" type="button"  onclick="generatenewModal(${x.id})"  data-bs-toggle="modal" 
                 data-bs-target="#generatepageModal">
     
-                <img id="${x.id}" src="../${x.cover}" class="card-img-top">
+                <img id="${x.id}" src="../${x.cover}" class="card-img-top"  loading="lazy">
      
                 <div class="card-body d-flex flex-wrap justify-content-between mt-2">
                     <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
@@ -52,7 +52,7 @@ function generatenewModal(id){
         let modal= document.getElementById("generateBody");
          modal.innerHTML = `
           <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center align-content-center">
-            <img src="../${bookFind.cover}" class="modal-cover-image" alt="">
+            <img src="../${bookFind.cover}" class="modal-cover-image" alt="cover of the book"  loading="lazy">
           </div>
           <div class="col-12 col-lg-6 pe-5">
             <h1 class="display-3 fw-bold mt-5 mb-3 text-center text-lg-start">${bookFind.title}</h1>
