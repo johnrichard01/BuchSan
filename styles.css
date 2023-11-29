@@ -120,9 +120,9 @@
  }
 .modal-cover-image{
     position: fixed;
-    top: 80px;
-    left: 80px;
-    width: 35%;
+    top: 120px;
+    left: 120px;
+    width: 30%;
     height: auto; 
     padding: 2rem;
     object-fit: cover;
@@ -137,7 +137,7 @@
 }
 .outer-star{
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem;
     display: inline-block;
 }
 .outer-star::before{
@@ -156,12 +156,12 @@
     color: gold;
 }
 .rating-text{
-    font-size: 2.25rem;
+    font-size: 1.25rem;
 }
 .rating-box{
     max-width: 90%;
-    width: 50%;
-    padding: 1rem;
+    width: 40%;
+    padding: 10px;
     border-radius: 20px;
     text-align: center;
 }
@@ -184,7 +184,6 @@
 .accordion-button{
     border: 2px solid #f77f00;
     color: #f77f00 !important;
-   
 }
 .accordion-button::after{
     color: #f77f00 !important;
@@ -204,10 +203,12 @@
   }
 
 .accordion-body{
-    background-color: rgba(245, 247, 250, 0.6);
+    outline: none;
+    border: none;
 }
 .accordion-item{
-    background-color: rgba(245, 247, 250, 0.6);
+    outline: none;
+    border: none;
 }
 @media(max-width:992px){
     .new_arrival{
