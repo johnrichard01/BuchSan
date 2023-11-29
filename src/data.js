@@ -5,6 +5,7 @@ let allBooks=[
         title:"Anne of Green Gables",
         author:"L.M. Montgomery",
         genre: "children",
+        price:"999",
         rating: "4.30",
         synop: `<p class="synopsis-text">
                 This heartwarming story has beckoned generations of readers into the special world of Green Gables, an old-fashioned farm outside a town called Avonlea. Anne Shirley, an eleven-year-old orphan, has arrived in this verdant corner of Prince Edward Island only to discover that the Cuthberts—elderly Matthew and his stern sister, Marilla—want to adopt a boy, not a feisty redheaded girl. But before they can send her back, Anne—who simply must have more scope for her imagination and a real home—wins them over completely. A much-loved classic that explores all the vulnerability, expectations, and dreams of a child growing up, Anne of Green Gables is also a wonderful portrait of a time, a place, a family… and, most of all, love.
@@ -13,13 +14,14 @@ let allBooks=[
 
     {
         id: "children_2",
-            cover:"images/children_2.png",
-            title:"The Chronicles of Narnia (Publication Order) #1, The Lion, the Witch and the Wardrobe",
-            author:"C.S. Lewis",
-            genre: "children",
-            rating:"4.23",
-            synop: `<p class="synopsis-text">Narnia… the land beyond the wardrobe door, a secret place frozen in eternal winter, a magical country waiting to be set free.</p>
-            <p class="synopsis-text">Lucy is the first to find the secret of the wardrobe in the professor's mysterious old house. At first her brothers and sister don't believe her when she tells of her visit to the land of Narnia. But soon Edmund, then Peter and Susan step through the wardrobe themselves. In Narnia they find a country buried under the evil enchantment of the White Witch. When they meet the Lion Aslan, they realize they've been called to a great adventure and bravely join the battle to free Narnia from the Witch's sinister spell.</p>`
+        cover:"images/children_2.png",
+        title:"The Lion, the Witch and the Wardrobe",
+        author:"C.S. Lewis",
+        genre: "children",
+        price:"800",
+        rating:"4.23",
+        synop: `<p class="synopsis-text">Narnia… the land beyond the wardrobe door, a secret place frozen in eternal winter, a magical country waiting to be set free.</p>
+        <p class="synopsis-text">Lucy is the first to find the secret of the wardrobe in the professor's mysterious old house. At first her brothers and sister don't believe her when she tells of her visit to the land of Narnia. But soon Edmund, then Peter and Susan step through the wardrobe themselves. In Narnia they find a country buried under the evil enchantment of the White Witch. When they meet the Lion Aslan, they realize they've been called to a great adventure and bravely join the battle to free Narnia from the Witch's sinister spell.</p>`
     },
     
     {
@@ -28,6 +30,7 @@ let allBooks=[
         title:"The Secret Garden",
         author:"Frances Hodgson Burnett",
         genre: "children",
+        price:"899",
         rating:"4.15",
         synop:`<p class="synopsis-text">Mary Lennox, a spoiled, ill-tempered, and unhealthy child, comes to live with her reclusive uncle in Misselthwaite Manor on England's Yorkshire moors after the death of her parents. There she meets a hearty housekeeper and her spirited brother, a dour gardener, a cheerful robin, and her wilful, hysterical, and sickly cousin, Master Colin, whose wails she hears echoing through the house at night.</p> 
             <p class="synopsis-text">With the help of the robin, Mary finds the door to a secret garden, neglected and hidden for years. When she decides to restore the garden in secret, the story becomes a charming journey into the places of the heart, where faith restores health, flowers refresh the spirit, and the magic of the garden, coming to life anew, brings health to Colin and happiness to Mary.</p>`
@@ -39,6 +42,7 @@ let allBooks=[
         title:"The Puppets of Spelhorst",
         author:"Kate DiCamillo",
         genre: "children",
+        price:"699",
         rating:"4.30",
         synop:`<p class="synopsis-text">From master storyteller Kate DiCamillo comes an original fairy tale—with enchanting illustrations by Julie Morstad—in which five puppets confront circumstances beyond their control with patience, cunning, and high spirits.</p>
             <p class="synopsis-text">Shut up in a trunk by a taciturn old sea captain with a secret, five friends—a king, a wolf, a girl, a boy, and an owl—bicker, boast, and comfort one another in the dark. Individually, they dream of song and light, freedom and flight, purpose and glory, but they all agree they are part of a larger story, bound each to each by chance, bonded by the heart's mysteries. When at last their shared fate arrives, landing them on a mantel in a blue room in the home of two little girls, the truth is more astonishing than any of them could have imagined. A beloved author of modern classics draws on her most moving themes with humor, heart, and wisdom in the first of the Norendy Tales, a projected trio of novellas linked by place and mood, each illustrated in black and white by a different virtuoso illustrator. A magical and beautifully packaged gift volume designed to be read aloud and shared, The Puppets of Spelhorst is a tale that soothes and strengthens us on our journey, leading us through whatever dark forest we find ourselves in.
@@ -52,6 +56,7 @@ let allBooks=[
         title:"Treasure Island: Runaway Gold",
         author:"Jewell Parker Rhodes",
         genre: "children",
+        price:"699",
         rating:"3.97",
         synop:`<p class="synopsis-text">Bestselling and award-winning author Jewell Parker Rhodes reimagines the classic novel Treasure Island  by Robert Louis Stevenson in this thrilling adventure set in modern-day Manhattan, in which three children must navigate the city's hidden history, dodge a threatening crew of skater kids, and decide who they can really trust in order to hunt down a long-buried treasure.  Three kids. One dog. And the island of Manhattan, laid out in an old treasure map. Zane is itching for an adventure that will take him away from his family's boarding house in Rockaway, Queens. So when he is entrusted with a real treasure map, leading to a spot somewhere in Manhattan, Zane wastes no time in riding the ferry over to the city to start the search with his friends Kiko and Jack and his dog, Hip-Hop. Through strange coincidence, they meet a man who is eager to help them find the John, a sailor who knows all about the buried history of Black New Yorkers of centuries past—and the gold that is hidden somewhere in those stories. As a vicious rival skateboard crew follows them around the city, Zane and his friends begin to wonder who they can really trust. And soon it becomes clear that treasure hunting is a dangerous business… Jewell Parker Rhodes has written a version of Treasure Island like none you've never seen—one that takes the reader through little-known Black history, and under the city of Manhattan itself. </p>`
     },
@@ -63,6 +68,7 @@ let allBooks=[
         title:"Ravenfall #2 Hollowthorn",
         author:"Kalyn Josephson",
         genre: "children",
+        price:"899",
         rating:"4.17",
         synop:`<p class="synopsis-text">In this spellbinding sequel to Ravenfall, two kids with supernatural powers must venture into the Otherworld to protect the Tree of Life from a terrifying foe—or risk losing the magic of Ravenfall forever.</p>
         <p class="synopsis-text">Best friends Anna and Colin defeated the King of the Dead on Halloween night, saving the magical Ravenfall Inn they call home. Now, with Hannukah approaching, the kids are looking forward to exploring their new powers—and maybe enjoying a little challah and peppermint cocoa, too.</p>
@@ -78,6 +84,7 @@ let allBooks=[
         title:"Blight Harbor #2 The Nighthouse Keeper",
         author:"Lora Senf",
         genre: "children",
+        price:"699",
         rating:"4.39",
         synop:`<p class="synopsis-text">Evie once again leaves her world behind to rescue Blight Harbor's ghosts in this second book in the bone-chilling middle grade Blight Harbor trilogy that's reminiscent of Doll Bones and Small Spaces.</p>
         <p class="synopsis-text">Evie Von Rathe has been home for only a few weeks from her adventure in the strange world of seven houses when Blight Harbor's beloved ghosts begin to disappear. Did they leave without saying goodbye, or has something gone horribly wrong? Soon Evie is invited to a mysterious council meeting, where she learns about the Dark Sun Side and a terrible secret.</p>
@@ -91,6 +98,7 @@ let allBooks=[
         title:"Thousand Worlds #3 Fox Snare",
         author:"Yoon Ha Lee",
         genre: "children",
+        price:"799",
         rating:"3.99",
         synop:`<p class="synopsis-text">Best-selling author Rick Riordan presents a third space opera starring Korean animal spirits by Yoon Ha Lee, author of Dragon Pearl.</p>
         <p class="synopsis-text">While on a mission to cement peace between the Sun Clans and the Thousand Worlds, Min the fox spirit and her ghost brother Jun get stranded on a death planet with Haneul the dragon spirit and Sebin the tiger spirit. To survive, the young cadets will have to rely on all their wits, training, and supernatural abilities. And let's not forget the Dragon Pearl . . .</p>
@@ -103,6 +111,7 @@ let allBooks=[
         title:"The Cursed Moon",
         author:"Angela Cervantes",
         genre: "children",
+        price:"799",
         rating:"4.03",
         synop:`<p class="synopsis-text">Celebrated author Angela Cervantes' brand new novel combines a chilling ghost story with her award-winning, heartfelt storytelling style. One two, the Caretaker's coming for you. Three-four, you'll breathe no more. Five-six, you'll float like sticks. Seven, eight, you'll meet your fate. Rafael Fuentes isn't easily scared. He loves writing ghost stories, reading scary books, and entertaining his friends with terrifying tales he creates on the spot. Rafa has come up against enough real-life scary situations that fictional hauntings seem like no big deal. Rafa's incarcerated mom is being released from jail soon, and will be coming to live with him, his sister, and their grandparents. For the first time in a while, Rafa feels a pit of fear growing in his stomach. To take his mind off his mom's return, Rafa spends an evening crafting the scariest ghost story he's ever told. As an eerie blood moon hangs in the sky, Rafa tells a group of friends about The Caretaker. The Caretaker is an evil ghost who lures unsuspecting kids into the neighborhood pond. . . and they don't ever come out. Rafa is really proud of his latest creation, until strange things start to happen around him. With a sinking feeling, Rafa realizes the Caretaker is real. Rafa has brought the ghost to life―and only he can stop him.</p>`
     },
@@ -114,6 +123,7 @@ let allBooks=[
         title:"Meowloween",
         author:"Diane Muldrow",
         genre: "children",
+        price:"999",
         rating:"3.67",
         synop:`<p class="synopsis-text">It's Halloween night, also known as Meowl-o-ween! Cats are on the prowl, ready to give trick-or-treaters a fright. But one lost kitten is scared--will she find her way and join the fun?</p>
         <p class="synopsis-text">On frightful, delightful Meowl-o-ween, cats slink by carved pumpkins and prepare to spook the trick-or-treaters parading the streets. But not all of the cats are enjoying the flashing lights and costumes. A lone kitten is overwhelmed by the crowds and doesn't know which way to turn! This fresh Halloween tale is a rhyming read-aloud that shows even the smallest scaredy-cat can find the courage to overcome their fears and anxieties.</p>`
@@ -125,6 +135,7 @@ let allBooks=[
         title:"Secrets of the Nile #1 What the River Knows",
         author:"Isabel Ibañez",
         genre: "fiction",
+        price:"999",
         rating:"4.03",
         synop:`<p class="synopsis-text">Bolivian-Argentinian Inez Olivera belongs to the glittering upper society of nineteenth century Buenos Aires, and like the rest of the world, the town is steeped in old world magic that's been largely left behind or forgotten. Inez has everything a girl might want, except for the one thing she yearns the most: her globetrotting parents—who frequently leave her behind.</p>`
     },
@@ -136,6 +147,7 @@ let allBooks=[
         title:"The Reformatory",
         author:"Tananarive Due",
         genre: "fiction",
+        price:"899",
         rating:"4.55",
         synop:`<p class="synopsis-text">A gripping, page-turning novel set in Jim Crow Florida that follows Robert Stephens Jr. as he's sent to a segregated reform school that is a chamber of terrors where he sees the horrors of racism and injustice, for the living, and the dead.</p>
         <p class="synopsis-text">Gracetown, Florida</p>
@@ -151,6 +163,7 @@ let allBooks=[
         title:"The Witches of Bone Hill",
         author:"Ava Morgyn",
         genre: "fiction",
+        price:"799",
         rating:"3.76",
         synop:`<p class="synopsis-text">Cordelia Bone's meticulously crafted life and career in Dallas are crashing down around her thanks to a philandering husband with criminal debts.</p>
         <p class="synopsis-text">When her older, carefree sister, Eustace—a cannabis grower in Boulder, calls to inform her the great aunt they never met has died and they must travel to a small town in Connecticut to deal with the estate, she sees an opportunity to unload the house and save herself.</p>
@@ -163,6 +176,7 @@ let allBooks=[
         title:"Lilith",
         author:"Nikki Marmery",
         genre: "fiction",
+        price:"799",
         rating:"3.65",
         synop:`<p class="synopsis-text">In the tradition of Madeline Miller and Claire North, Lilith is the story of the first woman, who was expelled from Paradise for disobedience. In this retelling of the Hebrew myth [NM1] that justified and explained woman's subjection to man, Lilith will have her revenge - however long it takes.</p>
         <p class="synopsis-text">In the Garden of Eden, at the beginning of time, an outrageous lie is born: that women are inferior.</p>
@@ -179,6 +193,7 @@ let allBooks=[
         title:"Murder by Degrees",
         author:"Ritu Mukerji",
         genre: "fiction",
+        price:"799",
         rating:"3.81",
         synop:`<p class="synopsis-text">Murder by Degrees is a historical mystery set in 19th century Philadelphia, following a pioneering woman doctor as she investigates the disappearance of a young patient who is presumed dead.</p>
         <p class="synopsis-text">Philadelphia, 1875: It is the start of term at Woman's Medical College of Pennsylvania. Dr. Lydia Weston, professor and anatomist, is immersed in teaching her students in the lecture hall and hospital. When the body of a patient, Anna Ward, is dredged out of the Schuylkill River, the young chambermaid's death is deemed a suicide. But Lydia is suspicious and she is soon brought into the police investigation.</p>
@@ -191,6 +206,7 @@ let allBooks=[
         title:"The Scarlet Alchemist #1 The Scarlet Alchemist",
         author:"Kylie Lee Baker",
         genre: "fiction",
+        price:"899",
         rating:"4.15",
         synop:`<p class="synopsis-text">Zilan dreams of becoming a royal alchemist, of providing for her family by making alchemical gold and gems for the wealthy to eat in order to stay young forever. But for now, she's trapped in her impoverished village in southern China, practicing an illegal form of alchemy to keep food on the table—resurrecting the dead, for a pric</p>
         <p class="synopsis-text">When Zilan finally has the chance to complete her imperial exams, she ventures to the capital to compete against the best alchemists in the country in tasks she'll be lucky to survive, let alone pass. On top of that, her reputation for raising the dead has followed her to the capital, and the Crown Prince himself seeks out her help, suspecting a coming assassination attempt.
@@ -203,6 +219,7 @@ let allBooks=[
         title:"Silent City",
         author:"Sarah Davis-Goff",
         genre: "fiction",
+        price:"799",
         rating:"3.46",
         synop:`<p class="synopsis-text">The story of young female warrior who must start a revolution if she and those she loves are to survive.</p>
         <p class="synopsis-text">Orpen has always been an outlier in Phoenix City - the only outsider ever admitted to the ranks of the banshees, the female warriors who enforce order, and protect it from the skrake - the ravening creatures that have laid waste to the rest of the country, and gather at the city walls.</p>
@@ -216,6 +233,7 @@ let allBooks=[
         title:"Thorn Witch #1 Tonight, I Burn",
         author:"Katharine J. Adams",
         genre: "fiction",
+        price:"799",
         rating:"3.81",
         synop:`<p class="synopsis-text">A thorn witch with the power to walk between the realms of Life and Death finds herself at the center of a magical rebellion—and a dangerous romance—that could destroy her coven and her soul in this dark and decadent debut.</p>
         <p class="synopsis-text">Thorns, Tides, Embers, Storms, and Ores. All five covens are bound in servitude to the tyrant High Warden of Halstett.</p>
@@ -231,6 +249,7 @@ let allBooks=[
         title:"The King-Killing Queen",
         author:"Shawn Speakman",
         genre: "fiction",
+        price:"899",
         rating:"4.35",
         synop:`<p class="synopsis-text">In this first book of a new trilogy author Anna Smith Spark calls “a dark love letter to high fantasy,” a woman discovers her unknown past carries with it a terrible future.</p>
         <p class="synopsis-text">When Alafair Goode lay wounded during his quest to destroy Mordreadth the Great Darkness, a witch magicked and saved the future High King's life to fulfill his destiny. Thereafter, all born to his line also cannot die, to be only undone by natural death.</p>
@@ -243,6 +262,7 @@ let allBooks=[
         title:"The Hild Sequence #2 Menewood",
         author:"Nicola Griffith",
         genre: "fiction",
+        price:"900",
         rating:"4.53",
         synop:`<p class="synopsis-text">In the much anticipated sequel to Hild, Nicola Griffith's Menewoodtransports readers back to seventh-century Britain, a land of rival kings and religions poised for epochal change.</p>
         <p class="synopsis-text">Hild is no longer the bright child who made a place in Edwin Overking's court with her seemingly supernatural insight. She is eighteen, honed and tested, the formidable Lady of Elmet, now building her personal stronghold in the valley of Menewood.
@@ -257,6 +277,7 @@ let allBooks=[
         title:"How to Say Babylon: A Memoir",
         author:"Safiya Sinclair",
         genre: "nonfiction",
+        price:"900",
         rating:"4.47",
         synop:`<p class="synopsis-text">With echoes of Educated and Born a Crime, How to Say Babylon is the stunning story of the author's struggle to break free of her rigid Rastafarian upbringing, ruled by her father's strict patriarchal views and repressive control of her childhood, to find her own voice as a woman and poet.</p>
         <p class="synopsis-text">Throughout her childhood, Safiya Sinclair's father, a volatile reggae musician and militant adherent to a strict sect of Rastafari, became obsessed with her purity, in particular, with the threat of what Rastas call Babylon, the immoral and corrupting influences of the Western world outside their home. He worried that womanhood would make Safiya and her sisters morally weak and impure, and believed a woman's highest virtue was her obedience.</p>
@@ -269,6 +290,7 @@ let allBooks=[
         title:"The Sisterhood: The Secret History of Women at the CIA",
         author:"Liza Mundy",
         genre: "nonfiction",
+        price:"700",
         rating:"4.40",
         synop:`<p class="synopsis-text">A thrilling and monumental new history of the CIA that reveals how women have always played crucial, often unacknowledged roles in American spycraft, a hidden “sisterhood” of spies, analysts, operatives, and manhunters who, over a half-century, kept the free world safe and, more than once, saved it—from the New York Times bestselling author of Code Girls</p>
         <p class="synopsis-text">Upon its creation in 1947, the Central Intelligence Agency instantly became one of the most important spy services in the world. Like every male-dominated workplace in Eisenhower America, the growing intelligence agency needed women to type memos, send messages, manipulate expense accounts, and keep secrets. Despite discrimination—even because of it—these clerks and secretaries rose to become some of the shrewdest, toughest operatives the agency employed. Because women were seen as unimportant, they moved unnoticed on the streets of Bonn, Geneva, and Moscow, stealing secrets under the noses of the KGB. Back at headquarters, they built the CIA's critical archives—first by hand, then by computer.</p>
@@ -282,15 +304,17 @@ let allBooks=[
         title:"Emperor of Rome: Ruling the Ancient Roman World",
         author:"Mary Beard",
         genre: "nonfiction",
+        price:"800",
         rating:"4.20",
         synop:`<p class="synopsis-text">A sweeping account of the social and political world of the Roman emperors by “the world's most famous classicist” ( Guardian ). In her international bestseller SPQR , Mary Beard told the thousand-year story of ancient Rome. Now she shines her spotlight on the emperors who ruled the Roman empire, from Julius Caesar (assassinated 44 BCE) to Alexander Severus (assassinated 235 CE). Emperor of Rome is not your usual chronological account of Roman rulers, one after the mad Caligula, the monster Nero, the philosopher Marcus Aurelius. Beard asks bigger What power did emperors actually have? Was the Roman palace really so bloodstained? She tracks down the emperor at home, at the races, on his travels, even on his way to heaven. She introduces his wives and lovers, rivals and slaves, court jesters and soldiers―and the ordinary people who pressed begging letters into his hands. Emperor of Rome goes directly to the heart of Roman (and our own) fantasies about what it was to be Roman, offering an account of Roman history as it has never been presented before.</p>`
     },  
     {
         id: "nonfiction_4",
-        cover:"images/nonfiction_14.png",
+        cover:"images/nonfiction_4.png",
         title:"Determined: A Science of Life without Free Will",
         author:"Robert M. Sapolsky",
         genre: "nonfiction",
+        price:"700",
         rating:"4.37",
         synop:`<p class="synopsis-text">One of our great behavioral scientists, the bestselling author of Behave, plumbs the depths of the science and philosophy of decision-making to mount a devastating case against free will, an argument with profound consequences.</p>
         <p class="synopsis-text">Robert Sapolsky's Behave, his now classic account of why humans do good and why they do bad, pointed toward an unsettling conclusion: we may not grasp the precise marriage of nature and nurture that creates the physics and chemistry at base of human behavior, but that doesn't mean it doesn't exist. Now, in Determined, Sapolsky takes his argument all the way, mounting a brilliant (and in his inimitable way, delightful) full-frontal assault on the pleasant fantasy that there's some separate self telling our biology what to do.</p>
@@ -302,6 +326,7 @@ let allBooks=[
         title:"The Nutmeg's Curse: Parables for a Planet in Crisis",
         author:"Amitav Ghosh",
         genre: "nonfiction",
+        price:"700",
         rating:"4.25",
         synop:`<p class="synopsis-text">In this ambitious successor to The Great Derangement, acclaimed writer Amitav Ghosh finds the origins of our contemporary climate crisis in Western colonialism's violent exploitation of human life and the natural environment.</p>
         <p class="synopsis-text">A powerful work of history, essay, testimony, and polemic, Amitav Ghosh's new book traces our contemporary planetary crisis back to the discovery of the New World and the sea route to the Indian Ocean. The Nutmeg's Curse  argues that the dynamics of climate change today are rooted in a centuries-old geopolitical order constructed by Western colonialism. At the center of Ghosh's narrative is the now-ubiquitous spice nutmeg. The history of the nutmeg is one of conquest and exploitation—of both human life and the natural environment. In Ghosh's hands, the story of the nutmeg becomes a parable for our environmental crisis, revealing the ways human history has always been entangled with earthly materials such as spices, tea, sugarcane, opium, and fossil fuels. Our crisis, he shows, is ultimately the result of a mechanistic view of the earth, where nature exists only as a resource for humans to use for our own ends, rather than a force of its own, full of agency and meaning.</p>
@@ -315,6 +340,8 @@ let allBooks=[
         title:"The Night Parade",
         author:"Jami Nakamura Lin",
         genre: "nonfiction",
+
+        price:"800",
         rating:"4.52",
         synop:`<p class="synopsis-text">In the groundbreaking tradition of In the Dream House and The Collected Schizophrenias, a gorgeously illustrated speculative memoir that draws upon the Japanese myth of the Hyakki Yagyo—the Night Parade of One Hundred Demons—to shift the cultural narrative around mental illness, grief, and remembrance.</p>
         <p class="synopsis-text">Are these the only two stories? The one where you defeat your monster, and the other where you succumb to it?</p>
@@ -330,6 +357,7 @@ let allBooks=[
         title:"MCU: The Reign of Marvel Studios",
         author:"Joanna Robinson, Dave Gonzales, Gavin Edwards",
         genre: "nonfiction",
+        price:"700",
         rating:"4.29",
         synop:`<p class="synopsis-text">INSTANT NEW YORK TIMES BESTSELLER "A superb chronicle of how Marvel Studios conquered Hollywood…. This definitive account of the Hollywood juggernaut thrills." ― Publishers Weekly , starred review</p>
         <p class="synopsis-text">The unauthorized, behind-the-scenes story of the stunning rise―and suddenly uncertain reign―of the most transformative cultural phenomenon of our the Marvel Cinematic Universe. Marvel Entertainment was a moribund toymaker not even twenty years ago. Today, Marvel Studios is the dominant player both in Hollywood and in global pop culture. How did an upstart studio conquer the world? In MCU , beloved culture writers Joanna Robinson, Dave Gonzales, and Gavin Edwards draw on more than a hundred interviews with actors, producers, directors, and writers to present the definitive chronicle of Marvel Studios and its sole, ongoing production, the Marvel Cinematic Universe. For all its outward success, the studio was forged by near-constant conflict, from the contentious hiring of Robert Downey Jr. for its 2008 debut, Iron Man , all the way up to the disappointment of Ant-Man and the Quantumania and shocking departures of multiple Marvel executives in 2023. Throughout, the authors demonstrate that the original genius of Marvel was its resurrection and modification of Hollywood's old studio system. But will it survive its own spectacular achievements? Dishy and authoritative, MCU is the first book to tell the Marvel Studios story in full―and an essential, effervescent account of American mass culture.</p>`
@@ -341,6 +369,7 @@ let allBooks=[
         title:"Leslie F*cking Jones",
         author:"Leslie Jones",
         genre: "nonfiction",
+        price:"900",
         rating:"4.16",
         synop:`<p class="synopsis-text">Hey you guys, it's Leslie. I'm excited to share my story with you.</p>
         <p class="synopsis-text">Now, I'm gonna be honest: Some of the details might be vague because a b*tch is fifty-five and she's smoked a ton of weed. But while bits might be a touch hazy, I can promise you the underlying truth is REAL. Whether I'm talking about my childhood growing up in the South, my early stand-up days driving from gig to gig through the darkest parts of our country and praying I wouldn't get murdered, what Chris Rock told Lorne Michaels, that time I wanted to shoot Whoopi Goldberg on SNL, and yeah, I'll tell you all about Ghostbusters and the nudes and Supermarket Sweep and The Daily Show . . . I'm sharing it all in these pages. It's not easy being a woman in comedy, especially when you're a tall-*ss Black woman with a trumpet voice. I have to fight so that no one takes me for granted, and no one takes advantage. These are the stories that explain why. (Cue the Law & Order theme.)</p>`
@@ -353,6 +382,7 @@ let allBooks=[
         title:"Creep: Accusations and Confessions",
         author:"Myriam Gurba",
         genre: "nonfiction",
+        price:"800",
         rating:"4.40",
         synop:`<p class="synopsis-text">A ruthless and razor-sharp essay collection that tackles the pervasive, creeping oppression and toxicity that has wormed its way into society—in our books, schools, and homes, as well as the systems that perpetuate them—from the acclaimed author of Mean, and one of our fiercest, foremost explorers of intersectional Latinx identity.</p>
         <p class="synopsis-text">A creep can be a singular figure, a villain who makes things go bump in the night. Yet creep is also what the fog does—it lurks and slithers into place, muffling screams, obscuring the truth, and providing cover for those prowling within it.</p>
@@ -366,6 +396,7 @@ let allBooks=[
         title:"This Country: Searching for Home in (Very) Rural America",
         author:"Navied Mahdavian",
         genre: "nonfiction",
+        price:"800",
         rating:"4.13",
         synop:`<p class="synopsis-text">A gorgeously illustrated and written debut graphic memoir about belonging, identity, and making a home in the remote American West, by New Yorker cartoonist Navied Mahdavian.</p>
         <p class="synopsis-text">Before Navied Mahdavian moved with his wife and dog in November of 2016 from San Francisco to an off-the-grid cabin in rural Idaho, he had never fished, gardened, hiked, hunted, or lived in a snowy place. But there, he could own land, realize his dream of being an artist, and start a family—the Millennial dream. Over the next three years, Mahdavian leaned into the wonders of the natural Idaho landscape and found himself adjusting to and enjoying a slower pace of living. But beyond the boundaries of his six acres, he was confronted with the realities of America's political shifts and forced to confront the Do I belong here?</p>
@@ -379,6 +410,7 @@ let allBooks=[
         title:"The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
         author:"Stephen R. Covey",
         genre: "selfhelp",
+        price:"900",
         rating:"4.15",
         synop:`<p class="synopsis-text">When Stephen Covey first released The Seven Habits of Highly Effective People, the book became an instant rage because people suddenly got up and took notice that their lives were headed off in the wrong direction; and more than that, they realized that there were so many simple things they could do in order to navigate their life correctly. This book was wonderful education for people, education in how to live life effectively and get closer to the ideal of being a ‘success' in life.</p>
         <p class="synopsis-text">But not everyone understands Stephen Covey's model fully well, or maybe there are some people who haven't read it yet. This is definitely true because we still see so much failure all around us. Now, I am not saying that by using Covey's model, or anyone else's model for that matter, you can become a sure-shot success, but at least we should have seen many more successes around us already judging by the number of copies the book has sold! So, where is the shortcoming?</p>
@@ -391,10 +423,11 @@ let allBooks=[
 
     {
         id: "selfhelp_2",
-        cover:"images/selfhelp_1.png",
+        cover:"images/selfhelp_2.png",
         title:"How to Win Friends and Influence People",
         author:"Dale Carnegie",
         genre: "selfhelp",
+        price:"550",
         rating:"4.22",
         synop:`<p class="synopsis-text">You can go after the job you want...and get it! You can take the job you have...and improve it! You can take any situation you're in...and make it work for you!</p>
         <p class="synopsis-text">Since its release in 1936, How to Win Friends and Influence People has sold more than 30 million copies. Dale Carnegie's first book is a timeless bestseller, packed with rock-solid advice that has carried thousands of now famous people up the ladder of success in their business and personal lives.</p>
@@ -408,6 +441,7 @@ let allBooks=[
         cover:"images/selfhelp_3.png",
         title:"Think and Grow Rich",
         author:"Napoleon Hill",
+        price:"700",
         genre: "selfhelp",
         rating:"4.18",
         synop:`<p class="synopsis-text">Think and Grow Rich is a guide to success by Napoleon Hill, which was first published in 1937 following the Great Depression. It was immediately welcomed as an antidote to hard times and remained a bestseller for decades. Many people still find its philosophy of positive thinking and its specific steps for achieving wealth both relevant and life-changing. Hill contends that our thoughts become our reality, and offers a plan and principles for transforming thoughts into riches, including visualization, affirmation, creating a Master Mind group, defining a goal, and planning.</p>`
@@ -420,6 +454,7 @@ let allBooks=[
         title:"Non Violent Communication A Language of Life",
         author:"Marshall B. Rosenberg",
         genre: "selfhelp",
+        price:"900",
         rating:"4.34",
         synop:`<p class="synopsis-text">How to communicate with people without being judgemental or threatening</p>`
     },
@@ -429,6 +464,7 @@ let allBooks=[
         title:"Anger: Wisdom for Cooling the Flames",
         author:"Thich Nhat Hanh",
         genre: "selfhelp",
+        price:"900",
         rating:"4.07",
         synop:`<p class="synopsis-text">It was under the bodhi tree in India twenty-five centuries ago that Buddha achieved the insight that three states of mind were the source of all our unhappiness: wrong knowing, obsessive desire, and anger. All are difficult, but in one instant of anger—one of the most powerful emotions—lives can be ruined, and health and spiritual development can be destroyed. With exquisite simplicity, Buddhist monk and Vietnam refugee Thich Nhat Hanh gives tools and advice for transforming relationships, focusing energy, and rejuvenating those parts of ourselves that have been laid waste by anger. His extraordinary wisdom can transform your life and the lives of the people you love, and in the words of Thich Nhat Hanh, can give each reader the power to "change everything."</p>`
     },
@@ -438,6 +474,7 @@ let allBooks=[
         title:"Surrounded by Idiots",
         author:"Thomas Erikson",
         genre: "selfhelp",
+        price:"600",
         rating:"3.47",
         synop:`<p class="synopsis-text">A runaway bestseller in Sweden that has sold more than a million copies worldwide, Surrounded by Idiots shares a groundbreaking new method of understanding the people around you that will change how you interact with everyone from your coworkers to your spouse.</p>
         <p class="synopsis-text">Author Thomas Erikson explains that there are four key behavior types that define how we interact with and perceive the people around us. Understanding someone's pattern of behavior is the key to successful communication. Erikson breaks down the four kinds of behavior types—Reds who are dominant and commanding, Yellows who are social and optimistic, Greens who are laid back and friendly, and Blues who are analytical and precise—and explains how to identify and interact with each type of person. Instead of being bogged down with overly technical categorizations, the simple four color system allows you to speedily identify a friend or coworker and adjust how you speak and share with them.</p>
@@ -449,6 +486,7 @@ let allBooks=[
         title:"The 4-Hour Workweek",
         author:"Timothy Ferriss",
         genre: "selfhelp",
+        price:"700",
         rating:"3.92",
         synop:`<p class="synopsis-text">What do you do? Tim Ferriss has trouble answering the question. Depending on when you ask this controversial Princeton University guest lecturer, he might answer: "I race motorcycles in Europe." "I ski in the Andes." "I scuba dive in Panama." "I dance tango in Buenos Aires." He has spent more than five years learning the secrets of the New Rich, a fast-growing subculture who has abandoned the "deferred-life plan" and instead mastered the new currencies-time and mobility-to create luxury lifestyles in the here and now. Whether you are an overworked employee or an entrepreneur trapped in your own business, this book is the compass for a new and revolutionary world.</p>`
     },
@@ -458,6 +496,7 @@ let allBooks=[
         title:"Smart Brevity: The Power of Saying More with Less",
         author:"Jim Vandehei",
         genre: "selfhelp",
+        price:"800",
         rating:"4.04",
         synop:`<p class="synopsis-text">Brevity is confidence. Length is fear. This is the guiding principle of Smart Brevity, a communication formula built by Axios journalists to prioritize essential news and information, explain its impact and deliver it in a concise and visual format. Now, the co-founders of Axios have created an essential guide for communicating effectively and efficiently using Smart Brevity—think Strunk and White's Elements of Style for the digital age.</p>
         <p class="synopsis-text">In  SMART The Power of Saying More with Less ,   Axios co-founders Jim VandeHei, Mike Allen, and Roy Schwartz teach readers how to say more with less in virtually any format. They also share communications lessons learned from their decades of experience in media, business and communications.</p>`
@@ -468,6 +507,7 @@ let allBooks=[
         title:"The Gifts of Imperfection",
         author:"Brené Brown",
         genre: "selfhelp",
+        price:"600",
         rating:"4.25",
         synop:`<p class="synopsis-text">In this groundbreaking New York Times best seller, Dr. Brené Brown, a research professor and thought leader on vulnerability, courage, worthiness, and shame, shares ten guideposts on the power of Wholehearted living—a way of engaging with the world from a place of worthiness.</p>`
     },
@@ -477,6 +517,7 @@ let allBooks=[
         title:"You Can Heal Your Life",
         author:"Louise L. Hay",
         genre: "selfhelp",
+        price:"900",
         rating:"4.15",
         synop:`<p class="synopsis-text">Louise's key message in this powerful work is: “If we are willing to do the mental work, almost anything can be healed.” Louise explains how limiting beliefs and ideas are often the cause of illness, and how you can change your thinking…and improve the quality of your life.</p>`
     }

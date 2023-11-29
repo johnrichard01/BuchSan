@@ -6,10 +6,10 @@ function generateNewArrival(){
         return `
         <div class="col-12 col-md-6 col-lg mb-3">
        
-            <div class="card d-flex position-relative h-100">
-         <a type="button"  onclick="generatenewModal(${x.id})"  data-bs-toggle="modal" data-bs-target="#newArrivalpageModal">    
+            <div class="card d-flex position-relative h-100 generated-hover" type="button"  onclick="generatenewModal(${x.id})"  data-bs-toggle="modal" data-bs-target="#newArrivalpageModal">
+
             <img id="${x.id}" src="../${x.cover}" class="card-img-top">
-         </a>   
+ 
             <div class="card-body d-flex flex-wrap justify-content-between mt-2">
                 <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
                 <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p>
@@ -63,7 +63,7 @@ function generatenewModal(id){
               <div class="accordion-item">
                 <h4 class="accordion-header" id="synopsisHeading">
                   <button class="accordion-button p-3 fs-5 fw-bold collapsed text-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#synopsisCollapse" aria-expanded="false" aria-controls="synopsisCollapse">
-                    <span class="d-flex justify-content-center align-items-center w-100">Synopsis</span>
+                    <span class="d-flex justify-content-center align-items-center w-100">Description</span>
                   </button>
                 </h4>
                 <div id="synopsisCollapse" class="accordion-collapse collapse" aria-labelledby="synopsisHeading" data-bs-parent="#synopsisAccordion">

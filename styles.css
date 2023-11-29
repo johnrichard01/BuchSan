@@ -120,12 +120,20 @@
  }
 .modal-cover-image{
     position: fixed;
-    top: 70px;
+    top: 80px;
     left: 80px;
     width: 35%;
     height: auto; 
     padding: 2rem;
     object-fit: cover;
+}
+.generated-hover:hover{
+    scale: 1.05;
+}
+
+.book-details{
+    background-color: #f77f00;
+    color: #f5f7fa;
 }
 .outer-star{
     position: relative;
@@ -136,6 +144,7 @@
     content: "\2605 \2605 \2605 \2605 \2605";
     color: #d3d3d3;
 }
+
 .inner-star{
     position: absolute;
     top: 0;
@@ -159,6 +168,11 @@
 .synopsis-body{
     font-size: 1rem;
 }
+.synopsis-text{
+    text-indent: 40px;
+    font-size: 1.25rem;
+}
+
 .btn-addtocard-modal{
     border: 2px solid #f77f00;
     color: #f77f00;
