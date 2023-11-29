@@ -1,0 +1,96 @@
+.modal-cover-image{
+    position: fixed;
+    top: 70px;
+    left: 80px;
+    width: 35%;
+    height: auto; 
+    padding: 2rem;
+    object-fit: cover;
+}
+.outer-star{
+    position: relative;
+    font-size: 3rem;
+    display: inline-block;
+}
+.outer-star::before{
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: #d3d3d3;
+}
+.inner-star{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.inner-star::before{
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: gold;
+}
+.rating-text{
+    font-size: 2.25rem;
+}
+.rating-box{
+    max-width: 90%;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+}
+.synopsis-body{
+    font-size: 1rem;
+}
+.btn-addtocard-modal{
+    border: 2px solid #f77f00;
+    color: #f77f00;
+}
+.btn-addtocard-modal:hover{
+    background-color: #f77f00;
+    color: white;
+}
+.accordion-button{
+    border: 2px solid #f77f00;
+    color: #f77f00 !important;
+   
+}
+.accordion-button::after{
+    color: #f77f00 !important;
+}
+.accordion-button .collapsed{
+    border: #f77f00;
+}
+.accordion-button:focus{
+    background-color: rgba(247, 127, 0, 1);
+    color: white !important;
+    border:2px solid #f77f00; ;
+    box-shadow: 2px 2px 2px 2px rgba(247,127,0,0.2);
+}
+.accordion-button:not(:focus) {
+    background-color: #fff;
+    color: #000;
+  }
+
+.accordion-body{
+    background-color: rgba(245, 247, 250, 0.6);
+}
+.accordion-item{
+    background-color: rgba(245, 247, 250, 0.6);
+}
+@media(max-width:992px){
+    .new_arrival{
+        height: 8rem;
+        width:18rem;
+        font-size: 5rem;
+        left: -1rem;
+        top: 1rem;
+    }
+
+    .modal-cover-image{
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 50%;
+        height: auto; 
+        padding: 2rem;
+        object-fit: cover;
+    }
+}
