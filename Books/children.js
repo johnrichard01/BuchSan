@@ -53,7 +53,7 @@ function generatenewModal(id){
          <div class="col-12 col-lg-6 d-flex flex-wrap align-items-center justify-content-center align-content-center">
          <img src="../${bookFind.cover}" class="modal-cover-image" alt="book cover"  loading="lazy">
        </div>
-       <div class="col-12 col-lg-6 pe-5">
+       <div class="col-12 col-lg-6 pe-0 pe-lg-5">
          <h1 class="display-6 fw-bold mt-5 mb-3 text-center text-lg-start">${bookFind.title}</h1>
          <h4 class="mb-3 text-center text-lg-start fst-italic">${bookFind.author}</h4>
          <div class="d-flex justify-content-lg-start justify-content-center">
@@ -67,12 +67,12 @@ function generatenewModal(id){
            </div>
          </div>
          <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; ${bookFind.price}</h4>
-         <div class="addtocardModal mb-3">
+         <div class="addtocardModal mb-3 d-flex justify-content-lg-start justify-content-center">
            <a href="../Home/login.html" type="button" class="btn btn-addtocard-modal fs-5 fw-bold w-50 p-2">ADD TO CART</a>
          </div>
-         <div class="accordion" id="synopsisAccordion">
+         <div class="" id="synopsisAccordion">
            <div class="accordion-item">
-             <h4 class="accordion-header" id="synopsisHeading">
+             <h4 class="accordion-header accordion d-flex justify-content-lg-start justify-content-center" id="synopsisHeading">
                <button class="accordion-button p-2 fs-5 fw-bold collapsed text-center w-50" type="button" data-bs-toggle="collapse" data-bs-target="#synopsisCollapse" aria-expanded="false" aria-controls="synopsisCollapse">
                  <span class="d-flex justify-content-center align-items-center w-100">Description</span>
                </button>
