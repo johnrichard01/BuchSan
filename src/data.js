@@ -198,7 +198,7 @@ let allBooks=[
     {
         id: "Romance_9",
         cover: "images/rom_9.png",
-        title: "DNA of YOU nad ME",
+        title: "DNA of YOU and ME",
         author: "Andrea Rothman",
         genre: "romance",
         price: "690",
