@@ -1,4 +1,223 @@
 let allBooks=[
+    {   
+        id: "Life_1",
+        cover: "images/Life_1.png",
+        title: "The Heart of a CHEETAH",
+        author: "Magatte Wade",
+        genre:"lifestyle",
+        price: "600",
+        rating:"4.70",
+        synop: `<p class="synopsis-text">
+                Experience the life story of Magatte Wade, the bold Senegalese entrepreneur and unflinching prosperity activist, determined to shape the destiny of her African homeland.</p>
+                <p class="synopsis-text"> In this riveting memoir, Wade challenges Africans to redefine their narrative, casting aside imposed inferiority to reclaim their innate brilliance.</p>`
+
+    },
+    {
+        id: "Life_2",
+        cover: "images/Life_2.png",
+        title: "Lifestyle Builders",
+        author: "Tom & Ariana Sylvester",
+        genre: "lifestyle",
+        price: "530",
+        rating: "4.70",
+        synop: `<p class="synopsis-text">Most people have two lives: the one that they are living and the one that they want to live. Today, there is more opportunity than ever for anyone to create their ideal life through entrepreneurship. After overcoming the obstacles of building three businesses with one spouse still in a 9-5 job and working together as a married couple while raising two young kids, Tom and Ariana Sylvester have cracked the code and developed a framework on how to successfully do business and life―together.</p>`
+
+    },
+    {
+        id: "Life_3",
+        cover: "images/Life_3.png",
+        title: "Ask Powerful Questions",
+        author: "Will Wise",
+        genre: "lifestyle",
+        price: "500",
+        rating : "4.50",
+        synop: `<p class="synopsis-text">What might happen if “small talk” was replaced with conversations that matter? In their Bestselling book, Will Wise and Chad Littlefield explain how the questions we traditionally ask are often meaningless when it comes to establishing a connection. Introducing a set of practice tools for understanding others by changing the way we ask questions, Will and Chad show how to transform “How are you?—I’m fine, thanks” into conversations that change not only how you lead but who you are as a person.</p>`
+
+    },
+    {
+        id: "Life_4",
+        cover: "images/Life_4.png",
+        title: "The Joy of Mixology",
+        author: "Gary Regan",
+        genre: "lifestyle",
+        price: "750",
+        rating: "4.30",
+        synop: `<p class="synopsis-text">A prolific writer on all things cocktails, Gary Regan and his books have been a huge influence on mixologists and bartenders in America. This brand-new edition fills in the gaps since the book first published, incorporating Regan's special insight on the cocktail revolution from 2000 to the present and a complete overhaul of the recipe section.</p>`
+
+    },
+    {
+        id: "Life_5",
+        cover: "images/Life_5.png",
+        title: "The RV Passive Income Guide",
+        author: "Jeremy Prost",
+        genre:"lifestyle",
+        price: "580",
+        rating: "4.00",
+        synop: `<p class="synopsis-text">Warning: Listening to this may cause you to quit your job and chase the RV adventure of your dreams.</p>
+                <p class="synopsis-text">Imagine a life where you don't have to meet up at work every morning at nine a.m. You can work straight from the comfort of your own home during the hours that suit your lifestyle best. Are you picturing it? Wonderful.</p>`
+    },
+    {
+        id: "Life_6",
+        cover: "images/Life_6.png",
+        title: "I Love It Here",
+        author: "Clint Pulver",
+        genre: "lifestyle",
+        price:"600",
+        rating: "4.70",
+        synop: `<p class="synopsis-text">Emmy Award-winning speaker Clint Pulver - aka the Undercover Millennial - shares insights gleaned from more than 10,000 undercover interviews with employees across the country, revealing the best methods for identifying talent, building a sense of ownership, and developing a successful workplace culture that employees will love.</p>`
+    },
+    {
+        id: "Life_7",
+        cover: "images/Life_7.png",
+        title: "You're The Leader Now What?",
+        author: "Richard Winters, M.D.",
+        genre: "lifestyle",
+        price : "700",
+        rating: "4.90",
+        synop: `<p class="synopsis-text">Leadership has never been more challenging. Your colleagues disagree, their emotions run high, and your way forward through the everchanging, complex work environment would confound even the most seasoned leader.</p>`
+
+    },
+    {
+        id: "Life_8",
+        cover: "images/Life_8.png",
+        title: "The Answer Is A Question",
+        author: "Laura Ashley-Timms",
+        genre: "lifestyle",
+        price: "670",
+        rating: "4.30",
+        synop:`<p class="synopsis-text">This book is produced in stunning full colour and provides invaluable insights, examples, and mini-missions that will show you precisely how to make some immediate changes that will yield fast and exciting results and revolutionise how you manage forever.</p>`
+
+
+    },
+    {
+        id: "Life_9",
+        cover: "images/Life_9.png",
+        title: "The Most Powerful Woman In The Room Is You",
+        auhtor: "Lydia Fenet",
+        genre: "lifestyle",
+        price: "680",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Throughout, Lydia also shares personal and inspiring stories from her own life - like how she got her foot in the door at Christie's after she was originally told there were no spots left in the intern program. And when she realized she was being paid a third of her worth - and how she came back more powerful than ever.</p>`
+    },
+    {
+        id: "Life_10",
+        cover: "images/Life_10.png",
+        title: "How to Taste",
+        author: "Many Naglich",
+        genre: "lifestyle",
+        price: "780",
+        rating: "4.10",
+        synop: `<p class="synopsis-text">Whether it's a meaningful meal or a favorite nostalgic road trip snack, we know what we like to eat. But even when it comes to the most vivid and memorable dishes it’s tough to say what exactly makes them so delicious.Now award-winning expert, certified food and beverage taster and lifestyle journalist Mandy Naglich reveals how to hone your tasting superpowers like a pro.</p>`
+
+    },
+    {
+        id: "Romance_1",
+        cover:"images/rom_1.png",
+        title: "The Love Hypothesis",
+        author: "Ali Hazelwood",
+        genre: "romance",
+        price: "690",
+        rating: "4.50",
+        synop: `<p class="synopsis-text"> As a third-year PhD candidate, Olive Smith doesn't believe in lasting romantic relationships—but her best friend does, and that's what got her into this situation. Convincing Anh that Olive is dating and well on her way to a happily ever after was always going to take more than hand-wavy Jedi mind tricks: Scientists require proof. So, like any self-respecting biologist, Olive panics and kisses the first man she sees.</p>`
+    },
+    {
+        id: "Romance_2",
+        cover: "images/rom_2.png",
+        title: "(Not So) Famous in Paradise",
+        author: "Brittany Larsen",
+        genre:"romance",
+        price:"780",
+        rating: "4.50",
+        synop: `<p class= "synopsis-text">When the biggest career opportunity of my life–my own home reno TV show–sends me back to my hometown, I’m less than excited. Paradise, Idaho might be paradise for everyone else, but it never was for me. Except for my best friend, Zach.</p>`
+    },
+    {
+        id: "Romance_3",
+        cover: "images/rom_3.png",
+        title: "Eleanor & Park", 
+        author: "Rainbow Rowell",
+        genre: "romance",
+        price: "600",
+        rating: "4.40",
+        synop: `<p class="synopsis-text">Set over the course of one school year in 1986, this is the story of two star-crossed misfits-smart enough to know that first love almost never lasts, but brave and desperate enough to try. When Eleanor meets Park, you'll remember your own first love-and just how hard it pulled you under.</p>`
+
+    },
+    {
+        id: "Romance_4",
+        cover: "images/rom_4.png",
+        title: "Absolute Not In Love",
+        author: "Jenny Proctor",
+        genre: "romance",
+        price: "550",
+        rating: "4.40",
+        synop:`<p class="synopsis-text">Which is why I will never be interested in my neighbor, the aloof and mysterious Felix Jamison, no matter how many books I see him hauling into his apartment. Unless he loses his pro hockey skates, I'm out.</p>`
+
+    },
+    {
+        id: "Romance_5",
+        cover: "images/rom_5.png",
+        title: "True North",
+        author: "Robin Huber",
+        genre : "romance",
+        price: "540",
+        rating: "4.00",
+        synop: `<p class="synopsis-text">
+        It's been eight years since the moment that changed Olivia Dalton’s life. Gabriel North was her first love—her only love. But an accident shattered their world, leaving Gabe with a serious injury and Liv with a broken heart.</p><p class="synopsis-text">In the years that followed, Liv left their small coastal town in Georgia and began her career in North Carolina. But she often feels like a stranger watching the woman she’s become drift farther and farther from the girl she used to be.</p>`
+    },
+    {
+        id: "Romance_6",
+        cover: "images/rom_6.png",
+        title: "Love & Other Words",
+        author: "Christian Lauren",
+        genre: "romance",
+        price: "750",
+        rating: "4.60",
+        synop:`<p class= "synopsis-text">Macy Sorensen is settling into an ambitious if emotionally tepid routine: work hard as a new pediatrics resident, plan her wedding to an older, financially secure man, keep her head down and heart tucked away.</p><p class= "synopsis-text">But when she runs into Elliot Petropoulos - the first and only love of her life - the careful bubble she’s constructed begins to dissolve. Once upon a time, Elliot was Macy’s entire world - growing from her gangly teen friend into the man who coaxed her heart open again after the loss of her mother...only to break it on the very night he declared his love for her.</p>`
+
+    },
+    {
+        id: "Romance_7",
+        cover: "images/rom_6.png",
+        title: "In The Weeds",
+        author: "B.K. Borison",
+        genre: "romance",
+        price: "800",
+        rating: "4.30",
+        synop: `<p class="synopsis-text">One incredible weekend in Maine, and Beckett Porter is officially a distracted man. He’s not unfamiliar with hot and heavy flings. He knows how it goes. But Evie wove some sort of magic over him during their tumble in the sheets. He can’t stop thinking about her laugh, her hand pressed flat against his chest, her smiling mouth at his neck, her eyes, her legs. </p>`
+
+    },
+    {
+        id: "Romance_8",
+        cover: "images/rom_8.png",
+        title: "A Part Of You",
+        author: "Lynden Renwick",
+        genre: "romance",
+        price: "670",
+        rating: "4.00",
+        synop:`<p class ="synopsis-text">Ashleigh led an idyllic life. She was fit, loved her job, and was blissfully married to a doting husband. Then came the diagnosis: infertile. With every IVF clinic around the country shutting its doors, it seems that any hope of completing her family is lost. Enter Hannah—a beautiful and celebrated playwright looking for inspiration for her next show—who offers to serve as Ashleigh's non-surgical surrogate.</p>`
+    },
+    {
+        id: "Romance_9",
+        cover: "images/rom_9.png",
+        title: "DNA of YOU nad ME",
+        author: "Andrea Rothman",
+        genre: "romance",
+        price: "690",
+        rating: "4.10",
+        synop:`<p class="synopsis-text">How does smell work? Specifically, how do olfactory sensory neurons project to their targets in the olfactory bulb, where smell is processed? Justin McKinnon has hired fresh-faced graduate student Emily to study that question. What Justin hasn’t told Emily is that two other scientists in the lab, Aeden and Allegra, are working on a very similar topic, and their findings may compete with her research.</p>`
+    },
+    {
+        id: "Romance_10",
+        cover: "images/rom_10.png",
+        title: "Dinner For Two",
+        author:"Drea Stein",
+        genre: "romance",
+        price:  "880",
+        rating: "4.20",
+        synop: `<p class= "text-synop">Sean and Darby love food, but is their relationship a recipe for disaster, or a chance to make kitchen magic?</p><p class= "text-synop">Sean Callahan was a hotshot big-city chef whose high-handed ways got him into trouble one too many times. Now he's in a small town hoping for another shot at the big leagues.</p><p class= "text-synop">Darby Reese is a big-city lawyer who can bake like an angel. Unfortunately, a life lived according to the law has left her burned out. So when the chance comes to run her family's deli in the small town of Queensbay, Darby's happy to take it.</p>`
+    },
+    {
+        
+    },
     {
         id: "children_1",
         cover:"images/children_1.png",
