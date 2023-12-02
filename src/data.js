@@ -176,7 +176,7 @@ let allBooks=[
     },
     {
         id: "Romance_7",
-        cover: "images/rom_6.png",
+        cover: "images/rom_7.png",
         title: "In The Weeds",
         author: "B.K. Borison",
         genre: "romance",
