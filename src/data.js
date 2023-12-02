@@ -213,10 +213,218 @@ let allBooks=[
         genre: "romance",
         price:  "880",
         rating: "4.20",
-        synop: `<p class= "text-synop">Sean and Darby love food, but is their relationship a recipe for disaster, or a chance to make kitchen magic?</p><p class= "text-synop">Sean Callahan was a hotshot big-city chef whose high-handed ways got him into trouble one too many times. Now he's in a small town hoping for another shot at the big leagues.</p><p class= "text-synop">Darby Reese is a big-city lawyer who can bake like an angel. Unfortunately, a life lived according to the law has left her burned out. So when the chance comes to run her family's deli in the small town of Queensbay, Darby's happy to take it.</p>`
+        synop: `<p class= "synopsis-text">Sean and Darby love food, but is their relationship a recipe for disaster, or a chance to make kitchen magic?</p><p class= "text-synop">Sean Callahan was a hotshot big-city chef whose high-handed ways got him into trouble one too many times. Now he's in a small town hoping for another shot at the big leagues.</p><p class= "text-synop">Darby Reese is a big-city lawyer who can bake like an angel. Unfortunately, a life lived according to the law has left her burned out. So when the chance comes to run her family's deli in the small town of Queensbay, Darby's happy to take it.</p>`
     },
     {
-        
+        id:"Sale_1",
+        cover: "images/SALE_1.png",
+        title:"All The Light We Cannot See",
+        author: "Anthony Doerr",
+        genre: "sale",
+        price: "1550",
+        saleprice: "50",
+        rating: "4.50",
+        synop:`<p class="synopsis-text">Marie-Laure lives with her father in Paris near the Museum of Natural History, where he works as the master of its thousands of locks. When she is six, Marie-Laure goes blind and her father builds a perfect miniature of their neighborhood so she can memorize it by touch and navigate her way home. When she is 12, the Nazis occupy Paris and father and daughter flee to the walled citadel of Saint-Malo, where Marie-Laure’s reclusive great-uncle lives in a tall house by the sea. With them they carry what might be the museum’s most valuable and dangerous jewel. </p>`
+    },
+    {
+        id: "Sale_2",
+        cover: "images/SALE_2.png",
+        title: "Violet",
+        author: "Scott Thomas",
+        genre: "sale",
+        price: "800",
+        saleprice: "15",
+        rating: "4.00",
+        synop:`<p class = "synopsis-text">For many children, the summer of 1988 was filled with sunshine and laughter. But for 10-year-old Kris Barlow, it was her chance to say goodbye to her dying mother. </p> <p class = "synopsis-text">Three decades later, loss returns - her husband killed in a car accident. And so, Kris goes home to the place where she first knew pain - to that summer house overlooking the crystal waters of Lost Lake. It’s there that Kris and her eight-year-old daughter will make a stand against grief. </p>`
+    },
+    {
+        id: "Sale_3",
+        cover: "images/SALE_3.png",
+        title: "The Seven Husbands Of Evelyn Hugo",
+        author: "Taylor Jenkins Reid",
+        genre: "sale",
+        price: "1000",
+        saleprice: "10",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Aging and reclusive Hollywood movie icon Evelyn Hugo is finally ready to tell the truth about her glamorous and scandalous life. But when she chooses unknown magazine reporter Monique Grant for the job, no one in the journalism community is more astounded than Monique herself. Why her? Why now? </p>`
+    }, 
+    {
+        id: "Sale_4",
+        cover:"images/SALE_4.png",
+        title: "I Lived on Butterfly Hill",
+        author: "Marjorie Agosin",
+        genre: "sale",
+        price: "800",
+        saleprice: "30",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Celeste Marconi is a dreamer. She lives peacefully among friends and neighbors and family in the idyllic town of Valparaiso, Chile - until one day when warships are spotted in the harbor and schoolmates start disappearing from class without a word. Celeste doesn't quite know what is happening, but one thing is clear: no one is safe, not anymore.</p>`
+    },
+    {
+        id: "Sale_5",
+        cover: "images/SALE_5.png",
+        title: "The Universe Has Your Back",
+        author: "Gabrielle Berstein",
+        genre: "sale",
+        price: "900",
+        saleprice: "50",
+        rating: "4.60",
+        synop:`<p class= "synopsis-text">In her latest book, The Universe Has Your Back, New York Times best-selling author Gabrielle Bernstein teaches listeners how to transform their fear into faith in order to live a divinely guided life. Each story and lesson in the book guides listeners to release the blocks to what they most long for: happiness, security, and clear direction. The lessons help listeners relinquish the need to control so they can relax into a sense of certainty and freedom. Listeners will learn to stop chasing life and truly live. Making the shift from fear to faith will give listeners a sense of power in a world that all too often makes them feel utterly powerless. When the tragedies of the world seem overwhelming, this book will help guide them back to their true power. </p>`
+    },
+    {
+        id: "Sale_6",
+        cover: "images/SALE_6.png",
+        title: "The Things We Cannot Say",
+        author: "Kelly Rimmer",
+        genre: "sale",
+        price: "900",
+        saleprice: "30",
+        rating: "4.70",
+        synop:`<p class= synopsis-text>In 1942, Europe remains in the relentless grip of war. Just beyond the tents of the Russian refugee camp she calls home, a young woman speaks her wedding vows. It’s a decision that will alter her destiny...and it’s a lie that will remain buried until the next century. </p>`
+    },
+    {
+        id: "Sale_7",
+        cover: "images/SALE_7.png",
+        title: "If He Had Been With Me",
+        author: "Laura Nowlin",
+        genre: "sale",
+        price: "800",
+        saleprice: "25",
+        rating: "4.20",
+        synop:`<p class= "synopsis-text">Autumn and Finn used to be inseparable. But then something changed. Or they changed. Now, they do their best to ignore each other. </p><p class= "synopsis-text">Autumn has her boyfriend, Jamie, and her close-knit group of friends. And Finn has become that boy at school, the one everyone wants to be around. </p>`
+    },
+    {
+        id: "Sale_8",
+        cover: "images/SALE_8.png",
+        title: "The Nightingale",
+        author: "Kristin Anna",
+        genre: "sale",
+        price: "900",
+        saleprice: "20",
+        rating: "4.70",
+        synop: `<p class="synopsis-text">With courage, grace, and powerful insight, bestselling author Kristin Hannah captures the epic panorama of World War II and illuminates an intimate part of history seldom seen: the women's war. The Nightingale tells the stories of two sisters, separated by years and experience, by ideals, passion and circumstance, each embarking on her own dangerous path toward survival, love, and freedom in German-occupied, war-torn France—a heartbreakingly beautiful novel that celebrates the resilience of the human spirit and the durability of women. It is a novel for everyone, a novel for a lifetime.</p>`
+    },
+    {
+        id: "Sale_9",
+        cover: "images/SALE_9.png",
+        title: "They All Had A Secret",
+        author: "Michele Leathers",
+        genre: "sale",
+        price: "900",
+        saleprice: "20",
+        rating: "4.20",
+        synop:`<p class="synopsis-text">Charity has a past full of dark secrets that she keeps buried deep inside her cold heart. Samantha didn’t used to have any secrets, but that’s all about to change. And Roy, who seems to be caught in the middle, may have a haunting past of his own. When the small town they live in is hit with a devastating flood, the isolation and danger they must face will lead the three of them down a path they can never return from. One of them will have to go, for the others to survive. </p>`
+    },
+    {
+        id: "Sale_10",
+        cover: "images/SALE_10.png",
+        title: "Come Back To Bed",
+        author: "Kayle Loring",
+        genre: "sale",
+        price : "950",
+        saleprice: "20",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Dear grouchy neighbor: I'm considering your offer and need clarification before proceeding. Despite being an artist, I think you know that as a busy New Yorker, I am also practical and straightforward.</p><p class="synopsis-text>Dear nutty neighbor: As a lawyer, I must clarify that I never made an offer. It was a suggestion regarding the possibility of a non-permanent, no-strings-attached arrangement between two consenting adults whose beds are separated by a wall.</p>"`
+    },
+    {
+        id: "Bestseller_1",
+        cover: "images/best_1.png",
+        title: "Verity",
+        author: "Coleen Hoover",
+        genre: "bestseller",
+        price: "700",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Lowen Ashleigh is a struggling writer on the brink of financial ruin when she accepts the job offer of a lifetime. Jeremy Crawford, husband of bestselling author Verity Crawford, has hired Lowen to complete the remaining books in a successful series his injured wife is unable to finish.</p>`
+    },
+    {
+        id: "Bestseller_2",
+        cover: "images/best_2.png",
+        title: "We were Dreamers",
+        author:"Simu Liu",
+        genre: "bestseller",
+        price: "550",
+        rating: "4.70",
+        synop:`<p class= "synopsis-text">Simu's parents left him in the care of his grandparents, then brought him to Canada when he was four. Life as a Canuck, however, is not all that it was cracked up to be; Simu's new guardians lack the gentle touch of his grandparents, resulting in harsh words and hurt feelings. His parents, on the other hand, find their new son emotionally distant and difficult to relate to - although they are related by blood, they are separated by culture, language, and values. </p>`
+    },
+    {
+        id: "Bestseller_3",
+        cover:"images/best_3.png",
+        title: "The Wives",
+        author: "Tarryn Fisher",
+        genre:"bestseller",
+        price: "630",
+        rating: "4.00",
+        synop:`<p class="synopsis-text">You thought you were fine with your arrangement, but you can’t help yourself: you track her down, and, under false pretenses, you strike up a friendship. Hannah has no idea who you really are. Then Hannah starts showing up to your coffee dates with telltale bruises, and you realize she’s being abused by her husband. Who, of course, is also your husband. But you’ve never known him to be violent, ever.</p>`
+    },
+    {
+        id: "Bestseller_4",
+        cover: "images/best_4.png",
+        title:"The Silent Patient",
+        author: "Alex Michaelides",
+        genre:"bestseller",
+        price: "700",
+        rating:"4.40",
+        synop:`<p class="synopsis-text">Alicia Berenson’s life is seemingly perfect. A famous painter married to an in-demand fashion photographer, she lives in a grand house with big windows overlooking a park in one of London’s most desirable areas. One evening her husband Gabriel returns home late from a fashion shoot, and Alicia shoots him five times in the face, and then never speaks another word.
+        </p>`
+    },
+    {
+        id: "Bestseller_5",
+        cover: "images/best_5.png",
+        title: "The Housemaid",
+        author: "Freida McFadden",
+        genre:"bestseller",
+        price: "600",
+        rating: "4.30",
+        synop :`<p class="synopsis-text">“Welcome to the family,” Nina Winchester says as I shake her elegant, manicured hand. I smile politely, gazing around the marble hallway. Working here is my last chance to start fresh. I can pretend to be whoever I like. But I'll soon learn that the Winchesters' secrets are far more dangerous than my own…</p>`
+    },
+    {
+        id: "Bestseller_6",
+        cover: "images/best_6.png",
+        title:"Never Lie",
+        author: "Freida McFadden",
+        genre:"bestseller",
+        price: "690",
+        rating: "4.40",
+        synop:`<p class="synopsis-text">But when they visit the remote manor that once belonged to Dr. Adrienne Hale, a renowned psychiatrist who vanished without a trace four years earlier, a violent winter storm traps them at the estate… with no chance of escape until the blizzard comes to an end.</p>`
+    },
+    {
+        id: "Bestseller_7",
+        cover: "images/best_7.png",
+        title: "The Perfect Marriage",
+        author: "Jeneva Rose",
+        genre:"bestseller",
+        price: "700",
+        rating: "4.50",
+        synop:`<p class="synopsis-text">Sarah Morgan is a successful and powerful defense attorney in Washington D.C. As a named partner at her firm, life is going exactly how she planned. The same cannot be said for her husband, Adam. He's a struggling writer who has had little success in his career and he tires of his and Sarah's relationship as she is constantly working.</p>`
+    },
+    {
+        id: "Bestseller_8",
+        cover: "images/best_8.png",
+        title: "An Honest Lie",
+        author: "Tarryn Fisher",
+        genre: "bestseller",
+        price: "800",
+        rating: "4.50",
+        synop:`<p class="synopsis-text">When Rainy reluctantly agrees to a girls' weekend in Vegas, she's prepared for an exhausting parade of shots and slot machines. But after a wild night, her friend Braithe doesn't come back to the hotel room.</p>`
+    },
+    {
+        id: "Bestseller_9",
+        cover: "images/best_9.png",
+        title: "In Five Years",
+        author: "Rebecca Serle",
+        genre:"bestseller",
+        price:"500",
+        rating: "4.30",
+        synop:`<p class="synopsis-text">She is nothing like her lifelong best friend—the wild, whimsical, believes-in-fate Bella. Her meticulous planning seems to have paid off after she nails the most important job interview of her career and accepts her boyfriend’s marriage proposal in one fell swoop, falling asleep completely content.</p>`
+    },
+    {
+        id: "Bestseller_10",
+        cover: "images/best_10.png",
+        title: "Every Summer After",
+        author: "Carley Fortune",
+        genre:"bestseller",
+        price: "600",
+        rating: "4.60",
+        synop:`<p class="synopsis-text">They say you can never go home again, and for Persephone Fraser, ever since she made the biggest mistake of her life a decade ago, that has felt too true. Instead of glittering summers on the lakeshore of her childhood, she spends them in a stylish apartment in the city, going out with friends, and keeping everyone a safe distance from her heart</p>`
     },
     {
         id: "children_1",
