@@ -512,4 +512,37 @@ background:#B36910;
     display:flex;
     justify-content: center;
 }
-
+/* for saved button */
+.image-div{
+    position: relative;
+}
+.heart-div{
+    position: relative;
+}
+.heart-inside{
+    position: absolute;
+    color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.save-button{
+    color: #f77f00;
+    background-color: transparent;
+}
+.save-div{
+    position: absolute;
+    background-color:rgba(245, 247, 250, 0.4);
+    border-radius: 10px;
+    padding: 10px;
+    top: 20px;
+    right: 20px;
+}
+.save-div:hover{
+    background-color:rgba(245, 247, 250, 0.6);
+    animation: ease-in;
+}
+.save-button-inside:hover{
+    color: #f77f00;
+}
+/* modal revise */

@@ -10,26 +10,35 @@ function generateChildren(){
         console.log("true");
         return (cardscontainer.innerHTML=findGenre.map(function(x){
             return `
-            <div class="col-12 col-md-6 col-lg mb-3">
-           
-                <div class="card d-flex position-relative h-100 generated-hover" type="button"  onclick="generatenewModal(${x.id})"  data-bs-toggle="modal" data-bs-target="#childrenpageModal">
-    
-                <img id="${x.id}" src="../${x.cover}" class="card-img-top" alt="book cover" loading="lazy">
-     
-                <div class="card-body d-flex flex-wrap justify-content-between mt-2">
-                    <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
-                    <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p>
-                    
+            <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick="generatenewModal(${x.id})"  data-bs-toggle="modal" data-bs-target="#childrenpageModal">        
+            <div class="image-div">
+                <img id="${x.id}" src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+                <div class="save-div">
+                    <a href="../Home/login.html" >
+                        <div class="heart-div">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="save-button bi bi-heart" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                            </svg>
+                                <div class="heart-inside">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="save-button-inside bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                    </svg>
+                                </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="price_addToCart">
-                    <span> &#8369; ${x.price}</span>
-                </div>    
-                <div class="addToCart">    
-                <a href="../Home/login.html"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
-                </div>
-                </div>
-            
             </div>
+        <div class="card-body d-flex flex-wrap justify-content-between mt-2">
+            <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
+            <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
+        </div>
+        <div class="price_addToCart">
+            <span> &#8369; ${x.price}</span>
+        </div>    
+        <div class="addToCart">    
+            <a href="./Home/login.html"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
+        </div>
+    </div>
             `
         }).join(""))
     }
@@ -42,9 +51,12 @@ function generateChildren(){
 generateChildren();
 
 function generatenewModal(id){
+   
     let selected=id;
+    console.log(id); 
     let bookFind = allBooks.find(function(x){
         return x.id === selected.id;
+        
         
     });
     if (bookFind){
