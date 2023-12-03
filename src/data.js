@@ -1,4 +1,431 @@
 let allBooks=[
+    {   
+        id: "Life_1",
+        cover: "images/Life_1.png",
+        title: "The Heart of a CHEETAH",
+        author: "Magatte Wade",
+        genre:"lifestyle",
+        price: "600",
+        rating:"4.70",
+        synop: `<p class="synopsis-text">
+                Experience the life story of Magatte Wade, the bold Senegalese entrepreneur and unflinching prosperity activist, determined to shape the destiny of her African homeland.</p>
+                <p class="synopsis-text"> In this riveting memoir, Wade challenges Africans to redefine their narrative, casting aside imposed inferiority to reclaim their innate brilliance.</p>`
+
+    },
+    {
+        id: "Life_2",
+        cover: "images/Life_2.png",
+        title: "Lifestyle Builders",
+        author: "Tom & Ariana Sylvester",
+        genre: "lifestyle",
+        price: "530",
+        rating: "4.70",
+        synop: `<p class="synopsis-text">Most people have two lives: the one that they are living and the one that they want to live. Today, there is more opportunity than ever for anyone to create their ideal life through entrepreneurship. After overcoming the obstacles of building three businesses with one spouse still in a 9-5 job and working together as a married couple while raising two young kids, Tom and Ariana Sylvester have cracked the code and developed a framework on how to successfully do business and life―together.</p>`
+
+    },
+    {
+        id: "Life_3",
+        cover: "images/Life_3.png",
+        title: "Ask Powerful Questions",
+        author: "Will Wise",
+        genre: "lifestyle",
+        price: "500",
+        rating : "4.50",
+        synop: `<p class="synopsis-text">What might happen if “small talk” was replaced with conversations that matter? In their Bestselling book, Will Wise and Chad Littlefield explain how the questions we traditionally ask are often meaningless when it comes to establishing a connection. Introducing a set of practice tools for understanding others by changing the way we ask questions, Will and Chad show how to transform “How are you?—I’m fine, thanks” into conversations that change not only how you lead but who you are as a person.</p>`
+
+    },
+    {
+        id: "Life_4",
+        cover: "images/Life_4.png",
+        title: "The Joy of Mixology",
+        author: "Gary Regan",
+        genre: "lifestyle",
+        price: "750",
+        rating: "4.30",
+        synop: `<p class="synopsis-text">A prolific writer on all things cocktails, Gary Regan and his books have been a huge influence on mixologists and bartenders in America. This brand-new edition fills in the gaps since the book first published, incorporating Regan's special insight on the cocktail revolution from 2000 to the present and a complete overhaul of the recipe section.</p>`
+
+    },
+    {
+        id: "Life_5",
+        cover: "images/Life_5.png",
+        title: "The RV Passive Income Guide",
+        author: "Jeremy Prost",
+        genre:"lifestyle",
+        price: "580",
+        rating: "4.00",
+        synop: `<p class="synopsis-text">Warning: Listening to this may cause you to quit your job and chase the RV adventure of your dreams.</p>
+                <p class="synopsis-text">Imagine a life where you don't have to meet up at work every morning at nine a.m. You can work straight from the comfort of your own home during the hours that suit your lifestyle best. Are you picturing it? Wonderful.</p>`
+    },
+    {
+        id: "Life_6",
+        cover: "images/Life_6.png",
+        title: "I Love It Here",
+        author: "Clint Pulver",
+        genre: "lifestyle",
+        price:"600",
+        rating: "4.70",
+        synop: `<p class="synopsis-text">Emmy Award-winning speaker Clint Pulver - aka the Undercover Millennial - shares insights gleaned from more than 10,000 undercover interviews with employees across the country, revealing the best methods for identifying talent, building a sense of ownership, and developing a successful workplace culture that employees will love.</p>`
+    },
+    {
+        id: "Life_7",
+        cover: "images/Life_7.png",
+        title: "You're The Leader Now What?",
+        author: "Richard Winters, M.D.",
+        genre: "lifestyle",
+        price : "700",
+        rating: "4.90",
+        synop: `<p class="synopsis-text">Leadership has never been more challenging. Your colleagues disagree, their emotions run high, and your way forward through the everchanging, complex work environment would confound even the most seasoned leader.</p>`
+
+    },
+    {
+        id: "Life_8",
+        cover: "images/Life_8.png",
+        title: "The Answer Is A Question",
+        author: "Laura Ashley-Timms",
+        genre: "lifestyle",
+        price: "670",
+        rating: "4.30",
+        synop:`<p class="synopsis-text">This book is produced in stunning full colour and provides invaluable insights, examples, and mini-missions that will show you precisely how to make some immediate changes that will yield fast and exciting results and revolutionise how you manage forever.</p>`
+
+
+    },
+    {
+        id: "Life_9",
+        cover: "images/Life_9.png",
+        title: "The Most Powerful Woman In The Room Is You",
+        auhtor: "Lydia Fenet",
+        genre: "lifestyle",
+        price: "680",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Throughout, Lydia also shares personal and inspiring stories from her own life - like how she got her foot in the door at Christie's after she was originally told there were no spots left in the intern program. And when she realized she was being paid a third of her worth - and how she came back more powerful than ever.</p>`
+    },
+    {
+        id: "Life_10",
+        cover: "images/Life_10.png",
+        title: "How to Taste",
+        author: "Many Naglich",
+        genre: "lifestyle",
+        price: "780",
+        rating: "4.10",
+        synop: `<p class="synopsis-text">Whether it's a meaningful meal or a favorite nostalgic road trip snack, we know what we like to eat. But even when it comes to the most vivid and memorable dishes it’s tough to say what exactly makes them so delicious.Now award-winning expert, certified food and beverage taster and lifestyle journalist Mandy Naglich reveals how to hone your tasting superpowers like a pro.</p>`
+
+    },
+    {
+        id: "Romance_1",
+        cover:"images/rom_1.png",
+        title: "The Love Hypothesis",
+        author: "Ali Hazelwood",
+        genre: "romance",
+        price: "690",
+        rating: "4.50",
+        synop: `<p class="synopsis-text"> As a third-year PhD candidate, Olive Smith doesn't believe in lasting romantic relationships—but her best friend does, and that's what got her into this situation. Convincing Anh that Olive is dating and well on her way to a happily ever after was always going to take more than hand-wavy Jedi mind tricks: Scientists require proof. So, like any self-respecting biologist, Olive panics and kisses the first man she sees.</p>`
+    },
+    {
+        id: "Romance_2",
+        cover: "images/rom_2.png",
+        title: "(Not So) Famous in Paradise",
+        author: "Brittany Larsen",
+        genre:"romance",
+        price:"780",
+        rating: "4.50",
+        synop: `<p class= "synopsis-text">When the biggest career opportunity of my life–my own home reno TV show–sends me back to my hometown, I’m less than excited. Paradise, Idaho might be paradise for everyone else, but it never was for me. Except for my best friend, Zach.</p>`
+    },
+    {
+        id: "Romance_3",
+        cover: "images/rom_3.png",
+        title: "Eleanor & Park", 
+        author: "Rainbow Rowell",
+        genre: "romance",
+        price: "600",
+        rating: "4.40",
+        synop: `<p class="synopsis-text">Set over the course of one school year in 1986, this is the story of two star-crossed misfits-smart enough to know that first love almost never lasts, but brave and desperate enough to try. When Eleanor meets Park, you'll remember your own first love-and just how hard it pulled you under.</p>`
+
+    },
+    {
+        id: "Romance_4",
+        cover: "images/rom_4.png",
+        title: "Absolute Not In Love",
+        author: "Jenny Proctor",
+        genre: "romance",
+        price: "550",
+        rating: "4.40",
+        synop:`<p class="synopsis-text">Which is why I will never be interested in my neighbor, the aloof and mysterious Felix Jamison, no matter how many books I see him hauling into his apartment. Unless he loses his pro hockey skates, I'm out.</p>`
+
+    },
+    {
+        id: "Romance_5",
+        cover: "images/rom_5.png",
+        title: "True North",
+        author: "Robin Huber",
+        genre : "romance",
+        price: "540",
+        rating: "4.00",
+        synop: `<p class="synopsis-text">
+        It's been eight years since the moment that changed Olivia Dalton’s life. Gabriel North was her first love—her only love. But an accident shattered their world, leaving Gabe with a serious injury and Liv with a broken heart.</p><p class="synopsis-text">In the years that followed, Liv left their small coastal town in Georgia and began her career in North Carolina. But she often feels like a stranger watching the woman she’s become drift farther and farther from the girl she used to be.</p>`
+    },
+    {
+        id: "Romance_6",
+        cover: "images/rom_6.png",
+        title: "Love & Other Words",
+        author: "Christian Lauren",
+        genre: "romance",
+        price: "750",
+        rating: "4.60",
+        synop:`<p class= "synopsis-text">Macy Sorensen is settling into an ambitious if emotionally tepid routine: work hard as a new pediatrics resident, plan her wedding to an older, financially secure man, keep her head down and heart tucked away.</p><p class= "synopsis-text">But when she runs into Elliot Petropoulos - the first and only love of her life - the careful bubble she’s constructed begins to dissolve. Once upon a time, Elliot was Macy’s entire world - growing from her gangly teen friend into the man who coaxed her heart open again after the loss of her mother...only to break it on the very night he declared his love for her.</p>`
+
+    },
+    {
+        id: "Romance_7",
+        cover: "images/rom_7.png",
+        title: "In The Weeds",
+        author: "B.K. Borison",
+        genre: "romance",
+        price: "800",
+        rating: "4.30",
+        synop: `<p class="synopsis-text">One incredible weekend in Maine, and Beckett Porter is officially a distracted man. He’s not unfamiliar with hot and heavy flings. He knows how it goes. But Evie wove some sort of magic over him during their tumble in the sheets. He can’t stop thinking about her laugh, her hand pressed flat against his chest, her smiling mouth at his neck, her eyes, her legs. </p>`
+
+    },
+    {
+        id: "Romance_8",
+        cover: "images/rom_8.png",
+        title: "A Part Of You",
+        author: "Lynden Renwick",
+        genre: "romance",
+        price: "670",
+        rating: "4.00",
+        synop:`<p class ="synopsis-text">Ashleigh led an idyllic life. She was fit, loved her job, and was blissfully married to a doting husband. Then came the diagnosis: infertile. With every IVF clinic around the country shutting its doors, it seems that any hope of completing her family is lost. Enter Hannah—a beautiful and celebrated playwright looking for inspiration for her next show—who offers to serve as Ashleigh's non-surgical surrogate.</p>`
+    },
+    {
+        id: "Romance_9",
+        cover: "images/rom_9.png",
+        title: "DNA of YOU and ME",
+        author: "Andrea Rothman",
+        genre: "romance",
+        price: "690",
+        rating: "4.10",
+        synop:`<p class="synopsis-text">How does smell work? Specifically, how do olfactory sensory neurons project to their targets in the olfactory bulb, where smell is processed? Justin McKinnon has hired fresh-faced graduate student Emily to study that question. What Justin hasn’t told Emily is that two other scientists in the lab, Aeden and Allegra, are working on a very similar topic, and their findings may compete with her research.</p>`
+    },
+    {
+        id: "Romance_10",
+        cover: "images/rom_10.png",
+        title: "Dinner For Two",
+        author:"Drea Stein",
+        genre: "romance",
+        price:  "880",
+        rating: "4.20",
+        synop: `<p class= "synopsis-text">Sean and Darby love food, but is their relationship a recipe for disaster, or a chance to make kitchen magic?</p><p class= "text-synop">Sean Callahan was a hotshot big-city chef whose high-handed ways got him into trouble one too many times. Now he's in a small town hoping for another shot at the big leagues.</p><p class= "text-synop">Darby Reese is a big-city lawyer who can bake like an angel. Unfortunately, a life lived according to the law has left her burned out. So when the chance comes to run her family's deli in the small town of Queensbay, Darby's happy to take it.</p>`
+    },
+    {
+        id:"Sale_1",
+        cover: "images/SALE_1.png",
+        title:"All The Light We Cannot See",
+        author: "Anthony Doerr",
+        genre: "sale",
+        price: "1550",
+        saleprice: "50",
+        rating: "4.50",
+        synop:`<p class="synopsis-text">Marie-Laure lives with her father in Paris near the Museum of Natural History, where he works as the master of its thousands of locks. When she is six, Marie-Laure goes blind and her father builds a perfect miniature of their neighborhood so she can memorize it by touch and navigate her way home. When she is 12, the Nazis occupy Paris and father and daughter flee to the walled citadel of Saint-Malo, where Marie-Laure’s reclusive great-uncle lives in a tall house by the sea. With them they carry what might be the museum’s most valuable and dangerous jewel. </p>`
+    },
+    {
+        id: "Sale_2",
+        cover: "images/SALE_2.png",
+        title: "Violet",
+        author: "Scott Thomas",
+        genre: "sale",
+        price: "800",
+        saleprice: "15",
+        rating: "4.00",
+        synop:`<p class = "synopsis-text">For many children, the summer of 1988 was filled with sunshine and laughter. But for 10-year-old Kris Barlow, it was her chance to say goodbye to her dying mother. </p> <p class = "synopsis-text">Three decades later, loss returns - her husband killed in a car accident. And so, Kris goes home to the place where she first knew pain - to that summer house overlooking the crystal waters of Lost Lake. It’s there that Kris and her eight-year-old daughter will make a stand against grief. </p>`
+    },
+    {
+        id: "Sale_3",
+        cover: "images/SALE_3.png",
+        title: "The Seven Husbands Of Evelyn Hugo",
+        author: "Taylor Jenkins Reid",
+        genre: "sale",
+        price: "1000",
+        saleprice: "10",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Aging and reclusive Hollywood movie icon Evelyn Hugo is finally ready to tell the truth about her glamorous and scandalous life. But when she chooses unknown magazine reporter Monique Grant for the job, no one in the journalism community is more astounded than Monique herself. Why her? Why now? </p>`
+    }, 
+    {
+        id: "Sale_4",
+        cover:"images/SALE_4.png",
+        title: "I Lived on Butterfly Hill",
+        author: "Marjorie Agosin",
+        genre: "sale",
+        price: "800",
+        saleprice: "30",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Celeste Marconi is a dreamer. She lives peacefully among friends and neighbors and family in the idyllic town of Valparaiso, Chile - until one day when warships are spotted in the harbor and schoolmates start disappearing from class without a word. Celeste doesn't quite know what is happening, but one thing is clear: no one is safe, not anymore.</p>`
+    },
+    {
+        id: "Sale_5",
+        cover: "images/SALE_5.png",
+        title: "The Universe Has Your Back",
+        author: "Gabrielle Berstein",
+        genre: "sale",
+        price: "900",
+        saleprice: "50",
+        rating: "4.60",
+        synop:`<p class= "synopsis-text">In her latest book, The Universe Has Your Back, New York Times best-selling author Gabrielle Bernstein teaches listeners how to transform their fear into faith in order to live a divinely guided life. Each story and lesson in the book guides listeners to release the blocks to what they most long for: happiness, security, and clear direction. The lessons help listeners relinquish the need to control so they can relax into a sense of certainty and freedom. Listeners will learn to stop chasing life and truly live. Making the shift from fear to faith will give listeners a sense of power in a world that all too often makes them feel utterly powerless. When the tragedies of the world seem overwhelming, this book will help guide them back to their true power. </p>`
+    },
+    {
+        id: "Sale_6",
+        cover: "images/SALE_6.png",
+        title: "The Things We Cannot Say",
+        author: "Kelly Rimmer",
+        genre: "sale",
+        price: "900",
+        saleprice: "30",
+        rating: "4.70",
+        synop:`<p class= synopsis-text>In 1942, Europe remains in the relentless grip of war. Just beyond the tents of the Russian refugee camp she calls home, a young woman speaks her wedding vows. It’s a decision that will alter her destiny...and it’s a lie that will remain buried until the next century. </p>`
+    },
+    {
+        id: "Sale_7",
+        cover: "images/SALE_7.png",
+        title: "If He Had Been With Me",
+        author: "Laura Nowlin",
+        genre: "sale",
+        price: "800",
+        saleprice: "25",
+        rating: "4.20",
+        synop:`<p class= "synopsis-text">Autumn and Finn used to be inseparable. But then something changed. Or they changed. Now, they do their best to ignore each other. </p><p class= "synopsis-text">Autumn has her boyfriend, Jamie, and her close-knit group of friends. And Finn has become that boy at school, the one everyone wants to be around. </p>`
+    },
+    {
+        id: "Sale_8",
+        cover: "images/SALE_8.png",
+        title: "The Nightingale",
+        author: "Kristin Anna",
+        genre: "sale",
+        price: "900",
+        saleprice: "20",
+        rating: "4.70",
+        synop: `<p class="synopsis-text">With courage, grace, and powerful insight, bestselling author Kristin Hannah captures the epic panorama of World War II and illuminates an intimate part of history seldom seen: the women's war. The Nightingale tells the stories of two sisters, separated by years and experience, by ideals, passion and circumstance, each embarking on her own dangerous path toward survival, love, and freedom in German-occupied, war-torn France—a heartbreakingly beautiful novel that celebrates the resilience of the human spirit and the durability of women. It is a novel for everyone, a novel for a lifetime.</p>`
+    },
+    {
+        id: "Sale_9",
+        cover: "images/SALE_9.png",
+        title: "They All Had A Secret",
+        author: "Michele Leathers",
+        genre: "sale",
+        price: "900",
+        saleprice: "20",
+        rating: "4.20",
+        synop:`<p class="synopsis-text">Charity has a past full of dark secrets that she keeps buried deep inside her cold heart. Samantha didn’t used to have any secrets, but that’s all about to change. And Roy, who seems to be caught in the middle, may have a haunting past of his own. When the small town they live in is hit with a devastating flood, the isolation and danger they must face will lead the three of them down a path they can never return from. One of them will have to go, for the others to survive. </p>`
+    },
+    {
+        id: "Sale_10",
+        cover: "images/SALE_10.png",
+        title: "Come Back To Bed",
+        author: "Kayle Loring",
+        genre: "sale",
+        price : "950",
+        saleprice: "20",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Dear grouchy neighbor: I'm considering your offer and need clarification before proceeding. Despite being an artist, I think you know that as a busy New Yorker, I am also practical and straightforward.</p><p class="synopsis-text>Dear nutty neighbor: As a lawyer, I must clarify that I never made an offer. It was a suggestion regarding the possibility of a non-permanent, no-strings-attached arrangement between two consenting adults whose beds are separated by a wall.</p>"`
+    },
+    {
+        id: "Bestseller_1",
+        cover: "images/best_1.png",
+        title: "Verity",
+        author: "Coleen Hoover",
+        genre: "bestseller",
+        price: "700",
+        rating: "4.60",
+        synop: `<p class="synopsis-text">Lowen Ashleigh is a struggling writer on the brink of financial ruin when she accepts the job offer of a lifetime. Jeremy Crawford, husband of bestselling author Verity Crawford, has hired Lowen to complete the remaining books in a successful series his injured wife is unable to finish.</p>`
+    },
+    {
+        id: "Bestseller_2",
+        cover: "images/best_2.png",
+        title: "We were Dreamers",
+        author:"Simu Liu",
+        genre: "bestseller",
+        price: "550",
+        rating: "4.70",
+        synop:`<p class= "synopsis-text">Simu's parents left him in the care of his grandparents, then brought him to Canada when he was four. Life as a Canuck, however, is not all that it was cracked up to be; Simu's new guardians lack the gentle touch of his grandparents, resulting in harsh words and hurt feelings. His parents, on the other hand, find their new son emotionally distant and difficult to relate to - although they are related by blood, they are separated by culture, language, and values. </p>`
+    },
+    {
+        id: "Bestseller_3",
+        cover:"images/best_3.png",
+        title: "The Wives",
+        author: "Tarryn Fisher",
+        genre:"bestseller",
+        price: "630",
+        rating: "4.00",
+        synop:`<p class="synopsis-text">You thought you were fine with your arrangement, but you can’t help yourself: you track her down, and, under false pretenses, you strike up a friendship. Hannah has no idea who you really are. Then Hannah starts showing up to your coffee dates with telltale bruises, and you realize she’s being abused by her husband. Who, of course, is also your husband. But you’ve never known him to be violent, ever.</p>`
+    },
+    {
+        id: "Bestseller_4",
+        cover: "images/best_4.png",
+        title:"The Silent Patient",
+        author: "Alex Michaelides",
+        genre:"bestseller",
+        price: "700",
+        rating:"4.40",
+        synop:`<p class="synopsis-text">Alicia Berenson’s life is seemingly perfect. A famous painter married to an in-demand fashion photographer, she lives in a grand house with big windows overlooking a park in one of London’s most desirable areas. One evening her husband Gabriel returns home late from a fashion shoot, and Alicia shoots him five times in the face, and then never speaks another word.
+        </p>`
+    },
+    {
+        id: "Bestseller_5",
+        cover: "images/best_5.png",
+        title: "The Housemaid",
+        author: "Freida McFadden",
+        genre:"bestseller",
+        price: "600",
+        rating: "4.30",
+        synop :`<p class="synopsis-text">“Welcome to the family,” Nina Winchester says as I shake her elegant, manicured hand. I smile politely, gazing around the marble hallway. Working here is my last chance to start fresh. I can pretend to be whoever I like. But I'll soon learn that the Winchesters' secrets are far more dangerous than my own…</p>`
+    },
+    {
+        id: "Bestseller_6",
+        cover: "images/best_6.png",
+        title:"Never Lie",
+        author: "Freida McFadden",
+        genre:"bestseller",
+        price: "690",
+        rating: "4.40",
+        synop:`<p class="synopsis-text">But when they visit the remote manor that once belonged to Dr. Adrienne Hale, a renowned psychiatrist who vanished without a trace four years earlier, a violent winter storm traps them at the estate… with no chance of escape until the blizzard comes to an end.</p>`
+    },
+    {
+        id: "Bestseller_7",
+        cover: "images/best_7.png",
+        title: "The Perfect Marriage",
+        author: "Jeneva Rose",
+        genre:"bestseller",
+        price: "700",
+        rating: "4.50",
+        synop:`<p class="synopsis-text">Sarah Morgan is a successful and powerful defense attorney in Washington D.C. As a named partner at her firm, life is going exactly how she planned. The same cannot be said for her husband, Adam. He's a struggling writer who has had little success in his career and he tires of his and Sarah's relationship as she is constantly working.</p>`
+    },
+    {
+        id: "Bestseller_8",
+        cover: "images/best_8.png",
+        title: "An Honest Lie",
+        author: "Tarryn Fisher",
+        genre: "bestseller",
+        price: "800",
+        rating: "4.50",
+        synop:`<p class="synopsis-text">When Rainy reluctantly agrees to a girls' weekend in Vegas, she's prepared for an exhausting parade of shots and slot machines. But after a wild night, her friend Braithe doesn't come back to the hotel room.</p>`
+    },
+    {
+        id: "Bestseller_9",
+        cover: "images/best_9.png",
+        title: "In Five Years",
+        author: "Rebecca Serle",
+        genre:"bestseller",
+        price:"500",
+        rating: "4.30",
+        synop:`<p class="synopsis-text">She is nothing like her lifelong best friend—the wild, whimsical, believes-in-fate Bella. Her meticulous planning seems to have paid off after she nails the most important job interview of her career and accepts her boyfriend’s marriage proposal in one fell swoop, falling asleep completely content.</p>`
+    },
+    {
+        id: "Bestseller_10",
+        cover: "images/best_10.png",
+        title: "Every Summer After",
+        author: "Carley Fortune",
+        genre:"bestseller",
+        price: "600",
+        rating: "4.60",
+        synop:`<p class="synopsis-text">They say you can never go home again, and for Persephone Fraser, ever since she made the biggest mistake of her life a decade ago, that has felt too true. Instead of glittering summers on the lakeshore of her childhood, she spends them in a stylish apartment in the city, going out with friends, and keeping everyone a safe distance from her heart</p>`
+    },
     {
         id: "children_1",
         cover:"images/children_1.png",
