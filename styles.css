@@ -122,7 +122,7 @@
 .generated-hover:hover{
     scale: 1.05;
 }
-
+/* modal */
 .book-details{
     background-color: #f77f00;
     color: #f5f7fa;
@@ -217,6 +217,9 @@
     animation: ease-in;
 }
 .save-button-inside-modal:hover{
+    color: #f77f00;
+}
+.related-books{
     color: #f77f00;
 }
 @media(max-width:992px){

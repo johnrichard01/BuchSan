@@ -23,7 +23,7 @@ function generateCards(x){
             </div>
         </div>
     <div class="card-body d-flex flex-wrap justify-content-between mt-2">
-        <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
+        <p class="card-title h6 fw-bold mb-2 w-100">${x.title}</p>
         <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
     </div>
     <div class="price_addToCart">
@@ -43,13 +43,13 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 30,
     loop: true,
   
-    // If we need pagination
+  
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
   
-    // Navigation arrows
+
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -58,7 +58,7 @@ const swiper = new Swiper('.swiper', {
   });
 
 
-  let generateRelated=(id)=>{
+  function generateRelated(id){
     let select = id;
     let related= document.getElementById("relatedContainer");
     let bookFind = allBooks.filter(function(x){
@@ -93,8 +93,8 @@ const swiper = new Swiper('.swiper', {
             </div>
         </div>
     <div class="card-body d-flex flex-wrap justify-content-between mt-2">
-        <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
-        <p class="Author lead w-100 fs-6 fst-italic">${x.athor}}</p> 
+        <p class="card-title h6 fw-bold mb-2 w-100">${x.title}</p>
+        <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
     </div>
     <div class="price_addToCart">
         <span> &#8369; ${x.price}</span>
@@ -119,7 +119,7 @@ const swiper = new Swiper('.swiper', {
         let modal= document.getElementById("modalgenerateBody");
         console.log(selected);
          modal.innerHTML = `
-         <div class="row mb-5">
+         <div class="row mb-5 mt-5">
          <div class=" position-relative col-12 col-lg-6 d-flex flex-wrap justify-content-center align-content-start">
              <div class="image-div-modal col-12 d-flex flex-wrap justify-content-center">
                  <div class="d-flex flex-wrap justify-content-center">
@@ -172,7 +172,7 @@ const swiper = new Swiper('.swiper', {
      </div>
      <div class="container-fluid mt-5 bg-body-tertiary">
          <div class="container">
-             <h1 class="py-5">Related genre</h1>
+             <h1 class="pt-3 fw-bold related-books">Related Books</h1>
          <div class="row row-cols-1 row-cols-4 justify-content-center" id="relatedContainer">
             
          </div>
