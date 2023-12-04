@@ -52,7 +52,7 @@ generatePage();
 
 function generateRelated(id){
 let select = id;
-let genre= "lifestyle";
+let genre= "bestseller";
 let related= document.getElementById("relatedContainer");
 let bookFind = allBooks.filter(function(x){
     return select !== x.id;
