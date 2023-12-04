@@ -714,7 +714,7 @@ let allBooks=[
     {
         id: "nonfiction_2",
         cover:"images/nonfiction_2.png",
-        title:"The Sisterhood: The Secret History of Women at the CIA",
+        title:"The Sisterhood",
         author:"Liza Mundy",
         genre: "nonfiction",
         price:"700",
@@ -782,7 +782,7 @@ let allBooks=[
         id: "nonfiction_7",
         cover:"images/nonfiction_7.png",
         title:"MCU: The Reign of Marvel Studios",
-        author:"Joanna Robinson, Dave Gonzales, Gavin Edwards",
+        author:"Joanna Robinson",
         genre: "nonfiction",
         price:"700",
         rating:"4.29",
@@ -820,7 +820,7 @@ let allBooks=[
     {
         id: "nonfiction_10",
         cover:"images/nonfiction_10.png",
-        title:"This Country: Searching for Home in (Very) Rural America",
+        title:"This Country",
         author:"Navied Mahdavian",
         genre: "nonfiction",
         price:"800",
@@ -834,7 +834,7 @@ let allBooks=[
     {
         id: "selfhelp_1",
         cover:"images/selfhelp_1.png",
-        title:"The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
+        title:"The 7 Habits of Highly Effective People",
         author:"Stephen R. Covey",
         genre: "selfhelp",
         price:"900",
