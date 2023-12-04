@@ -2,7 +2,7 @@
 
 function generatePage(){
   let cardscontainer=document.getElementById("generatePage");
-  let genre= "lifestyle";
+  let genre= "bestseller";
   let findGenre= allBooks.filter(function(x){
       return genre === x.genre;
   })
