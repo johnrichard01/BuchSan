@@ -9,7 +9,7 @@ function generatePage(){
           <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
           <div class="new-div position-absolute badge">New Arrivals!</div>
           <div class="save-div">
-              <a href="./Home/login.html">
+              <a href="../Home/login.html">
                   <div class="heart-div">
                       <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="save-button bi bi-heart" viewBox="0 0 16 16">
                           <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
@@ -62,7 +62,7 @@ if (bookRand){
         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
         <div class="new-div position-absolute badge">New Arrivals!</div>
         <div class="save-div">
-            <a href="./Home/login.html" >
+            <a href="../Home/login.html" >
                 <div class="heart-div">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="save-button bi bi-heart" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
@@ -84,7 +84,7 @@ if (bookRand){
     <span> &#8369; ${x.price}</span>
 </div>
 <div class="addToCart">    
-    <a href="./Home/login.html"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
+    <a href="../Home/login.html"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
 </div>
 </div>
         `
@@ -109,7 +109,7 @@ function generatenewModal(id){
                <div class="d-flex flex-wrap justify-content-center">
                    <img src="../${bookFind.cover}" class="modal-cover-image" alt="book cover"  loading="lazy">
                <div class="save-div-modal">
-                   <a href="./Home/login.html">
+                   <a href="../Home/login.html">
                        <div class="heart-div-modal">
                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="save-button-modal bi bi-heart" viewBox="0 0 16 16">
                                <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
@@ -125,7 +125,7 @@ function generatenewModal(id){
 
                <div class="col-12 row justify-content-center">
                    <div class="addtocardModal mb-3 d-flex justify-content-center col-11">
-                       <a href="./Home/login.html" type="button" class="btn w-100 btn-addtocard-modal fs-6 fw-bold p-0 p-lg-2">ADD TO CART</a>
+                       <a href="../Home/login.html" type="button" class="btn w-100 btn-addtocard-modal fs-6 fw-bold p-0 p-lg-2">ADD TO CART</a>
                    </div>
                </div>
                </div>
