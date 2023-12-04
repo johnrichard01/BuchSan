@@ -7,6 +7,7 @@ function generateCards(x){
         <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick="generateModal('${x.id}')"  data-bs-toggle="modal" data-bs-target="#newArrivalModal">        
         <div class="image-div">
             <img src="${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+            <div class="new-div position-absolute badge">New Arrivals!</div>
             <div class="save-div">
                 <a href="./Home/login.html">
                     <div class="heart-div">
@@ -74,9 +75,10 @@ const swiper = new Swiper('.swiper', {
     if (bookRand){
         related.innerHTML= bookRand.slice(-5).map(function(x){
             return `
-            <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-5"  id="product${x.id}" type="button" onclick="openFirst(); generateModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#newArrivalModal">        
+            <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-2 mb-lg-5"  id="product${x.id}" type="button" onclick="openFirst(); generateModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#newArrivalModal">        
         <div class="image-div">
             <img src="${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+            <div class="new-div position-absolute badge">New Arrivals!</div>
             <div class="save-div">
                 <a href="./Home/login.html" >
                     <div class="heart-div">
@@ -104,7 +106,7 @@ const swiper = new Swiper('.swiper', {
     </div>
     </div>
             `
-        })
+        }).join("")
     }
   }
 

@@ -29,7 +29,7 @@ function generatePage(){
             </div>
         </div>
     <div class="card-body d-flex flex-wrap justify-content-between mt-2">
-        <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
+        <p class="card-title h6 fw-bold mb-2 w-100">${x.title}</p>
         <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
     </div>
     <div class="price_addToCart">
@@ -69,7 +69,7 @@ function generateRelated(id){
   if (bookRand){
       related.innerHTML= bookRand.slice(-5).map(function(x){
           return `
-          <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-5"  id="product${x.id}" type="button" onclick="openFirst(); generatenewModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#generatepageModal">        
+          <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" type="button" onclick="openFirst(); generatenewModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#generatepageModal">        
       <div class="image-div">
           <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
           <div class="save-div">
@@ -88,7 +88,7 @@ function generateRelated(id){
           </div>
       </div>
   <div class="card-body d-flex flex-wrap justify-content-between mt-2">
-      <p class="card-title h5 fw-bold mb-2 w-100">${x.title}</p>
+      <p class="card-title h6 fw-bold mb-2 w-100">${x.title}</p>
       <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
   </div>
   <div class="price_addToCart">
@@ -99,7 +99,7 @@ function generateRelated(id){
   </div>
   </div>
           `
-      })
+      }).join("")
   }
 }
 

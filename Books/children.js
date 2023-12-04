@@ -68,7 +68,7 @@ function generateRelated(id){
   if (bookRand){
       related.innerHTML= bookRand.slice(-5).map(function(x){
           return `
-          <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-5"  id="product${x.id}" type="button" onclick="openFirst(); generatenewModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#childrenpageModal">        
+          <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-2 mb-lg-5"  id="product${x.id}" type="button" onclick="openFirst(); generatenewModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#childrenpageModal">        
       <div class="image-div">
           <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
           <div class="save-div">
@@ -98,7 +98,7 @@ function generateRelated(id){
   </div>
   </div>
           `
-      })
+      }).join("")
   }
 }
 

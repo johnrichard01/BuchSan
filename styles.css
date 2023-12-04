@@ -222,6 +222,30 @@
 .related-books{
     color: #f77f00;
 }
+.new-div{
+    background: #f77f00;
+    color:white;
+    font-size:large;
+    left:5px;
+    border-radius:0;
+    font-family:sans-serif;
+    font-weight:300;
+    margin:20px -10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.btn-carouselsign{
+    border: 2px solid #f77f00;
+    color: #f5f7fa;
+    background-color: #f77f00;
+}
+.btn-carouselsign:hover{
+    background-color: #d26e04;
+
+}
+.callto-content{
+    max-width: 500px;
+    width: 90%;
+}
 @media(max-width:992px){
     .new_arrival{
         height: 8rem;

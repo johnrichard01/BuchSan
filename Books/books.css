@@ -97,6 +97,9 @@
 .save-button-inside-modal:hover{
     color: #f77f00;
 }
+.related-books{
+    color: #f77f00;
+}
 @media(max-width:992px){
     .new_arrival{
         height: 8rem;

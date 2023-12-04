@@ -1,16 +1,6 @@
-.modal-cover-image{
-    position: fixed;
-    top: 120px;
-    left: 120px;
-    width: 30%;
-    height: auto; 
-    padding: 2rem;
-    object-fit: cover;
-}
 .generated-hover:hover{
     scale: 1.05;
 }
-
 .book-details{
     background-color: #f77f00;
     color: #f5f7fa;
@@ -48,10 +38,6 @@
 .synopsis-body{
     font-size: 1rem;
 }
-.synopsis-text{
-    text-indent: 40px;
-    font-size: 1.25rem;
-}
 
 .btn-addtocard-modal{
     border: 2px solid #f77f00;
@@ -61,34 +47,69 @@
     background-color: #f77f00;
     color: white;
 }
-.accordion-button{
-    border: 2px solid #f77f00;
-    color: #f77f00 !important;
+.modal-cover-image{
+    position: relative;
+    width: 100%;
+    height: auto; 
+    padding: 2rem;
+    padding-bottom: 0.5rem;
 }
-.accordion-button::after{
-    color: #f77f00 !important;
+.synopsis-text{
+    text-indent: 40px;
+    font-size: 1rem;
 }
-.accordion-button .collapsed{
-    border: #f77f00;
+.image-group-div{
+    position: relative;
 }
-.accordion-button:focus{
-    background-color: rgba(247, 127, 0, 1);
-    color: white !important;
-    border:2px solid #f77f00; ;
-    box-shadow: 2px 2px 2px 2px rgba(247,127,0,0.2);
+.image-div-modal{
+    position: sticky;
+    top: 0;
+    left: auto;
+    width: 55%;
+    height: auto;
 }
-.accordion-button:not(:focus) {
-    background-color: #fff;
-    color: #000;
-  }
-
-.accordion-body{
-    outline: none;
-    border: none;
+.heart-div-modal{
+    position: relative;
 }
-.accordion-item{
-    outline: none;
-    border: none;
+.heart-inside-modal{
+    position: absolute;
+    color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.save-button-modal{
+    color: #f77f00;
+    background-color: transparent;
+}
+.save-div-modal{
+    position: absolute;
+    background-color:rgba(245, 247, 250, 0.4);
+    border-radius: 10px;
+    padding: 10px;
+    top: 55px;
+    right: 55px;
+}
+.save-div-modal:hover{
+    background-color:rgba(245, 247, 250, 0.6);
+    animation: ease-in;
+}
+.save-button-inside-modal:hover{
+    color: #f77f00;
+}
+.related-books{
+    color: #f77f00;
+}
+.new-div{
+    background: #f77f00;
+    color:white;
+    font-size:large;
+    left:5px;
+    border-radius:0;
+    font-family:sans-serif;
+    font-weight:300;
+    margin:20px -10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 @media(max-width:992px){
     .new_arrival{
@@ -103,9 +124,38 @@
         position: relative;
         top: auto;
         left: auto;
-        width: 50%;
+        width: 100%;
         height: auto; 
         padding: 2rem;
         object-fit: cover;
+    }
+    .testi-comment{
+        padding: 0 3rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    .save-div-modal{
+        position: absolute;
+        background-color:rgba(245, 247, 250, 0.4);
+        border-radius: 10px;
+        padding: 10px;
+        top: 50px;
+        right: 50px;
+    }
+    .modal-cover-image{
+        position: relative;
+        width: 100%;
+        height: auto; 
+        padding: 2rem;
+        padding-bottom: 0.5rem;
+    }
+    .image-div-modal{
+        position: sticky;
+        top: 0;
+        left: auto;
+        width: 75%;
+        height: auto;
     }
 }
