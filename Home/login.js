@@ -31,7 +31,7 @@ function saveData(){
         sessionStorage.setItem("name", current_admin.name);
         sessionStorage.setItem("username", current_admin.username);
         sessionStorage.setItem("email", current_admin.email);
-        window.location.href="../admin.html";
+        window.location.replace("../admin.html");
     }else if(matchedUser){
         let current_user=user_records.filter(function(v){
             return v.email===email && v.password===password;
@@ -40,7 +40,8 @@ function saveData(){
         sessionStorage.setItem("username", current_user.username);
         sessionStorage.setItem("email", current_user.email);
         sessionStorage.setItem("profilepicture", current_user.profilepicture);
-        window.location.href="../user_mainpage/user.html";
+        window.location.replace("../user_mainpage/user.html");
+        
     } else {
         document.getElementById("error-message").classList.add("error-print");
         document.getElementById("in-group1").classList.add("in-field-invalid");

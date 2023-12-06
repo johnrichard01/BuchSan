@@ -22,6 +22,14 @@
 .addto-cart:hover{
     scale: 1.05;
 }
+.saved-bookspage{
+    position: relative;
+    color: #f77f00;
+    padding: 6px;
+}
+.saved-bookspage:hover{
+    scale: 1.05;
+}
 .cart-amount{
     position: absolute;
     top: -8px;
