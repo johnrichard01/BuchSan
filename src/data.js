@@ -93,7 +93,7 @@ let allBooks=[
         id: "Life_9",
         cover: "images/Life_9.png",
         title: "The Most Powerful Woman In The Room Is You",
-        auhtor: "Lydia Fenet",
+        author: "Lydia Fenet",
         genre: "lifestyle",
         price: "680",
         rating: "4.60",
