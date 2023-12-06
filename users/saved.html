@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../universal.css">
     <link rel="stylesheet" href="../user_mainpage/user.css">
+    <link rel="stylesheet" href="../Books/books.css">
     <title>Saved Books</title>
 </head>
 <body>
@@ -168,6 +169,19 @@
            </div>
         </div>
     </div>
+    <div class="modal fade" id="generatepageModal" tabindex="-1" aria-labelledby="generateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header book-details">
+              <h1 class="modal-title h2  w-100 text-center fw-bold" id="generateModalLabel">Book Details</h1>
+              <button type="button" class="btn-close btn-close-white fw-bold fs-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" id="generateBody">
+    
+            </div>
+          </div>
+        </div>
+    </div>
 
     
 
@@ -293,6 +307,8 @@
     <script src="../src/data.js"></script>
     <script src="../src/Universal.js"></script>
     <script src="../src/userApp.js"></script>
+    <script src="../src/saved.js"></script>
+    <script src="saved.js"></script>
     <script src="../src/saved.js"></script>
 </body>
 </html>

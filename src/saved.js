@@ -19,6 +19,8 @@ function savedBooks(id){
                 let hearfill= document.getElementById("saved"+findDupe.id);
                 hearfill.classList.remove("heart-fill");
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                generatePage();
+                checkSaved();
                 console.log(saved_records)
             } if (elementExists("savedModal"+savebook.id)){
                 let hearfill= document.getElementById("savedModal"+savebook.id);
@@ -60,11 +62,21 @@ function clickEvent(event){
 }
 //for the heartfill
 function checkSaved(){
-    saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
-    saved_records.map(function(x){
-        let hearfill= document.getElementById("saved"+x.id);
-        hearfill.classList.add("heart-fill");
+   let saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+
+    if (saved_records.length === 0){
+        console.log("empty save array")
+    }else{
+        saved_records.map(function(x){
+            let hearfill= document.getElementById("saved"+x.id);
+            if(document.getElementById("saved"+x.id).classList.contains("heart-fill")){
+                console.log("already colored")
+            }else{
+                hearfill.classList.add("heart-fill");
+            }
+        
     })
+    }
 }
 function elementExists(id) {
     return !!document.getElementById(id);
@@ -84,8 +96,6 @@ function checkModal(){
         }
     })
 }
+
+
 checkSaved();
-
-
-
-
