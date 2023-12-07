@@ -1,3 +1,127 @@
+//pushing the books to saved
+function savedBooks(id){
+    let selected = id;
+    saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+
+    let savebook= allBooks.find(function(x){
+        return selected === x.id;
+    })
+    if (savebook){
+        let findDupe= saved_records.find(function(x){
+            return savebook.id === x.id;
+        })
+        if(findDupe){
+             if (elementExists("savedModal"+savebook.id)){
+                let hearfill= document.getElementById("savedModal"+savebook.id);
+                saved_records=saved_records.filter(function(x){
+                    return findDupe.id !== x.id;
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.remove("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("Modal")
+            } else if (elementExists("savedRelated"+savebook.id)){
+                let hearfill= document.getElementById("savedRelated"+savebook.id);
+                saved_records=saved_records.filter(function(x){
+                    return findDupe.id !== x.id;
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.remove("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("Related")
+            } else if(elementExists("saved"+savebook.id)){
+                console.log('dupe')
+                saved_records=saved_records.filter(function(x){
+                    return findDupe.id !== x.id;
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                let hearfill= document.getElementById("saved"+findDupe.id);
+                hearfill.classList.remove("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log(saved_records)
+            }
+            
+        }else{
+            if (elementExists("savedModal"+savebook.id)){
+                let hearfill= document.getElementById("savedModal"+savebook.id);
+                saved_records.push({
+                    "id": savebook.id,
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.add("heart-fill");
+                console.log("Modal")
+            }else if (elementExists("savedRelated"+savebook.id)){
+                let hearfill= document.getElementById("savedRelated"+savebook.id);
+                saved_records.push({
+                    "id": savebook.id,
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.add("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("Related")
+            } else if (elementExists("saved"+savebook.id)){
+                let hearfill= document.getElementById("saved"+savebook.id);
+                saved_records.push({
+                    "id": savebook.id,
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.add("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("saved")
+            }
+            
+        }
+    }     
+}
+//stopped unnecessary behavior
+function clickEvent(event){
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+}
+//for the heartfill
+function checkSaved(){
+   let saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+
+    if (saved_records.length === 0){
+        console.log("empty save array")
+    }else{
+        saved_records.map(function(x){
+            let hearfill= document.getElementById("saved"+x.id);
+            if(document.getElementById("saved"+x.id).classList.contains("heart-fill")){
+                console.log("already colored")
+            }else{
+                hearfill.classList.add("heart-fill");
+            }
+        
+    })
+    }
+}
+function elementExists(id) {
+    return !!document.getElementById(id);
+}
+function checkModal(){
+    saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+    saved_records.map(function(x){
+        if (elementExists("savedRelated"+x.id)){
+            let hearfillRelated=document.getElementById("savedRelated"+x.id);
+            hearfillRelated.classList.add("heart-fill");
+           
+        }else if(elementExists("savedModal"+x.id)){
+            let hearfillModal=document.getElementById("savedModal"+x.id);
+            hearfillModal.classList.add("heart-fill");
+        }else{
+            console.log("not here");
+        }
+    })
+}
+
+
 function generatePage(){
     let saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
     let cardscontainer=document.getElementById("generateSaved");
@@ -39,16 +163,18 @@ function generatePage(){
                 </div>
         </div>
         `
-       }))
+       }).join(""))
             
           
     }else{
         cardscontainer.innerHTML=`<h1 class="fw-bold">No save books at the moment</h1>`;
   }
 }
-  
-  generatePage();
-  checkSaved();
+  function generateALL(){
+    generatePage();
+    checkSaved();
+  }
+  generateALL();
 
 
   function generateRelated(id){
@@ -58,15 +184,13 @@ function generatePage(){
       return select !== x.id;
   });
   
-  let bookNew= bookFind.slice(-9);
   
-  let bookRand=  bookNew.sort(function(){
+  let bookRand=  bookFind.sort(function(){
           return Math.random()-0.5;
   });
-  console.log(bookRand);
   
   if (bookRand){
-      related.innerHTML= bookRand.slice(-5).map(function(x){
+      related.innerHTML= bookRand.slice(0,5).map(function(x){
           return `
                 <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" >        
                     <a type="button" onclick="openFirst(); generatenewModal('${x.id}'); checkModal();"  data-bs-toggle="modal" data-bs-target="#generatepageModal">
@@ -169,7 +293,7 @@ function generatePage(){
      </div>
      <div class="container-fluid mt-5 bg-body-tertiary p-0 w-100">
          <div class="container">
-            <h1 class="pt-3 fw-bold related-books">Related Books</h1>
+            <h1 class="pt-3 fw-bold related-books">Books you might like</h1>
          <div class="row row-cols-1 row-cols-4 justify-content-center" id="relatedContainer">
             
          </div>
@@ -205,4 +329,5 @@ function generatePage(){
     var modalInstance = new bootstrap.Modal(modal);
     modalInstance.show();
   }
+
 

@@ -1,11 +1,14 @@
-{/*  */}
-
 function generatePage(){
-    
     let cardscontainer=document.getElementById("generatePage");
-   cardscontainer.innerHTML=allBooks.slice(-10).map(function(x){
+    let genre= "fiction";
+    let findGenre= allBooks.filter(function(x){
+        return genre === x.genre;
+    })
+    if(findGenre){
+        console.log("true");
+        return (cardscontainer.innerHTML=findGenre.slice(0,10).map(function(x){
             return `
-                <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
+            <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
                     <div class="image-div">
                         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
                         <div class="new-div position-absolute badge">New Arrivals!</div>
@@ -36,20 +39,27 @@ function generatePage(){
                     </div>
                 </div>
             `
-        }).join("")
+        }).join(""))
+    }
+    else{
+  
+        console.log("failed");
+    }
   }
   
   generatePage();
-
+  
   function generateRelated(id){
   let select = id;
+  let genre= "fiction";
   let related= document.getElementById("relatedContainer");
   let bookFind = allBooks.filter(function(x){
       return select !== x.id;
   });
   
-  let bookNew= bookFind.slice(-9);
-  
+  let bookNew= bookFind.filter(function(x){
+    return genre === x.genre;
+  });
   let bookRand=  bookNew.sort(function(){
           return Math.random()-0.5;
   });
@@ -168,6 +178,8 @@ function generatePage(){
        
         `;
         generateRelated(bookFind.id);
+        
+        
     }else{
         console.log("failed");
     }
@@ -195,9 +207,7 @@ function generatePage(){
     var modalInstance = new bootstrap.Modal(modal);
     modalInstance.show();
   }
-
-//pushing the books to saved
-function savedBooks(id){
+  function savedBooks(id){
     let selected = id;
     saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
 
@@ -209,44 +219,68 @@ function savedBooks(id){
             return savebook.id === x.id;
         })
         if(findDupe){
-            if(elementExists("saved"+savebook.id)){
+             if (elementExists("savedModal"+savebook.id)){
+                let hearfill= document.getElementById("savedModal"+savebook.id);
+                saved_records=saved_records.filter(function(x){
+                    return findDupe.id !== x.id;
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.remove("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("Modal")
+            } else if (elementExists("savedRelated"+savebook.id)){
+                let hearfill= document.getElementById("savedRelated"+savebook.id);
+                saved_records=saved_records.filter(function(x){
+                    return findDupe.id !== x.id;
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.remove("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("Related")
+            } else if(elementExists("saved"+savebook.id)){
                 console.log('dupe')
                 saved_records=saved_records.filter(function(x){
                     return findDupe.id !== x.id;
                 })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 let hearfill= document.getElementById("saved"+findDupe.id);
                 hearfill.classList.remove("heart-fill");
-                sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 generatePage();
                 checkSaved();
                 console.log(saved_records)
-            } if (elementExists("savedModal"+savebook.id)){
-                let hearfill= document.getElementById("savedModal"+savebook.id);
-                hearfill.classList.remove("heart-fill");
-                console.log("Modal")
-            } if (elementExists("savedRelated"+savebook.id)){
-                let hearfill= document.getElementById("savedRelated"+savebook.id);
-                hearfill.classList.remove("heart-fill");
-                console.log("Related")
             }
             
         }else{
-            if (elementExists("saved"+savebook.id)){
+            if (elementExists("savedModal"+savebook.id)){
+                let hearfill= document.getElementById("savedModal"+savebook.id);
+                saved_records.push({
+                    "id": savebook.id,
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.add("heart-fill");
+                console.log("Modal")
+            }else if (elementExists("savedRelated"+savebook.id)){
+                let hearfill= document.getElementById("savedRelated"+savebook.id);
+                saved_records.push({
+                    "id": savebook.id,
+                })
+                sessionStorage.setItem("saved",JSON.stringify(saved_records));
+                hearfill.classList.add("heart-fill");
+                generatePage();
+                checkSaved();
+                console.log("Related")
+            } else if (elementExists("saved"+savebook.id)){
                 let hearfill= document.getElementById("saved"+savebook.id);
                 saved_records.push({
                     "id": savebook.id,
                 })
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 hearfill.classList.add("heart-fill");
+                generatePage();
+                checkSaved();
                 console.log("saved")
-            } if (elementExists("savedModal"+savebook.id)){
-                let hearfill= document.getElementById("savedModal"+savebook.id);
-                hearfill.classList.add("heart-fill");
-                console.log("Modal")
-            } if (elementExists("savedRelated"+savebook.id)){
-                let hearfill= document.getElementById("savedRelated"+savebook.id);
-                hearfill.classList.add("heart-fill");
-                console.log("Related")
             }
             
         }
@@ -268,14 +302,14 @@ function checkSaved(){
         saved_records.map(function(x){
             let hearfill= document.getElementById("saved"+x.id);
             if(elementExists("saved"+x.id)){
-                if(hearfill.classList.contains("heart-fill")){
-                     console.log("colored already")
-                 }else{
-                     hearfill.classList.add("heart-fill");
-                 }
-             }else{
-                 console.log("does not exist");
-             }
+               if(hearfill.classList.contains("heart-fill")){
+                    console.log("colored already")
+                }else{
+                    hearfill.classList.add("heart-fill");
+                }
+            }else{
+                console.log("does not exist");
+            }
     })
     }
 }

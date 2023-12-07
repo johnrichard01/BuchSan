@@ -1,11 +1,14 @@
-{/*  */}
-
 function generatePage(){
-    
     let cardscontainer=document.getElementById("generatePage");
-   cardscontainer.innerHTML=allBooks.slice(-10).map(function(x){
+    let genre= "romance";
+    let findGenre= allBooks.filter(function(x){
+        return genre === x.genre;
+    })
+    if(findGenre){
+        console.log("true");
+        return (cardscontainer.innerHTML=findGenre.slice(0,10).map(function(x){
             return `
-                <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
+            <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
                     <div class="image-div">
                         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
                         <div class="new-div position-absolute badge">New Arrivals!</div>
@@ -36,20 +39,27 @@ function generatePage(){
                     </div>
                 </div>
             `
-        }).join("")
+        }).join(""))
+    }
+    else{
+  
+        console.log("failed");
+    }
   }
   
   generatePage();
-
+  
   function generateRelated(id){
   let select = id;
+  let genre= "romance";
   let related= document.getElementById("relatedContainer");
   let bookFind = allBooks.filter(function(x){
       return select !== x.id;
   });
   
-  let bookNew= bookFind.slice(-9);
-  
+  let bookNew= bookFind.filter(function(x){
+    return genre === x.genre;
+  });
   let bookRand=  bookNew.sort(function(){
           return Math.random()-0.5;
   });
@@ -168,6 +178,8 @@ function generatePage(){
        
         `;
         generateRelated(bookFind.id);
+        
+        
     }else{
         console.log("failed");
     }
@@ -195,9 +207,7 @@ function generatePage(){
     var modalInstance = new bootstrap.Modal(modal);
     modalInstance.show();
   }
-
-//pushing the books to saved
-function savedBooks(id){
+  function savedBooks(id){
     let selected = id;
     saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
 
@@ -268,14 +278,14 @@ function checkSaved(){
         saved_records.map(function(x){
             let hearfill= document.getElementById("saved"+x.id);
             if(elementExists("saved"+x.id)){
-                if(hearfill.classList.contains("heart-fill")){
-                     console.log("colored already")
-                 }else{
-                     hearfill.classList.add("heart-fill");
-                 }
-             }else{
-                 console.log("does not exist");
-             }
+               if(hearfill.classList.contains("heart-fill")){
+                    console.log("colored already")
+                }else{
+                    hearfill.classList.add("heart-fill");
+                }
+            }else{
+                console.log("does not exist");
+            }
     })
     }
 }
