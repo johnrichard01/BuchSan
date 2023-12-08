@@ -19,7 +19,7 @@ function space(input) {
 }
 //only letters
 function onlyLetters(input) {
-    return /^[a-zA-Z]+$/.test(input);
+    return /^[a-zA-Z ]+$/.test(input);
 }
 //whole submit validation function
 function validate(event){
@@ -92,7 +92,9 @@ function validate(event){
             event.preventDefault();
             isValid=false;
         }
-        
+    } if(confirmpasswordVal!==passwordVal){
+        event.preventDefault();
+        isValid=false;
     } if(isValid){
         saveData();
     }
