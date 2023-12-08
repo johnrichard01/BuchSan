@@ -1,5 +1,5 @@
 {/*  */}
-
+let saved_records= new Array
 function generatePage(){
     
     let cardscontainer=document.getElementById("generatePage");
@@ -199,7 +199,7 @@ function generatePage(){
 //pushing the books to saved
 function savedBooks(id){
     let selected = id;
-    let saved_records= new Array
+
     saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
 
     let savebook= allBooks.find(function(x){
@@ -261,7 +261,7 @@ function clickEvent(event){
 }
 //for the heartfill
 function checkSaved(){
-   let saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+   saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
 
     if (saved_records.length === 0){
         console.log("empty save array")
