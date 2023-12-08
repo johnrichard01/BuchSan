@@ -41,7 +41,7 @@ function saveData(){
         sessionStorage.setItem("username", current_user.username);
         sessionStorage.setItem("email", current_user.email);
         sessionStorage.setItem("profilepicture", current_user.profilepicture);
-        sessionStorage.setItem("saved", JSON.stringify(current_user.saved)||[]);
+        sessionStorage.setItem("saved", JSON.stringify(current_user.saved||[]));
         window.location.replace("../user_mainpage/user.html");
         
     } else {
