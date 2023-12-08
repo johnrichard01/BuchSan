@@ -1,6 +1,7 @@
-let admin_records=new Array();
+
 function adminOne(){
     //set admin accounts
+    let admin_records=new Array();
     admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
     // Check if the data already exists in the array
     var newData = {
@@ -18,12 +19,15 @@ function adminOne(){
     if (!newDataExists) {
         // Data doesn't exist, so push it into the array
         admin_records.push(newData);
+        sessionStorage.setItem("admins",JSON.stringify(admin_records));
     }
 }
 
 // Repeat the process for the second set of data
 function adminTwo(){
-    
+    let admin_records=new Array();
+    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
+
    let newData = {
         "name": "John Richard Vidal Sumagui",
         "username": "Richard",
@@ -39,11 +43,12 @@ function adminTwo(){
     if (!newDataExists) {
         // Data doesn't exist, so push it into the array
         admin_records.push(newData);
+        sessionStorage.setItem("admins",JSON.stringify(admin_records));
     }
 }
 adminOne();
 adminTwo();
-sessionStorage.setItem("admins",JSON.stringify(admin_records));
+
 
 //for newsletter form validation
 function isValidEmail(email) {

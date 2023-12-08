@@ -13,6 +13,14 @@ function passwordsMatch(password, confirmPassword) {
         return password === confirmPassword;
     
   }
+//test for only spaces
+function space(input) {
+    return /^\s*$/.test(input);
+}
+//only letters
+function onlyLetters(input) {
+    return /^[a-zA-Z]+$/.test(input);
+}
 //whole submit validation function
 function validate(event){
     let fullnameVal = document.getElementById("fullname").value;
@@ -23,16 +31,36 @@ function validate(event){
     let empty="";
     let isValid=true;
 
-    if (fullnameVal==empty){
+    if (!onlyLetters(fullnameVal)){
+        event.preventDefault();
+        document.getElementById("error-message1").innerHTML="";
+        document.getElementById("error-message1").innerHTML="Please enter fullname with only letters"
+        document.getElementById("error-message1").classList.add("error-print");
+        document.getElementById("infieldError1").classList.add("in-field-invalid");
+        isValid=false;
+    }if (fullnameVal==empty){
+        event.preventDefault();
+
+        document.getElementById("error-message1").classList.add("error-print");
+        document.getElementById("infieldError1").classList.add("in-field-invalid");
+        isValid=false;
+    } if (space(fullnameVal)){
         event.preventDefault();
         document.getElementById("error-message1").classList.add("error-print");
         document.getElementById("infieldError1").classList.add("in-field-invalid");
         isValid=false;
-    } if (usernameVal==empty){
+    }if (usernameVal==empty){
         event.preventDefault();
         document.getElementById("error-message2").classList.add("error-print");
         document.getElementById("infieldError2").classList.add("in-field-invalid");
-    } if (emailVal==empty){
+        isValid=false;
+    }if (space(usernameVal)){
+        event.preventDefault();
+        document.getElementById("error-message2").classList.add("error-print");
+        document.getElementById("infieldError2").classList.add("in-field-invalid");
+        isValid=false;
+    }
+    if (emailVal==empty){
         event.preventDefault();
         document.getElementById("error-message3").classList.add("error-print");
         document.getElementById("infieldError3").classList.add("in-field-invalid");
@@ -123,42 +151,59 @@ function saveData(){
     username=document.getElementById("username").value;
     email=document.getElementById("email").value;
     password=document.getElementById("password").value;
-    
+    let admin_records=new Array();
+    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
     let user_records=new Array();
     user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
     if (user_records.some(function(v){
-        return v.email==email;
+        return v.email.toLowerCase()==email.toLowerCase();
     })){
         document.getElementById("error-duplicate1").classList.add("error-print");
     }else {
         // Check for duplicate username before pushing the new user record
         if (user_records.some(function(v) {
-            return v.username == username;
+            return v.username.toLowerCase() == username.toLowerCase();
         })) {
             // Display an error message for duplicate username
             document.getElementById("error-duplicate2").classList.add("error-print");
         } else{
-            user_records.push({
+            if (admin_records.some(function(v){
+                return v.email.toLowerCase() === email.toLowerCase();
+            })){
+                document.getElementById("error-duplicate1").classList.add("error-print");
+            }else{
+                if(admin_records.some(function(v){
+                    return v.username.toLowerCase() === username.toLowerCase();
+                })){
+                   document.getElementById("error-duplicate2").classList.add("error-print"); 
+                }else{
+                    user_records.push({
                 "name": name,
                 "username": username,
                 "email": email,
                 "password": password,
                 "profilepicture":"../images/profile-picture.png"
-            })
-            
-            document.getElementById("fullname").value="";
-            document.getElementById("username").value="";
-            document.getElementById("email").value="";
-            document.getElementById("password").value="";
-            document.getElementById("confirmpassword").value="";
-            message.innerHTML="";
-            openPopup();
-            sessionStorage.setItem("users",JSON.stringify(user_records));
-
+                })
+                
+                document.getElementById("fullname").value="";
+                document.getElementById("username").value="";
+                document.getElementById("email").value="";
+                document.getElementById("password").value="";
+                document.getElementById("confirmpassword").value="";
+                message.innerHTML="";
+                openPopup();
+                sessionStorage.setItem("users",JSON.stringify(user_records));
+                }
+            }
         }
     }
 }
+            
+        
+        
+    
 
+ 
 //event for submit button
 document.getElementById("submit").addEventListener("click",validate);
 document.getElementById("confirmpassword").addEventListener("input",realtimeCheck);

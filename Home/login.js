@@ -31,6 +31,7 @@ function saveData(){
         sessionStorage.setItem("name", current_admin.name);
         sessionStorage.setItem("username", current_admin.username);
         sessionStorage.setItem("email", current_admin.email);
+        
         window.location.replace("../admin.html");
     }else if(matchedUser){
         let current_user=user_records.filter(function(v){
@@ -40,6 +41,7 @@ function saveData(){
         sessionStorage.setItem("username", current_user.username);
         sessionStorage.setItem("email", current_user.email);
         sessionStorage.setItem("profilepicture", current_user.profilepicture);
+        sessionStorage.setItem("saved", JSON.stringify(current_user.saved));
         window.location.replace("../user_mainpage/user.html");
         
     } else {
