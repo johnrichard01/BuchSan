@@ -1,5 +1,5 @@
 {/*  */}
-let saved_records= new Array
+
 function generatePage(){
     
     let cardscontainer=document.getElementById("generatePage");
@@ -199,8 +199,8 @@ function generatePage(){
 //pushing the books to saved
 function savedBooks(id){
     let selected = id;
-
-    saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+    let saved_records= new Array
+    saved_records= JSON.parse(sessionStorage.getItem("saved"))||[];
 
     let savebook= allBooks.find(function(x){
         return selected === x.id;
@@ -261,7 +261,8 @@ function clickEvent(event){
 }
 //for the heartfill
 function checkSaved(){
-   saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+    let saved_records= new Array
+   saved_records= JSON.parse(sessionStorage.getItem("saved"))||[];
 
     if (saved_records.length === 0){
         console.log("empty save array")
@@ -284,7 +285,8 @@ function elementExists(id) {
     return !!document.getElementById(id);
 }
 function checkModal(){
-    saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+    let saved_records= new Array
+    saved_records= JSON.parse(sessionStorage.getItem("saved"))||[];
     saved_records.map(function(x){
         if (elementExists("savedRelated"+x.id)){
             let hearfillRelated=document.getElementById("savedRelated"+x.id);
