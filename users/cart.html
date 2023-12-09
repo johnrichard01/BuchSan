@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../universal.css">
     <link rel="stylesheet" href="../user_mainpage/user.css">
-   
     <title>Cart</title>
 </head>
 <body>
@@ -148,117 +147,44 @@
     <h2>Your Cart</h2>
 </div>
 
-  <div class="container cart-page">
+<div class="container cart-page" id="noContent">
     <div class="row">
         <div class="col-md-8">
-            <div class="shopdetails">
-            <table>
-                <tr>
-                    <th>ITEM</th>
-                    <th>QUANTITY</th>
-                    <th>SUBTOTAL</th>
-                    <th class="iremoves">REMOVE</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="../images/best_1.png" >
-                            <div>
-                                <p id="booksCategory">Author : Mitch Albom</p>
-                                <p>Category : Selp-Help</p>
-                                <small> Price: &#8369; 100.00</small>
-                                <br>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" value="1"></td>
-                    <td class="iremove">&#8369; 100.00</td>
-                    <td class="iremove"><button class="btn-delete"><i class="fa fa-trash delete"></i></button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="../images/SALE_2.png" >
-                            <div>
-                                <p id="booksCategory">Author : Mitch Albom</p>
-                                <p>Category : Selp-Help</p>
-                                <small> Price: &#8369; 100.00</small>
-                                <br>
-                        </div>
-                    </td>
-                    <td><input type="number" value="1"></td>
-                    <td>&#8369; 100.00</td>
-                    <td class="iremove"><button class="btn-delete"><i class="fa fa-trash delete"></i></button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="../images/SALE_9.png" >
-                            <div>
-                                <p id="booksCategory">Author : Mitch Albom</p>
-                                <p>Category : Selp-Help</p>
-                                <small> Price: &#8369; 100.00</small>
-                                <br>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" value="1"></td>
-                    <td>&#8369; 100.00</td>
-                    <td class="iremove"><button class="btn-delete"><i class="fa fa-trash delete"></i></button></td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="cart-info">
-                            <img src="../images/rom_6.png" >
-                            <div>
-                                <p id="booksCategory">Author : Mitch Albom</p>
-                                <p>Category : Selp-Help</p>
-                                <small> Price: &#8369; 100.00</small>
-                                <br>
-                            </div>
-                        </div>
-                    </td>
-                    <td><input type="number" value="1"></td>
-                    <td>&#8369; 100.00</td>
-                    <td class="iremove"><button class="btn-delete"><i class="fa fa-trash delete"></i></button></td>
-                </tr>
-            </table>
+            <div class="shopdetails" id="cartTable">
+                <table id="carBody">
+                    <tr>
+                        <th class="text-center">ITEM</th>
+                        <th class="text-center">QUANTITY</th>
+                        <th class="text-center">SUBTOTAL</th>
+                        <th class="iremoves text-center">REMOVE</th>
+                    </tr>
+
+                        <!-- <tr>
+                            <td>
+                                <div class="cart-info">
+                                    <img src="../images/best_1.png"  >
+                                    <div>
+                                        <p id="booksCategory">Author : Mitch Albom</p>
+                                        <p>Category : Selp-Help</p>
+                                        <small> Price: &#8369; 100.00</small>
+                                        <br>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><input type="number" value="1"></td>
+                            <td class="iremove">&#8369; 100.00</td>
+                            <td class="iremove"><button class="btn-delete"><i class="fa fa-trash delete"></i></button></td>
+                        </tr> -->
+
+                </table>
+            </div>
         </div>
-        </div>
-        <div class="col-md-4 ctotal">
+        <div class="col-md-4 ctotal" id="total">
           
-            <div class="Cart-total">
-                <h5>ORDER SUMMARY</h5>
-            </div>
-            <div class="container tutal">
-            <div class="stotal">
-                <h6>Subtotal</h6>
-                <p>&#8369; 100.00</p>
-            </div>
-            <div class="shipping">
-                <h6>Shipping</h6>
-                <p>&#8369; 100.00</p>
-            </div>
-            <hr style="border:2px solid rgb(115, 78, 10);">
-            <div class="ordertotal">
-                <h5>Order Total</h5>
-                <p>&#8369; 100.00</p>
-            </div>
-            <div class="checkout">
-                <button class="btn-checkout" type="button">Proceed to Checkout</button>
-            </div>
-        </div>
-        </div>
+                
         </div>
     </div>
 </div>
- 
-<div class="container relative-books">
-    <h2>You Might Also Like</h2>
-</div>
-
-
-
 
     <!--Footer-->
     <div class="ftr container-fluid">
@@ -379,10 +305,11 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../src/data.js"></script>
     <script src="../src/Universal.js"></script>
-    <script src="./cart.js"></script>
     <script src="../src/userApp.js"></script>
-    
+    <script src="../src/cartUniversal.js"></script>
+    <script src="cart.js"></script>
     
 </body>
 </html>

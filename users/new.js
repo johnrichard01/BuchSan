@@ -182,7 +182,7 @@ function generatePage(){
     var newModal = new bootstrap.Modal(firstModal);
     newModal.hide();
   }
-  
+   
   function showSecond() {
     var secondModal = document.getElementById('generatepageModal');
     var newModal = new bootstrap.Modal(secondModal);

@@ -35,7 +35,7 @@ function generatePage(){
                         <span> &#8369; ${x.price}</span>
                     </div>    
                     <div class="addToCart">    
-                        <a href="#"> <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
+                        <a href="#"> <button  onclick="clickEvent(event); addCart('${x.id}')" class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
                     </div>
                 </div>
             `
@@ -96,7 +96,7 @@ function generatePage(){
                             <span> &#8369; ${x.price}</span>
                         </div>
                         <div class="addToCart">    
-                            <a > <button class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
+                            <a > <button  onclick="clickEvent(event); addCart('${x.id}')" class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
                         </div>
                     </a>
                 </div>
@@ -138,7 +138,7 @@ function generatePage(){
   
                  <div class="col-12 row justify-content-center">
                      <div class="addtocardModal mb-3 d-flex justify-content-center col-11">
-                         <a  type="button" class="btn w-100 btn-addtocard-modal fs-6 fw-bold p-0 p-lg-2">ADD TO CART</a>
+                         <a   onclick="clickEvent(event); addCart('${bookFind.id}')" type="button" class="btn w-100 btn-addtocard-modal fs-6 fw-bold p-0 p-lg-2">ADD TO CART</a>
                      </div>
                  </div>
                  </div>
