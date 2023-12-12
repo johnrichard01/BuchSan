@@ -33,3 +33,12 @@ function calculateCart(){
         cartIcon.innerHTML= total;
 }
 calculateCart();
+
+
+function calculateSaved(){
+    let saved_records= new Array
+    saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+    let saveIcon = document.getElementById('saveCounter');
+    saveIcon.innerHTML= saved_records.length;
+}
+calculateSaved();

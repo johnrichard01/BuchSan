@@ -245,6 +245,7 @@ function generatePage(){
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 let hearfill= document.getElementById("saved"+findDupe.id);
                 hearfill.classList.remove("heart-fill");
+                calculateSaved();
                 generatePage();
                 checkSaved();
                 console.log(saved_records)
@@ -258,6 +259,7 @@ function generatePage(){
                 })
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 hearfill.classList.add("heart-fill");
+                calculateSaved();
                 console.log("Modal")
             }else if (elementExists("savedRelated"+savebook.id)){
                 let hearfill= document.getElementById("savedRelated"+savebook.id);
@@ -266,6 +268,7 @@ function generatePage(){
                 })
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 hearfill.classList.add("heart-fill");
+                calculateSaved();
                 generatePage();
                 checkSaved();
                 console.log("Related")
@@ -276,6 +279,7 @@ function generatePage(){
                 })
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
                 hearfill.classList.add("heart-fill");
+                calculateSaved();
                 generatePage();
                 checkSaved();
                 console.log("saved")

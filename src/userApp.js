@@ -14,6 +14,8 @@ generateName();
 
 
 function logOut(){
+    let cartItems= new Array
+    cartItems=JSON.parse(sessionStorage.getItem("Cart"))||[];
     let user_records=new Array();
     user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
     let saved_records= new Array
@@ -24,9 +26,11 @@ function logOut(){
     })
     if (findUser){
         findUser.saved=saved_records;
+        findUser.Cart=cartItems;
         sessionStorage.setItem("users",JSON.stringify(user_records));
     }
-    sessionStorage.removeItem("saved")
+    sessionStorage.removeItem("Cart");
+    sessionStorage.removeItem("saved");
     sessionStorage.removeItem("name");
     sessionStorage.removeItem("username");
     sessionStorage.removeItem("email");
