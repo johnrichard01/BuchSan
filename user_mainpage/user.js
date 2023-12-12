@@ -1,16 +1,13 @@
-function generatePage(){
-    let cardscontainer=document.getElementById("generatePage");
-    let genre= "lifestyle";
-    let findGenre= allBooks.filter(function(x){
-        return genre === x.genre;
-    })
-    if(findGenre){
-        console.log("true");
-        return (cardscontainer.innerHTML=findGenre.slice(0,10).map(function(x){
-            return `
-            <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
+let cardContainerNew= document.getElementById("cardContainerNew");
+
+
+function generateCards(x){
+    return(cardContainerNew.innerHTML= allBooks.slice(-5).map(function(x){
+        return`
+        <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generateModal('${x.id}');  checkModal();"  >        
                     <div class="image-div">
                         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+                        <div class="new-div position-absolute badge">New Arrivals!</div>
                         <div class="save-div">
                             <a href="#" id="heart${x.id}" onclick="clickEvent(event);savedBooks('${x.id}');">
                                 <div class="heart-div">
@@ -36,41 +33,53 @@ function generatePage(){
                     <div class="addToCart">    
                         <a href="#"> <button  onclick="clickEvent(event); addCart('${x.id}')" class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
                     </div>
-                </div>
-            `
-        }).join(""))
-    }
-    else{
+                </div>`
+    }).join(""))
+}
+
+generateCards();
+
+const swiper = new Swiper('.swiper', {
+    slidesPerview:1,
+    spaceBetween: 30,
+    loop: true,
   
-        console.log("failed");
-    }
-  }
   
-  generatePage();
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
   
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  });
+
+
   function generateRelated(id){
-  let select = id;
-  let genre= "lifestyle";
-  let related= document.getElementById("relatedContainer");
-  let bookFind = allBooks.filter(function(x){
-      return select !== x.id;
-  });
-  
-  let bookNew= bookFind.filter(function(x){
-    return genre === x.genre;
-  });
-  let bookRand=  bookNew.sort(function(){
-          return Math.random()-0.5;
-  });
-  console.log(bookRand);
-  
-  if (bookRand){
-      related.innerHTML= bookRand.slice(-5).map(function(x){
-          return `
-                <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" >        
-                    <a type="button" onclick="openFirst(); generatenewModal('${x.id}'); checkModal();"  data-bs-toggle="modal" data-bs-target="#generatepageModal">
+    let select = id;
+    let related= document.getElementById("relatedContainer");
+    let bookFind = allBooks.filter(function(x){
+        return select !== x.id;
+    });
+    console.log(bookFind);
+    let bookNew= bookFind.slice(-9);
+    let bookRand=  bookNew.sort(function(){
+            return Math.random()-0.5;
+        });
+    console.log(bookRand);
+
+    if (bookRand){
+        related.innerHTML= bookRand.slice(-5).map(function(x){
+            return `
+            <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" >        
+                    <a type="button" onclick="openFirst(); generateModal('${x.id}'); checkModal();"  data-bs-toggle="modal" data-bs-target="#newArrivalModal">
                         <div class="image-div">
                             <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+                            <div class="new-div position-absolute badge">New Arrivals!</div>
                             <div class="save-div d-flex flex-wrap">
                                 <a id="heart${x.id}" onclick="savedBooks('${x.id}'); clickEvent(event);">
                                     <div class="heart-div">
@@ -98,21 +107,21 @@ function generatePage(){
                         </div>
                     </a>
                 </div>
-          `
-      }).join("")
+            `
+        }).join("")
+    }
   }
-  }
-  
-  
-  
-  function generatenewModal(id){
+
+
+  function generateModal(id){
     let selected=id;
+    console.log(selected);
     let bookFind = allBooks.find(function(x){
         return x.id === selected;
-        
     });
     if (bookFind){
-        let modal= document.getElementById("generateBody");
+        let modal= document.getElementById("modalgenerateBody");
+        console.log(selected);
          modal.innerHTML = `
          <div class="row mb-5 mt-5">
          <div class=" position-relative col-12 col-lg-6 d-flex flex-wrap justify-content-center align-content-start">
@@ -157,7 +166,7 @@ function generatePage(){
                      </div>
                  </div>
                  </div>
-                 <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; ${bookFind.price}</h4>
+                 <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; 999</h4>
                  
              <div class="container mx-2">
                  ${bookFind.synop}
@@ -176,16 +185,14 @@ function generatePage(){
        
         `;
         generateRelated(bookFind.id);
-        
-        
     }else{
         console.log("failed");
     }
-  
-  }
-  
-  function openFirst() {
-    var firstModal = document.getElementById('generatepageModal');
+
+
+}
+function openFirst() {
+    var firstModal = document.getElementById('newArrivalModal');
     firstModal.addEventListener('hidden.bs.modal', function(){
         setTimeout(showSecond, 100);}
         , { once: true });
@@ -194,14 +201,14 @@ function generatePage(){
   }
   
   function showSecond() {
-    var secondModal = document.getElementById('generatepageModal');
+    var secondModal = document.getElementById('newArrivalModal');
     var newModal = new bootstrap.Modal(secondModal);
     newModal.show();
   }
 
 
   function openModal() {
-    var modal = document.getElementById('generatepageModal');
+    var modal = document.getElementById('newArrivalModal');
     var modalInstance = new bootstrap.Modal(modal);
     modalInstance.show();
   }
@@ -225,7 +232,7 @@ function generatePage(){
                 let hearfill= document.getElementById("saved"+findDupe.id);
                 hearfill.classList.remove("heart-fill");
                 sessionStorage.setItem("saved",JSON.stringify(saved_records));
-                generatePage();
+                generateCards();
                 checkSaved();
                 console.log(saved_records)
             } if (elementExists("savedModal"+savebook.id)){

@@ -35,7 +35,7 @@ function generatePage(){
                     </div>
                 </td>
                 <td class="iremove text-center">&#8369; ${x.items * search.price}</td>
-                <td class="iremove r">
+                <td class="iremove ">
                     <div class="d-flex flex-wrap justify-content-center">
                         <button onclick="removeCart('${x.id}')" class="btn btn-delete "><i class="fa fa-trash delete"></i></button>
                     </div>

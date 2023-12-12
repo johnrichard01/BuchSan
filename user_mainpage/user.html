@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="../universal.css">
     <link rel="stylesheet" href="user.css">
     <title>Homepage(user)</title>
@@ -139,7 +140,203 @@
             </div>
         </div>
     </nav>
+    <!-- Content -->
+    <!--Homepage Content-->
+    <!-- Carousel Section -->
+    <div class="carousel slide mb-5 carousel-fade" id="sectionCarousel" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item main-carousel active" data-bs-interval="2000">
+                <div class="overlay-image1">
+                </div>
+                <div class="container d-flex justify-content-lg-start justify-content-center align-items-center ">
+                    <div class="carousel-content callto-content d-flex flex-wrap flex-column ps-0 ps-lg-5 ms-0 ms-lg-5">
+                            <h1 class="display-6 mb-4 fw-bold">BuchSan</h1>
+                            <p class="lead mb-5">"More than just a bookstore, it is a gateway to limitless tales. Explore, indulge, and let the enchantment of words captivate your soul."</p>
+                            <a href="../users/bestseller-user.html" class="btn btn-lg btn-carouselsign fw-bold w-100">
+                                BEST SELLERS 
+                            </a> 
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item main-carousel" data-bs-interval="2000">
+                <div class="overlay-image2">
+                </div>
+                <div class="container d-flex justify-content-lg-start justify-content-center align-items-center ">
+                    <div class="carousel-content callto-content d-flex flex-wrap flex-column ps-0 ps-lg-5 ms-0 ms-lg-5">
+                            <h1 class="display-6 mb-4 fw-bold">BuchSan</h1>
+                            <p class="lead mb-5">"More than just a bookstore, it is a gateway to limitless tales. Explore, indulge, and let the enchantment of words captivate your soul."</p>
+                            <a href="../users/bestseller-user.html" class="btn btn-lg btn-carouselsign fw-bold w-100">
+                                BEST SELLERS 
+                            </a> 
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item main-carousel" data-bs-interval="2000">
+                <div class="overlay-image3">
+                </div>
+                <div class="container d-flex justify-content-lg-start justify-content-center align-items-center ">
+                    <div class="carousel-content callto-content d-flex flex-wrap flex-column ps-0 ps-lg-5 ms-0 ms-lg-5">
+                            <h1 class="display-6 mb-4 fw-bold">BuchSan</h1>
+                            <p class="lead mb-5">"More than just a bookstore, it is a gateway to limitless tales. Explore, indulge, and let the enchantment of words captivate your soul."</p>
+                            <a href="../users/bestseller-user.html" class="btn btn-lg btn-carouselsign fw-bold w-100">
+                                BEST SELLERS 
+                            </a> 
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
 
+    <!-- Popular Categ Cards -->
+    <div class="container-fluid popular-categ-bg">
+        <div class="container my-5">
+            <h1 class="display-6 section-title fw-bold mb-5 pt-5 ">Popular Categories</h1>
+            <div class="row py-3">
+                <div class="col-12 col-lg-12 col-xl mb-5 mb-xl-0  d-flex flex-wrap justify-content-center w-100">
+                    <a href="../users/children.html" class="card-hover ">
+                        <div class="card h-100 card-pop" style="width: 20rem;">
+                            <img src="../images/children_categories.png" class="card-img card-image " loading="lazy" alt="...">
+                            <div class="content h-100 w-100 d-flex align-items-center justify-content-center">
+                                <h1 class="fw-bold text-center display-3">Children</h1>
+                            </div> 
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="col-12 col-lg-12 col-xl mb-5 mb-xl-0  d-flex flex-wrap justify-content-center w-100">
+                    <a href="../users/fiction.html"  class="card-hover">
+                        <div class="card h-100 card-pop" style="width: 20rem;">
+                            <img src="../images/fiction_categories.png" class="card-img card-image"  loading="lazy" alt="...">
+                            <div class="content h-100 w-100 d-flex align-items-center justify-content-center">
+                                <h1 class="fw-bold display-3 text-center">Fiction</h1>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                <div class="col-12 col-lg-12 col-xl mb-5 mb-xl-0  d-flex flex-wrap justify-content-center w-100">
+                    <a href="../users/romance.html"  class="card-hover ">
+                        <div class="card card-pop h-100" style="width: 20rem;">
+                            <img src="../images/romance-category-bg.png" class="card-img card-image"  loading="lazy" alt="...">
+                            <div class="content h-100 w-100 d-flex align-items-center justify-content-center">
+                                <h1 class="fw-bold display-3 text-center">Romance</h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Featured Authors-->
+<div class="container-fluid">
+   <div class="container">
+    <h1 class="display-6 section-title fw-bolder mb-5 pt-5 ">Featured Authors</h1>
+        <div class="row">
+            <div class="col-md-5 author">
+                    <img src="../images/ali.png" class="img-fluid">
+            </div>
+            <div class="col-md-7 fa2">
+                    <h4 class="authorname"> ALI HAZELWOOD</h4>
+                        <p>Ali Hazelwood is a New York Times bestselling author who is also a writer of peer-reviewd
+                        articles about brain science in which no one makes out, and the ever after is not always happy.
+                        Originally from Italy, she lived in Germany and Japan before moving to the US to pursue a Ph.D. in nueroscience.
+                        When Ali is not at work, she can be found running, eating cake pops, or watching sci-fi movies.
+                    </p>   
+                    <p>
+                        All of the Ali Hazelwood books have hit multiple bestseller list. Her adult contemporary romance books are all set in the world of academia, and they center on women in STEM.
+                    </p> 
+                    <a href="#" class="authorbio">SEE MORE</a>
+                </div>
+         </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+    <!-- New Arrival -->
+    <div class="container-fluid new-arrival-bg  py-5">
+        <div class="container">
+            <h1 class="section-title  fw-bold display-6 pt-5 ">
+                New Arrivals
+            </h1>
+        </div>
+        <div class="container d-flex flex-wrap justify-content-center pb-3" id="cardContainerNew">
+            
+        </div>
+        <div class="container d-flex flex-wrap justify-content-end align-items-start pb-4">
+            <a href="../users/new.html" class="fw-bold fs-4 seemore-text">SEE MORE</a>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="newArrivalModal" tabindex="-1" aria-labelledby="newArrivalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header book-details">
+              <h1 class="modal-title h2  w-100 text-center fw-bold" id="newArrivalModalLabel">Book Details</h1>
+              <button type="button" class="btn-close btn-close-white fw-bold fs-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" id="modalgenerateBody">
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Testimonials Section -->
+    <div class="container-fluid testimonial-bg my-5 d-flex flex-column align-items-center justify-content-center align-content-center">
+        <div class="container mb-5">
+            <h1 class="display-6 fw-bold col-12 section-title ">Testimonials</h1>
+        </div>
+        <div class="container d-flex flex-wrap align-items-center justify-content-center">
+            <div class="testimonials swiper">
+                <div class=" testi-content swiper-wrapper">
+                    <div class="slide swiper-slide">
+                       <img src="../images/test_3.png" alt="" class="image img-fluid">
+                       
+                       
+                       <p class="testi-comment fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique sed quasi debitis, sit exercitationem laudantium accusamus officiis vero cupiditate praesentium officia necessitatibus aliquid qui rem vitae amet! Laborum, itaque aliquam.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi img-fluid bi-quote quote-icon" viewBox="0 0 16 16">
+                            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                        </svg>
+                        <div class="details d-flex flex-column align-items-center">
+                            <span class="name fw-bold h4">Hannah Jin</span>
+                        </div>
+                    </div>
+                    <div class="slide swiper-slide">
+                        <img src="../images/test_3.png" class="image img-fluid">
+                        
+                        
+                        <p class="testi-comment fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique sed quasi debitis, sit exercitationem laudantium accusamus officiis vero cupiditate praesentium officia necessitatibus aliquid qui rem vitae amet! Laborum, itaque aliquam.</p>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi img-fluid bi-quote quote-icon" viewBox="0 0 16 16">
+                             <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                         </svg>
+                         <div class="details d-flex flex-column align-items-center">
+                             <span class="name fw-bold h4">Kaye Keith</span>
+                         </div>
+                     </div>
+                     <div class="slide swiper-slide">
+                        <img src="../images/test_3.png" alt="" class="image img-fluid">
+                        
+                        
+                        <p class="testi-comment fw-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique sed quasi debitis, sit exercitationem laudantium accusamus officiis vero cupiditate praesentium officia necessitatibus aliquid qui rem vitae amet! Laborum, itaque aliquam.</p>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi img-fluid bi-quote quote-icon" viewBox="0 0 16 16">
+                             <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                         </svg>
+                         <div class="details d-flex flex-column align-items-center">
+                             <span class="name fw-bold h4">M.J Samson</span>
+                         </div>
+                     </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
     <!--Footer-->
     <div class="ftr container-fluid">
         <div class="container pt-5">
@@ -257,8 +454,11 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/data.js"></script>
     <script src="../src/Universal.js"></script>
     <script src="../src/userApp.js"></script>
+    <script src="user.js"></script>
     <script src="../src/cartUniversal.js"></script>
 </body>
 </html>

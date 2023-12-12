@@ -1,3 +1,6 @@
+body{
+    padding-top: 110    px;
+}
 .dropdown-menu li {
     position: relative;
 }
@@ -49,4 +52,330 @@
 }
 .profile-display::after{
     content: none;
+}
+.section-title{
+    color: #f77f00;
+}
+.seemore-text{
+    color: #f77f00;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: small;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.main-carousel{
+    height: 32rem;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+.carousel-content{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 40px;
+    padding-bottom: 50px;
+}
+.overlay-image1{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/carousel-item1.png);
+    opacity: 0.7;
+}
+.overlay-image2{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/carousel-item2.png);
+    opacity: 0.7;
+}
+.overlay-image3{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/carousel-item3.png);
+    opacity: 0.7;
+}
+.card-pop{
+    position: relative;
+    border-radius: 10px;
+    box-shadow:5px 10px 10px -1px rgba(17,17,17,0.75);
+}
+
+.content{
+    position: absolute;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.6s ease-in-out;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: #f77f00;
+    visibility: hidden;
+}
+.card-hover:hover .content{
+    visibility: visible;
+}
+.image-control1{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.testimonial-bg{
+    height: 70vh;
+    width: 100%;
+}
+.testimonials{
+    position: relative;
+    min-width: auto;
+    width: 100%;
+    padding: 50px 0;
+
+}
+.testimonials .image{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.testimonials .slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.testi-comment{
+    padding: 0 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+}
+.quote-icon{
+    color: #f77f00;
+}
+.swiper-pagination-bullet-active {
+    background-color: #f77f00 !important;
+}
+.swiper-button-prev{
+   color: #f77f00 !important;
+}
+.swiper-button-next{
+    color: #f77f00 !important;
+ }
+
+.generated-hover:hover{
+    scale: 1.05;
+}
+/* modal */
+.book-details{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.outer-star{
+    position: relative;
+    font-size: 2rem;
+    display: inline-block;
+}
+.outer-star::before{
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: #d3d3d3;
+}
+
+.inner-star{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.inner-star::before{
+    content: "\2605 \2605 \2605 \2605 \2605";
+    color: gold;
+}
+.rating-text{
+    font-size: 1.25rem;
+}
+.rating-box{
+    max-width: 90%;
+    width: 40%;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+.synopsis-body{
+    font-size: 1rem;
+}
+
+.btn-addtocard-modal{
+    border: 2px solid #f77f00;
+    color: #f77f00;
+}
+.btn-addtocard-modal:hover{
+    background-color: #f77f00;
+    color: white;
+}
+.modal-cover-image{
+    position: relative;
+    width: 100%;
+    height: auto; 
+    padding: 2rem;
+    padding-bottom: 0.5rem;
+}
+.synopsis-text{
+    text-indent: 40px;
+    font-size: 1rem;
+}
+.image-group-div{
+    position: relative;
+}
+.image-div-modal{
+    position: sticky;
+    top: 0;
+    left: auto;
+    width: 55%;
+    height: auto;
+}
+.heart-div-modal{
+    position: relative;
+}
+.heart-inside-modal{
+    position: absolute;
+    color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.save-button-modal{
+    color: #f77f00;
+    background-color: transparent;
+}
+.save-div-modal{
+    position: absolute;
+    background-color:rgba(245, 247, 250, 0.4);
+    border-radius: 10px;
+    padding: 10px;
+    top: 55px;
+    right: 55px;
+}
+.save-div-modal:hover{
+    background-color:rgba(245, 247, 250, 0.6);
+    animation: ease-in;
+}
+.save-button-inside-modal:hover{
+    color: #f77f00;
+}
+.related-books{
+    color: #f77f00;
+}
+.new-div{
+    background: #f77f00;
+    color:white;
+    font-size:large;
+    left:5px;
+    border-radius:0;
+    font-family:sans-serif;
+    font-weight:300;
+    margin:20px -10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.btn-carouselsign{
+    border: 2px solid #f77f00;
+    color: #f5f7fa;
+    background-color: #f77f00;
+}
+.btn-carouselsign:hover{
+    background-color: #d26e04;
+
+}
+.callto-content{
+    max-width: 500px;
+    width: 90%;
+}
+@media(max-width:992px){
+    .new_arrival{
+        height: 8rem;
+        width:18rem;
+        font-size: 5rem;
+        left: -1rem;
+        top: 1rem;
+    }
+
+    .modal-cover-image{
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto; 
+        padding: 2rem;
+        object-fit: cover;
+    }
+    .testi-comment{
+        padding: 0 3rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+    }
+    .save-div-modal{
+        position: absolute;
+        background-color:rgba(245, 247, 250, 0.4);
+        border-radius: 10px;
+        padding: 10px;
+        top: 50px;
+        right: 50px;
+    }
+    .modal-cover-image{
+        position: relative;
+        width: 100%;
+        height: auto; 
+        padding: 2rem;
+        padding-bottom: 0.5rem;
+    }
+    .image-div-modal{
+        position: sticky;
+        top: 0;
+        left: auto;
+        width: 75%;
+        height: auto;
+    }
+}
+
+/*--Featured Author--*/
+
+
+.author{
+    display: flex;
+    justify-content: center;
+}
+
+.fa2{
+    padding:70px 0px;
+   font-size: large;
+}
+.authorname{
+    margin-bottom:15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.authorbio{
+    text-decoration: none;
+    color:#f77f00;
+    font-weight: bolder;
+    font-size: medium;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

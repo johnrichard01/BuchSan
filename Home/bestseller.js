@@ -13,6 +13,7 @@ function generatePage(){
           <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick="generatenewModal('${x.id}')"  data-bs-toggle="modal" data-bs-target="#generatepageModal">        
       <div class="image-div">
           <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+          <div class="new-div position-absolute badge">Best Seller</div>
           <div class="save-div">
               <a href="../Home/login.html">
                   <div class="heart-div">
@@ -72,6 +73,7 @@ if (bookRand){
         <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" type="button" onclick="openFirst(); generatenewModal('${x.id}');"  data-bs-toggle="modal" data-bs-target="#generatepageModal">        
     <div class="image-div">
         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+        <div class="new-div position-absolute badge">Best Seller</div>
         <div class="save-div">
             <a href="../Home/login.html" >
                 <div class="heart-div">
@@ -119,6 +121,7 @@ function generatenewModal(id){
            <div class="image-div-modal col-12 d-flex flex-wrap justify-content-center">
                <div class="d-flex flex-wrap justify-content-center">
                    <img src="../${bookFind.cover}" class="modal-cover-image" alt="book cover"  loading="lazy">
+                   <div class="sale-div position-absolute badge">Best Seller</div>
                <div class="save-div-modal">
                    <a href="../Home/login.html">
                        <div class="heart-div-modal">
@@ -157,7 +160,7 @@ function generatenewModal(id){
                    </div>
                </div>
                </div>
-               <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; 999</h4>
+               <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; ${bookFind.price}</h4>
                
            <div class="container mx-2">
                ${bookFind.synop}

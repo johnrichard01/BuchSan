@@ -11,7 +11,6 @@ function generatePage(){
             <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
                     <div class="image-div">
                         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
-                        <div class="new-div position-absolute badge">New Arrivals!</div>
                         <div class="save-div">
                             <a href="#" id="heart${x.id}" onclick="clickEvent(event);savedBooks('${x.id}');">
                                 <div class="heart-div">
@@ -72,7 +71,6 @@ function generatePage(){
                     <a type="button" onclick="openFirst(); generatenewModal('${x.id}'); checkModal();"  data-bs-toggle="modal" data-bs-target="#generatepageModal">
                         <div class="image-div">
                             <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
-                            <div class="new-div position-absolute badge">New Arrivals!</div>
                             <div class="save-div d-flex flex-wrap">
                                 <a id="heart${x.id}" onclick="savedBooks('${x.id}'); clickEvent(event);">
                                     <div class="heart-div">

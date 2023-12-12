@@ -1,6 +1,7 @@
+
 function generatePage(){
     let cardscontainer=document.getElementById("generatePage");
-    let genre= "lifestyle";
+    let genre= "sale";
     let findGenre= allBooks.filter(function(x){
         return genre === x.genre;
     })
@@ -10,6 +11,7 @@ function generatePage(){
             return `
             <div class="card generated-hover col-12 col-md-6 col-lg mt-5" id="product${x.id}" type="button" onclick=" openModal();  generatenewModal('${x.id}');  checkModal();"  >        
                     <div class="image-div">
+                    <div class="sale-div position-absolute badge">SALE ${x.saleprice}% OFF</div>
                         <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
                         <div class="save-div">
                             <a href="#" id="heart${x.id}" onclick="clickEvent(event);savedBooks('${x.id}');">
@@ -31,7 +33,7 @@ function generatePage(){
                         <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
                     </div>
                     <div class="price_addToCart">
-                        <span> &#8369; ${x.price}</span>
+                    &#8369;${(x.price)-(x.price*(x.saleprice/100))}  <span><del> &#8369; ${x.price}</del> </span>
                     </div>    
                     <div class="addToCart">    
                         <a href="#"> <button  onclick="clickEvent(event); addCart('${x.id}')" class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
@@ -50,7 +52,7 @@ function generatePage(){
   
   function generateRelated(id){
   let select = id;
-  let genre= "lifestyle";
+  let genre= "sale";
   let related= document.getElementById("relatedContainer");
   let bookFind = allBooks.filter(function(x){
       return select !== x.id;
@@ -67,10 +69,12 @@ function generatePage(){
   if (bookRand){
       related.innerHTML= bookRand.slice(-5).map(function(x){
           return `
-                <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" >        
+          <div class="card generated-hover col-12 col-md-6 col-lg mt-5 mb-0 mb-lg-5"  id="product${x.id}" >        
                     <a type="button" onclick="openFirst(); generatenewModal('${x.id}'); checkModal();"  data-bs-toggle="modal" data-bs-target="#generatepageModal">
                         <div class="image-div">
+                        <div class="sale-div position-absolute badge">SALE ${x.saleprice}% OFF</div>
                             <img src="../${x.cover}" class="card-img-top generated-image-hover"  loading="lazy" alt="book cover">
+                            
                             <div class="save-div d-flex flex-wrap">
                                 <a id="heart${x.id}" onclick="savedBooks('${x.id}'); clickEvent(event);">
                                     <div class="heart-div">
@@ -91,7 +95,7 @@ function generatePage(){
                             <p class="Author lead w-100 fs-6 fst-italic">${x.author}</p> 
                         </div>
                         <div class="price_addToCart">
-                            <span> &#8369; ${x.price}</span>
+                            &#8369;${(x.price)-(x.price*(x.saleprice/100))}  <span><del> &#8369; ${x.price}</del> </span>
                         </div>
                         <div class="addToCart">    
                             <a > <button  onclick="clickEvent(event); addCart('${x.id}')" class="btn" type="button"><i class="fas fa-shopping-cart mx-1"></i>ADD TO CART</button> </a>
@@ -118,7 +122,9 @@ function generatePage(){
          <div class=" position-relative col-12 col-lg-6 d-flex flex-wrap justify-content-center align-content-start">
              <div class="image-div-modal col-12 d-flex flex-wrap justify-content-center">
                  <div class="d-flex flex-wrap justify-content-center">
+                 
                      <img src="../${bookFind.cover}" class="modal-cover-image" alt="book cover"  loading="lazy">
+                     <div class="sale-div position-absolute badge">SALE ${bookFind.saleprice}% OFF</div>
                  <div class="save-div-modal">
                      <a id="heart${bookFind.id}" onclick="savedBooks('${bookFind.id}'); clickEvent(event);">
                          <div class="heart-div-modal">
@@ -157,7 +163,7 @@ function generatePage(){
                      </div>
                  </div>
                  </div>
-                 <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; ${bookFind.price}</h4>
+                 <h4 class="mb-3 text-center text-lg-start h3 fw-bold">&#8369;${(bookFind.price)-(bookFind.price*(bookFind.saleprice/100))}  <span><del> &#8369; ${bookFind.price}</del> </span></h4>
                  
              <div class="container mx-2">
                  ${bookFind.synop}
@@ -182,6 +188,21 @@ function generatePage(){
         console.log("failed");
     }
   
+  }
+  
+  function openFirst() {
+    var firstModal = document.getElementById('generatepageModal');
+    firstModal.addEventListener('hidden.bs.modal', function(){
+        setTimeout(showSecond, 100);}
+        , { once: true });
+    var newModal = new bootstrap.Modal(firstModal);
+    newModal.hide();
+  }
+  
+  function showSecond() {
+    var secondModal = document.getElementById('generatepageModal');
+    var newModal = new bootstrap.Modal(secondModal);
+    newModal.show();
   }
   
   function openFirst() {
