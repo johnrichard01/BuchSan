@@ -91,3 +91,36 @@ body{
     color: #3c1518;
     scale: 1.05;
 }
+.or-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    justify-content: center;
+}
+
+.or-container::before,
+.or-container::after {
+    content: "";
+    flex: 0.2;
+    height: 1px;
+    background-color: rgba(247, 127, 0, 0.5);
+}
+.or{
+    padding: 0 10px;
+    font-weight: bold;
+    color: #f77f00;
+}
+.btn-loginsignup{
+    margin: 0 20px 0;
+    border-radius: 20px;
+    border: 2px solid #f77f00;
+    background-color: #f77f00;
+    width: 80%;
+    color: #f5f7fa;
+    height: 44px;
+}
+.btn-loginsignup:hover{
+    background-color: #d26e04;
+    color: #f5f7fa;
+}

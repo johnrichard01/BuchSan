@@ -57,12 +57,12 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     background: #f5f7fa;
-    padding: 50px 60px 70px;
+    padding: 50px 60px 50px;
     text-align: center;
     border-radius: 50px;
 }
 .signup-title{
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     color: #f77f00;
     position: relative;
     font-weight: 800;
@@ -154,7 +154,8 @@ body{
 }
 .mini-footer{
     background-color: #B36910;
-    
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .mini-footer-text{
     color: #f5f7fa;
@@ -162,4 +163,29 @@ body{
 .mini-footer-text:hover{
     color: #3c1518;
     scale: 1.05;
+}
+.or-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    justify-content: center;
+}
+
+.or-container::before,
+.or-container::after {
+    content: "";
+    flex: 0.2;
+    height: 1px;
+    background-color: rgba(247, 127, 0, 0.5);
+}
+.or{
+    padding: 0 10px;
+    font-weight: bold;
+    color: #f77f00;
+}
+@media(max-width:576){
+    .container-form{
+        padding-bottom: 1000px;
+    }
 }

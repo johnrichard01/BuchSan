@@ -80,6 +80,8 @@ function validate(event){
         document.getElementById("error-message4").innerHTML="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.";
         document.getElementById("error-message4").classList.add("error-print");
         document.getElementById("infieldError4").classList.add("in-field-invalid");
+        document.getElementById('containerform').style.paddingBottom="900px";
+        document.getElementById('overlay').style.marginTop="100px";
         isValid=false;
     } if(confirmpasswordVal==empty){
         let x=document.getElementById("message").innerHTML;
@@ -117,6 +119,8 @@ document.getElementById("email").addEventListener("input",function(){
 document.getElementById("password").addEventListener("input",function(){
     document.getElementById("error-message4").classList.remove("error-print");
     document.getElementById("infieldError4").classList.remove("in-field-invalid");
+    document.getElementById('containerform').style.paddingBottom="0px";
+    document.getElementById('overlay').style.marginTop="0px";
 });
 function realtimeCheck(){
     document.getElementById("error-message5").classList.remove("error-print");
