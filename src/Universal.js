@@ -73,13 +73,12 @@ function newserrorRemove(){
 }
 document.getElementById("newsLetterEmail").addEventListener("click",newserrorRemove);
 function validateNewsletter(event){
+    let newsletter_records= new Array
+    newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
     let email=document.getElementById("newsLetterEmail").value;
 
     if(isValidEmail(email)){
-        document.getElementById("newsLetterEmail").value="Thankyou for subscribing!";
-        document.getElementById("newsLetterEmail").classList.add("newsletter-printsucc");
-        document.getElementById("newsField").classList.add("newsfield-succ");
-        setTimeout(successRemove, 3000)
+        sendMail();
     }else{
         event.preventDefault();
         document.getElementById("newsLetterEmail").value="Please enter a valid email.";
@@ -89,3 +88,32 @@ function validateNewsletter(event){
 }
 
 document.getElementById("subscribeBtn").addEventListener("click", validateNewsletter);
+
+function sendMail(){
+    let newsletter_records= new Array
+    newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
+    let email= document.getElementById("newsLetterEmail").value;
+    let parms ={
+        email: document.getElementById("newsLetterEmail").value,
+    }
+
+    let searchDupe= newsletter_records.find(function(x){
+        return x === email;
+    })
+    if (searchDupe){
+        console.log("dupe")
+        document.getElementById("newsLetterEmail").value="Already Subscribed"
+        document.getElementById("newsLetterEmail").classList.add("newsletter-printerror");
+        document.getElementById("newsField").classList.add("newsfield-error");
+    }else{
+        console.log('sucess')
+        newsletter_records.push(email);
+        emailjs.send('service_pbq7erf', 'template_mmzjsll', parms);
+        sessionStorage.setItem("Subscribers", JSON.stringify(newsletter_records));
+        document.getElementById("newsLetterEmail").value="Thankyou for subscribing!";
+        document.getElementById("newsLetterEmail").classList.add("newsletter-printsucc");
+        document.getElementById("newsField").classList.add("newsfield-succ");
+        setTimeout(successRemove, 3000)
+    }
+
+}

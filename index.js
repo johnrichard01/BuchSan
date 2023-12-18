@@ -164,7 +164,7 @@ const swiper = new Swiper('.swiper', {
                      </div>
                  </div>
                  </div>
-                 <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; 999</h4>
+                 <h4 class="mb-3 text-center text-lg-start h3 fw-bold"> &#8369; ${bookFind.price}</h4>
                  
              <div class="container mx-2">
                  ${bookFind.synop}

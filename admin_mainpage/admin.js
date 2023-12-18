@@ -1,3 +1,4 @@
+//for sections and buttons
 function sectionReveal(id) {
     let sections = document.querySelectorAll('section');
     sections.forEach(function (x) {
@@ -11,7 +12,7 @@ function sectionReveal(id) {
 }
 
 function buttonActive(id){
-    let buttonArray= ['usersButton', 'adminButton', 'booksButton', 'newButton', 'newsButton', 'messagesButton'];
+    let buttonArray= ['usersButton', 'adminButton','orderButton', 'booksButton', 'newsButton', 'messagesButton'];
     buttonArray.forEach(function(x){
         let button= document.getElementById(x);
         if (button.classList.contains('btn-section-active')){
@@ -27,7 +28,7 @@ function buttonActive(id){
     }
 }
 function removeActive(){
-    let buttonArray= ['usersButton', 'adminButton', 'booksButton', 'newButton', 'newsButton', 'messagesButton'];
+    let buttonArray= ['usersButton', 'adminButton','orderButton', 'booksButton','newsButton', 'messagesButton'];
     buttonArray.forEach(function(x){
         let button= document.getElementById(x);
         if (button.classList.contains('btn-section-active')){
@@ -124,7 +125,9 @@ function generateSectionUsers(){
         </tr>`
     }).join("")
 }
+//users template literals
 generateSectionUsers();
+//admin template literals
 function generateSectionAdmins(){
     let sectionAdmin= document.getElementById('adminBody');
     let admin_records=new Array();
@@ -144,10 +147,53 @@ function generateSectionAdmins(){
     }).join("")
 }
 generateSectionAdmins();
-
-
-
-
+// template literals for books
+function generateBooks(){
+    let book_records=new Array();
+    book_records=JSON.parse(sessionStorage.getItem("Books"))?JSON.parse(sessionStorage.getItem("Books")):[];
+    let i=1;
+    let sectionBooks= document.getElementById('booksBody');
+    sectionBooks.innerHTML += book_records.map(function(x,y){
+        return `
+        <tr>
+                                            <td>
+                                                <div class="d-flex flex-wrap justify-content-center">
+                                                    ${y+1}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-info d-flex flex-wrap justify-content-start align-items-center">
+                                                    <img src="../${x.cover}">
+                                                    <div>
+                                                        <p id="booksCategory">Title : ${x.title}</p>
+                                                        <p id="booksCategory">Author : ${x.author}</p>
+                                                        <small> Genre: ${x.genre}</small>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex flex-wrap justify-content-center">
+                                                    &#8369;  ${x.price}
+                                                </div>
+                                            </td>
+                                            <td class="iremove text-center">
+                                                <div class="d-flex flex-wrap justify-content-center">
+                                                    ${x.rating}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a type="button" class="btn btn-remove d-flex justify-content-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+        `
+    }).join("")
+}
+generateBooks();
 
 //validation for account settings
 function space(input) {

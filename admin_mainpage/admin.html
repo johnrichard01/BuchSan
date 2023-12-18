@@ -35,7 +35,7 @@
                         <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionBooks'); buttonActive('booksButton')" id="booksButton">Books</a>
                     </div>
                     <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionNew'); buttonActive('newButton')" id="newButton">Add a new book</a>
+                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionOrder'); buttonActive('orderButton')" id="orderButton">Orders</a>
                     </div>
                     <div class="nav-div d-flex justify-content-center mb-3">
                         <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionNews'); buttonActive('newsButton')" id="newsButton">Newsletter</a>
@@ -102,46 +102,22 @@
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionBooks">
-                                <div class="container">
-                                    <h1>Books</h1>
-                                    <table class="w-100" id="booksBody">
-                                        <tr>
+                                <div class="container scrollable-div">
+                                    <table class="w-100 books-body" id="booksBody">
+                                        <tr class="header-sticky">
+                                            <th class="text-center">NO.</th>
                                             <th class="text-center">ITEM</th>
                                             <th class="text-center">PRICE</th>
                                             <th class="text-center">RATING</th>
                                             <th class="iremoves text-center">REMOVE</th>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="cart-info">
-                                                    <img src="../images/newarrival_1.png">
-                                                    <div>
-                                                        <p id="booksCategory">Title : ${search.title}</p>
-                                                        <p id="booksCategory">Author : ${search.author}</p>
-                                                        <small> Genre: &#8369; ${search.genre}</small>
-                                                        <br>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p>&#8369;  ${search.price}</p>
-                                            </td>
-                                            <td class="iremove text-center">${search.rating}</td>
-                                            <td>
-                                                <a type="button" class="btn btn-remove d-flex justify-content-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
                                     </table>
                                 </div>
 
                             </section>
-                            <section  class="section-body" id="sectionNew">
+                            <section  class="section-body" id="sectionOrder">
                                 <div class="container">
-                                    <h1>Add new books</h1>
+                                    <h1>Orders</h1>
                                     <table class="w-100" id="adminBody">
                                         <tr>
                                             <th class="text-center">Fullname</th>

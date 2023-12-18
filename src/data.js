@@ -1,3 +1,5 @@
+
+
 let allBooks=[
     {   
         id: "Life_1",
@@ -1138,3 +1140,14 @@ let allBooks=[
         rating:"4.19"
     },
 ]
+
+function booktoSession(){
+    let book_records=new Array();
+    book_records=JSON.parse(sessionStorage.getItem("Books"))?JSON.parse(sessionStorage.getItem("Books")):[];
+    if(book_records.length === 0){
+        sessionStorage.setItem("Books", JSON.stringify(allBooks));
+    }else{
+        console.log("books data already exists")
+    }
+}
+booktoSession();

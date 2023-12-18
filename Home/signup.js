@@ -152,9 +152,10 @@ function realtimeCheck(){
 };
 //save data for session storage
 function saveData(){
-    let name, username, email, password;
+    let name, usernameFirst,username, email, password;
     name=document.getElementById("fullname").value;
-    username=document.getElementById("username").value;
+    usernameFirst=document.getElementById("username").value;
+    username= usernameFirst.trim();
     email=document.getElementById("email").value;
     password=document.getElementById("password").value;
     let admin_records=new Array();

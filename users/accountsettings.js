@@ -12,7 +12,7 @@ function sectionReveal(id) {
 }
 
 function buttonActive(id){
-    let buttonArray= ['profileButton', 'passwordButton'];
+    let buttonArray= ['profileButton', 'passwordButton', 'addressButton'];
     buttonArray.forEach(function(x){
         let button= document.getElementById(x);
         console.log(button);
