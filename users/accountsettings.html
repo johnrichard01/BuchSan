@@ -142,12 +142,12 @@
         </div>
     </nav>
     <!-- Account  Settings -->
-    <div class="container-fluid">
+    <div class="container-fluid account-container">
         <div class="container">
             <div >
                 <h2 class="page-title">Account Settings</h2>
             </div>
-            <div class="row">
+            <div class="row " >
                 <div class="col-3">
                     <div class="flex-column my-5">
                         <div class="button-section mb-3">
@@ -357,13 +357,19 @@
                     </div>
                     <div id="section4">
                         <section class="bg-body-tertiary section-body py-5 rounded-5" id="sectionOrders">
-                            <h1 class="fw-bold text-center section-title">Orders</Address></h1>
-                            <div class="container d-flex flex-wrap justify-content-center">
-                                <form class="form" novalidate>
-                                    <div class="ing-group d-flex flex-wrap justify-content-center">
-                                        
-                                    </div>
-                                </form>
+                            <h1 class="fw-bold text-center section-title">My Orders</Address></h1>
+                            <div class="container ">
+                                <div class="orders-container" >
+                                    <table id="generateOrderBody">
+                                        <tr class="orders-sticky">
+                                            <th class="text-center fw-bold">ORDER ID</th>
+                                            <th  class="text-center fw-bold">DATE PLACED</th>
+                                            <th  class="text-center fw-bold">TOTAL</th>
+                                            <th  class="text-center fw-bold">STATUS</th>
+                                            <th  class="text-center fw-bold">ACTION</th>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -372,6 +378,49 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+       <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel1">Order Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="generateCheckoutBody">
+            <div class="details-body">
+              <div class="address-box">
+                  <div class="address-label fw-bold d-flex flex-wrap align-items-center">
+                        &nbsp; Address Details &nbsp;
+                  </div>
+                  <div id="address-body">
+                      
+                  </div>
+              </div>
+              <div class="items-box mt-3">
+                  <div class="items-label fw-bold d-flex flex-wrap align-items-center">
+                      &nbsp; Items &nbsp;
+                  </div>
+                  <table id="items-body">
+                  </table>
+              </div>
+              <div class="tot-box mt-3">
+                  <div class="tot-label fw-bold d-flex flex-wrap align-items-center">
+                        &nbsp; To Pay &nbsp;
+                  </div>
+                  <div id="total-body">
+                      
+                  </div>
+              </div>
+              <div class="payment-box mt-3" id="moreDetails">
+                 
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
     <!--Footer-->
     <div class="ftr container-fluid">
         <div class="container pt-5">

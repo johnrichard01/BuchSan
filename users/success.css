@@ -1,0 +1,14 @@
+.check-container{
+    color: #f77f00;
+}
+.title-container{
+    color: #f77f00;
+}
+.btn-goback{
+    border: 1px solid #f77f00;
+    color: #f77f00;
+}
+.btn-goback:hover{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}

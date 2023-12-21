@@ -188,6 +188,7 @@ function decrement(id){
     generatePage();
     generateTotal();
     generateTotalforModal();
+    generateOrderDetails();
 }
 function removeCart(id){
     let cartItems= new Array
@@ -207,6 +208,7 @@ function removeCart(id){
         generateTotalforModal();
         generatePage();
         generateTotal();
+        generateOrderDetails();
     }
     
 }
@@ -293,7 +295,7 @@ function generateOrderDetails(){
                                     </div>
                                 </div>
                             </td>
-                            <td class="col-1">
+                            <td class="col-2">
                                 x ${x.items}
                             </td>
                         </tr>
@@ -433,11 +435,22 @@ generateTotalforModal();
                 orderId: details.id,
                 payerName: sessionStorage.getItem('name'),
                 payerEmail: sessionStorage.getItem('email'),
-                shippingAddress: address_records.street+', Brgy.'+ address_records.barangay+','+ address_records.city +'City,'+address_records.province +','+ address_records.zipcode,
+                shippingAddress:{
+                    street: address_records.street,
+                    barangay: address_records.barangay,
+                    city: address_records.city,
+                    province: address_records.province,
+                    zipcode: address_records.zipcode,
+                },
                 phone: address_records.phonenumber,
                 items: cartItems,
                 total: totalPrice + shipping,
-                date: date+ ' ' + time,
+                date:{
+                    date: date,
+                    time: time,
+                },
+                status: 'TO SHIP',
+                payment: 'PAID',
             }
             totalOrder_records.push(ordersNow);
             order_records.push(ordersNow)

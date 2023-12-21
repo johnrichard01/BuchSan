@@ -44,6 +44,7 @@ function saveData(){
         sessionStorage.setItem("saved", JSON.stringify(current_user.saved||[]));
         sessionStorage.setItem("Cart", JSON.stringify(current_user.Cart||[]));
         sessionStorage.setItem("Orders", JSON.stringify(current_user.Orders||[]));
+        sessionStorage.setItem("Address", JSON.stringify(current_user.Address||[]));
         window.location.replace("../user_mainpage/user.html");
         
     } else {

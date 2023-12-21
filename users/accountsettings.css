@@ -1,3 +1,6 @@
+.account-container{
+    min-height: 80vh;
+}
 .page-title{
     font-weight:bolder;
     font-family:'Lucida Sans';
@@ -97,4 +100,70 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.orders-container{
+    border: 1px solid #f77f00;
+    max-height: 50vh;
+    position: relative;
+    overflow: auto;
+}
+.orders-sticky{
+    position: sticky;
+    top: 0px;
+}
+.orders-action{
+    color: #f77f00;
+    border: none;
+}
+.orders-action:hover{
+    color: #6d3a03;
+    border: none;
+}
+.orders-action::after{
+    content: none;
+}
+.orders-hover:hover{
+    background-color: #f77f00;
+    color: #f5f7fa;
+}
+.address-box{
+    position: relative;
+    border: 3px solid #f77f00;
+    padding: 20px;
+}
+.address-label{
+    position: absolute;
+    top: -15px;
+    color: #f77f00;
+    background-color: white;
+    font-size: 1.25rem;
+}
+.items-box{
+    position: relative;
+    border: 3px solid #f77f00;
+    padding: 20px;
+}
+.items-label{
+    position: absolute;
+    top: -15px;
+    color: #f77f00;
+    background-color: white;
+    font-size: 1.25rem;
+}
+.tot-box{
+    position: relative;
+    border: 3px solid #f77f00;
+    padding: 20px;
+}
+.tot-label{
+    position: absolute;
+    top: -15px;
+    color: #f77f00;
+    background-color: white;
+    font-size: 1.25rem;
+}
+.payment-box{
+    position: relative;
+    border: 3px solid #f77f00;
+    padding: 20px;
 }
