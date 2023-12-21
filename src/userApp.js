@@ -20,6 +20,8 @@ function logOut(){
     user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
     let saved_records= new Array
     saved_records= JSON.parse(sessionStorage.getItem("saved"))?JSON.parse(sessionStorage.getItem("saved")):[]
+    let order_records= new Array;
+    order_records=JSON.parse(sessionStorage.getItem("Orders"))?JSON.parse(sessionStorage.getItem("Orders")):[];
     let email=sessionStorage.getItem("email")
     let findUser= user_records.find(function(x){
         return email === x.email;
@@ -27,9 +29,11 @@ function logOut(){
     if (findUser){
         findUser.saved=saved_records;
         findUser.Cart=cartItems;
+        findUser.Orders=order_records;
         sessionStorage.setItem("users",JSON.stringify(user_records));
     }
     sessionStorage.removeItem("Cart");
+    sessionStorage.removeItem("Orders");
     sessionStorage.removeItem("saved");
     sessionStorage.removeItem("name");
     sessionStorage.removeItem("username");

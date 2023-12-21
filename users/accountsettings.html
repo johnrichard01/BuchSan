@@ -159,6 +159,9 @@
                         <div class="button-section mb-3">
                             <button class="w-100 btn-section fw-bold" id="addressButton"  onclick="sectionReveal('sectionAddress'); buttonActive('addressButton');">Address</button>
                         </div>
+                        <div class="button-section mb-3">
+                            <button class="w-100 btn-section fw-bold" id="ordersButton"  onclick="sectionReveal('sectionOrders'); buttonActive('ordersButton');">Orders</button>
+                        </div>
                     </div>
             </div>
             <div class="col-9">
@@ -262,8 +265,99 @@
                         </section>
                     </div>
                     <div id="section3">
-                        <section class="bg-body-tertiary section-body py-5 rounded-5" id="sectionAddress">
+                        <!-- <section class="bg-body-tertiary section-body py-5 rounded-5" id="sectionAddress">
                             <h1 class="fw-bold text-center section-title">Delivery Address</Address></h1>
+                            <div class="container d-flex flex-wrap justify-content-center">
+                                <form class="form w-100" novalidate>
+                                    
+                                    <div class="ing-group d-flex flex-wrap justify-content-center">
+                                        <div class="row w-100">
+                                            <div class=" col-12 col-lg">
+                                                <div class="in-field ms-0 ms-lg-5" id="infieldAdress1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-telephone-fill input-icon" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                                      </svg>
+                                                    
+                                                    <input type="number" class="in-box input-number" id="phoneNumber" placeholder="Phone number" required>
+                                                </div>
+                                                    <div class="error-message col-12 col-lg text-center" id="address-error1">
+                                                    </div>
+                                            </div>
+                                            <div class="col-12 col-lg">
+                                                <div class="in-field ms-0 ms-lg-5" id="infieldAdress2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-house-check-fill input-icon" viewBox="0 0 16 16">
+                                                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                                        <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                                                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514Z"/>
+                                                      </svg>
+                                                    <input type="text" class="in-box" id="streetHouse" placeholder=" Steet Name, House No." required>
+                                                </div>
+                                                    <div class="error-message col-12 col-lg text-center" id="address-error2">
+                                                    </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row w-100">
+                                            <div class="col-12 col-lg">
+                                                <div class="in-field ms-0 ms-lg-5" id="infieldAdress3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="input-icon bi bi-geo-fill" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                                                    </svg>
+                                                    <input type="text" class="in-box" id="province" placeholder="Province" required>
+                                                </div>
+                                                    <div class="error-message col-12 col-lg text-center" id="address-error3">
+                                                    </div>
+                                            </div>
+                                            
+                                            <div class="col-12 col-lg">
+                                                <div class="in-field ms-0 ms-lg-5" id="infieldAdress4">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="input-icon bi bi-geo-fill" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                                                    </svg>
+                                                    <input type="text" class="in-box" id="city" placeholder="City" required>
+                                                </div>
+                                                    <div class="error-message col-12 col-lg text-center" id="address-error4">
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="row w-100">
+                                            <div class="col-12 col-lg">
+                                                <div class="in-field ms-0 ms-lg-5" id="infieldAdress5">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="input-icon bi bi-geo-fill" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
+                                                    </svg>
+                                                    <input type="text" class="in-box" id="barangay" placeholder="Barangay" required>
+                                                </div>
+                                                    <div class="error-message col-12 col-lg text-center" id="address-error5">
+                                                    </div>
+                                            </div>
+                                            
+                                            <div class="col-12 col-lg">
+                                                <div class="in-field  ms-0 ms-lg-5" id="infieldAdress6">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="input-icon bi bi-mailbox" viewBox="0 0 16 16">
+                                                        <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3m0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3z"/>
+                                                        <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0"/>
+                                                      </svg>
+                                                    <input type="number" class="in-box" id="zipcode" placeholder="Zip code" required>
+                                                </div>
+                                                <div class="error-message col-12 col-lg text-center" id="address-error6">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pt-3 text-center" id="addressmessage"></div>
+                                        <div class="row w-100">
+                                            <div class="d-flex justify-content-center">
+                                                <button type="button" class="btn btn-update fw-bold w-25" id="saveAddress">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section> -->
+                    </div>
+                    <div id="section4">
+                        <section class="bg-body-tertiary section-body py-5 rounded-5" id="sectionOrders">
+                            <h1 class="fw-bold text-center section-title">Orders</Address></h1>
                             <div class="container d-flex flex-wrap justify-content-center">
                                 <form class="form" novalidate>
                                     <div class="ing-group d-flex flex-wrap justify-content-center">

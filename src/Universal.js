@@ -115,5 +115,4 @@ function sendMail(){
         document.getElementById("newsField").classList.add("newsfield-succ");
         setTimeout(successRemove, 3000)
     }
-
 }

@@ -26,6 +26,8 @@ function contactformValidation(event){
         errorText();
         isValid=false;
     } if(isValid){
+        saveMessage();
+        sendMessage();
         document.getElementById("contactusName").value="";
         document.getElementById("contactusEmail").value="";
         document.getElementById("contactusMessage").value="";
@@ -82,4 +84,34 @@ function removeError(){
 }
 document.getElementById("contactusSubmit").addEventListener("click", contactformValidation);
 
+function saveMessage(){
+    let message_records= new Array;
+    message_records=JSON.parse(sessionStorage.getItem("Messages"))?JSON.parse(sessionStorage.getItem("Messages")):[];
+    let name=document.getElementById("contactusName").value;
+    let email=document.getElementById("contactusEmail").value;
+    let message= document.getElementById("contactusMessage").value;
+    let date = new Date();
+    let time = date.toLocaleString();
+    message_records.push({
+        "name": name,
+        "email": email,
+        "message": message,
+        "time":time,
+    })
+    sessionStorage.setItem("Messages", JSON.stringify(message_records));
+}
 
+function sendMessage(){
+    let name=document.getElementById("contactusName").value;
+    let email=document.getElementById("contactusEmail").value;
+    let message= document.getElementById("contactusMessage").value;
+    let date = new Date();
+    let time = date.toLocaleString();
+    let params={
+        name: name,
+        email: email,
+        message: message,
+        time:time,
+    }
+    emailjs.send('service_ezz9egs', 'template_c1mnak8', params);
+}

@@ -9,7 +9,7 @@ function saveData(){
     user_records=JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[];
     let admin_records=new Array();
     admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
-
+    
 
     if (!email || !password) {
         document.getElementById("error-enter").innerHTML="Please enter both email and password";
@@ -43,6 +43,7 @@ function saveData(){
         sessionStorage.setItem("profilepicture", current_user.profilepicture);
         sessionStorage.setItem("saved", JSON.stringify(current_user.saved||[]));
         sessionStorage.setItem("Cart", JSON.stringify(current_user.Cart||[]));
+        sessionStorage.setItem("Orders", JSON.stringify(current_user.Orders||[]));
         window.location.replace("../user_mainpage/user.html");
         
     } else {
