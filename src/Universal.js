@@ -93,6 +93,10 @@ function sendMail(){
     let newsletter_records= new Array
     newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
     let email= document.getElementById("newsLetterEmail").value;
+    let dateTime = new Date();
+    let date = dateTime.toLocaleDateString();
+    let time = dateTime.toLocaleTimeString();
+
     let parms ={
         email: document.getElementById("newsLetterEmail").value,
     }
@@ -107,7 +111,13 @@ function sendMail(){
         document.getElementById("newsField").classList.add("newsfield-error");
     }else{
         console.log('sucess')
-        newsletter_records.push(email);
+        newsletter_records.push({
+            email: email,
+            date: {
+                date: date,
+                time: time,
+            }
+        });
         emailjs.send('service_pbq7erf', 'template_mmzjsll', parms);
         sessionStorage.setItem("Subscribers", JSON.stringify(newsletter_records));
         document.getElementById("newsLetterEmail").value="Thankyou for subscribing!";

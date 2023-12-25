@@ -77,9 +77,9 @@
                     <div class="row w-100">
                         <div class="container-fluid bg-body-tertiary section-container">
                             <section class="section-body section-active" id="sectionUser">
-                                <div class="container table-container">
+                                <div class="container table-container  scrollable-div">
                                     <table class="w-100" id="usersBody">
-                                        <tr>
+                                        <tr class="header-sticky">
                                             <th class="text-center">Fullname</th>
                                             <th class="text-center">Username</th>
                                             <th class="text-center">Email</th>
@@ -89,10 +89,9 @@
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionAdmin">
-                                <div class="container">
-                                    <h1>Admin</h1>
+                                <div class="container scrollable-div">
                                     <table class="w-100" id="adminBody">
-                                        <tr>
+                                        <tr class="header-sticky">
                                             <th class="text-center">Fullname</th>
                                             <th class="text-center">Username</th>
                                             <th class="text-center">Email</th>
@@ -113,60 +112,67 @@
                                         </tr>
                                     </table>
                                 </div>
-
                             </section>
                             <section  class="section-body" id="sectionOrder">
                                 <div class="container">
-                                    <h1>Orders</h1>
-                                    <table class="w-100" id="adminBody">
-                                        <tr>
-                                            <th class="text-center">Fullname</th>
-                                            <th class="text-center">Username</th>
-                                            <th class="text-center">Email</th>
-                                            <th class="iremoves text-center">REMOVE</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">John Richard Vidal Sumagui</td>
-                                            <td class="text-center">Merakpay</td>
-                                            <td class="text-center">richard01@gmai.com</td>
-                                            <td class="d-flex flex-wrap justify-content-center">
-                                                <a type="button" class="btn btn-remove">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                    <div class="container scrollable-div">
+                                        <table class="w-100" id="adminOrders">
+                                            <tr  class="header-sticky">
+                                                <th class="text-center">No.</th>
+                                                <th class="text-center">Order ID</th>
+                                                <th class="text-center">Email</th>
+                                                <th class="text-center">Total</th>
+                                                <th class="text-center">Status</th>
+                                                <th class="iremoves text-center">Actions</th>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">1231231231</td>
+                                                <td class="text-center">richard01@gmai.com</td>
+                                                <td class="text-center">&#8369; 2000.00</td>
+                                                <td class="text-center">
+                                                    <select name="status" id="orderStatus">
+                                                        <option value="toShip">TO SHIP</option>
+                                                        <option value="shipped">SHIPPED</option>
+                                                        <option value="completed">COMPLETED</option>
+                                                        <option value="canceled">CANCELED</option>
+                                                    </select>
+                                                </td>
+                                                <td  class="text-center dropdown-center">
+                                                    <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                                           <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                                                           <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                                                       </svg>
+                                                   </button>
+                                                   <ul class="dropdown-menu dropdown-orders">
+                                                       <li class="">
+                                                           <button onclick="generateDetails('${x.orderId}'); openModal3();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">View Details</button>
+                                                       </li>
+                                                   </ul>
+                                               </td>
+                                            </tr> -->
+                                        </table>
+                                    </div>
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionNews">
-                                <div class="container">
+                                <div class="container scrollable-div">
                                     <table class="w-100" id="newsBody">
-                                        <tr>
+                                        <tr  class="header-sticky">
                                             <th class="text-center">No.</th>
                                             <th class="text-center">Email</th>
+                                            <th class="text-center">Date</th>
                                             <th class="iremoves text-center">REMOVE</th>
                                         </tr>
-                                        <!-- <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">richard01@gmai.com</td>
-                                            <td class="d-flex flex-wrap justify-content-center">
-                                                <a type="button" class="btn btn-remove">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr> -->
+                                       
                                     </table>
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionMessages">
-                                <div class="container">
-                                    <h1>Messages</h1>
+                                <div class="containe scrollable-divr">
                                     <table class="w-100" id="adminBody">
-                                        <tr>
+                                        <tr  class="header-sticky">
                                             <th class="text-center">Fullname</th>
                                             <th class="text-center">Username</th>
                                             <th class="text-center">Email</th>
@@ -295,6 +301,49 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel1">Order Details</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body" id="generateCheckoutBody">
+             <div class="details-body">
+               <div class="address-box">
+                   <div class="address-label fw-bold d-flex flex-wrap align-items-center">
+                         &nbsp; Address Details &nbsp;
+                   </div>
+                   <div class="td-modal" id="address-body">
+                       
+                   </div>
+               </div>
+               <div class="items-box mt-3">
+                   <div class="items-label fw-bold d-flex flex-wrap align-items-center">
+                       &nbsp; Items &nbsp;
+                   </div>
+                   <table class="w-100  td-modal" id="items-body">
+                   </table>
+               </div>
+               <div class="tot-box mt-3">
+                   <div class="tot-label fw-bold d-flex flex-wrap align-items-center">
+                         &nbsp; To Pay &nbsp;
+                   </div>
+                   <div class="td-modal" id="total-body">
+                       
+                   </div>
+               </div>
+               <div class="payment-box mt-3  td-modal" id="moreDetails">
+                  
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+ </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="admin.js"></script>
 </body>

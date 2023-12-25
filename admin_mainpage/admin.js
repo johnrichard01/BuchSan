@@ -150,7 +150,6 @@ generateSectionAdmins();
 function generateBooks(){
     let book_records=new Array();
     book_records=JSON.parse(sessionStorage.getItem("Books"))?JSON.parse(sessionStorage.getItem("Books")):[];
-    let i=1;
     let sectionBooks= document.getElementById('booksBody');
     sectionBooks.innerHTML += book_records.map(function(x,y){
         return `
@@ -193,6 +192,272 @@ function generateBooks(){
     }).join("")
 }
 generateBooks();
+//generate orders info
+function generateOrders(){
+    let totalOrder_records= new Array;
+        totalOrder_records=JSON.parse(sessionStorage.getItem("totalOrders"))?JSON.parse(sessionStorage.getItem("totalOrders")):[];
+        let orderbody= document.getElementById('adminOrders');
+        let orderNone= document.getElementById('sectionOrders');
+        if (totalOrder_records.length === 0){
+            return orderNone.innerHTML=`
+             NOTHING TO SHOW
+            `
+        }else{
+            orderbody.innerHTML+= totalOrder_records.map(function(x,y){
+                if (x.status === 'TO SHIP'){
+                    return`
+                    <tr>
+                    <td class="text-center">${y+1}</td>
+                    <td class="text-center">${x.orderId}</td>
+                    <td class="text-center">${x.payerEmail}</td>
+                    <td class="text-center">&#8369; ${x.total}.00</td>
+                    <td class="text-center">
+                        <select name="status" onchange="selectedStatus('${x.orderId}',this)">
+                            <option value="TO SHIP" selected>TO SHIP</option>
+                            <option value="SHIPPED">SHIPPED</option>
+                            <option value="COMPLETED">COMPLETED</option>
+                            <option value="CANCELED">CANCELED</option>
+                        </select>
+                    </td>
+                    <td  class="text-center dropdown-center">
+                        <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                               <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                               <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                           </svg>
+                       </button>
+                       <ul class="dropdown-menu dropdown-orders">
+                           <li class="">
+                               <button onclick="generateDetails('${x.orderId}'); openModal3();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">View Details</button>
+                           </li>
+                       </ul>
+                   </td>
+                   </tr>
+                   `
+                }else if(x.status === 'SHIPPED'){
+                    return`
+                    <tr>
+                    <td class="text-center">${y+1}</td>
+                    <td class="text-center">${x.orderId}</td>
+                    <td class="text-center">${x.payerEmail}</td>
+                    <td class="text-center">&#8369; ${x.total}.00</td>
+                    <td class="text-center">
+                        <select name="status" onchange="selectedStatus('${x.orderId}',this)">
+                            <option value="TO SHIP">TO SHIP</option>
+                            <option value="SHIPPED" selected>SHIPPED</option>
+                            <option value="COMPLETED">COMPLETED</option>
+                            <option value="CANCELED">CANCELED</option>
+                        </select>
+                    </td>
+                    <td  class="text-center dropdown-center">
+                        <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                               <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                               <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                           </svg>
+                       </button>
+                       <ul class="dropdown-menu dropdown-orders">
+                           <li class="">
+                               <button onclick="generateDetails('${x.orderId}'); openModal3();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">View Details</button>
+                           </li>
+                       </ul>
+                   </td>
+                   </tr>
+                   `
+                }else if (x.status === 'COMPLETED'){
+                    return`
+                    <tr>
+                    <td class="text-center">${y+1}</td>
+                    <td class="text-center">${x.orderId}</td>
+                    <td class="text-center">${x.payerEmail}</td>
+                    <td class="text-center">&#8369; ${x.total}.00</td>
+                    <td class="text-center">
+                        <select name="status" onchange="selectedStatus('${x.orderId}',this)">
+                            <option value="TO SHIP">TO SHIP</option>
+                            <option value="SHIPPED">SHIPPED</option>
+                            <option value="COMPLETED" selected>COMPLETED</option>
+                            <option value="CANCELED">CANCELED</option>
+                        </select>
+                    </td>
+                    <td  class="text-center dropdown-center">
+                        <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                               <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                               <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                           </svg>
+                       </button>
+                       <ul class="dropdown-menu dropdown-orders">
+                           <li class="">
+                               <button onclick="generateDetails('${x.orderId}'); openModal3();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">View Details</button>
+                           </li>
+                       </ul>
+                   </td>
+                   </tr>
+                   `
+                }else if(x.status === 'CANCELED'){
+                    return`
+                    <tr>
+                    <td class="text-center">${y+1}</td>
+                    <td class="text-center">${x.orderId}</td>
+                    <td class="text-center">${x.payerEmail}</td>
+                    <td class="text-center">&#8369; ${x.total}.00</td>
+                    <td class="text-center">
+                        <select name="status" onchange="selectedStatus('${x.orderId}',this)">
+                            <option value="TO SHIP">TO SHIP</option>
+                            <option value="SHIPPED">SHIPPED</option>
+                            <option value="COMPLETED">COMPLETED</option>
+                            <option value="CANCELED" selected>CANCELED</option>
+                        </select>
+                    </td>
+                    <td  class="text-center dropdown-center">
+                        <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                               <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                               <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                           </svg>
+                       </button>
+                       <ul class="dropdown-menu dropdown-orders">
+                           <li class="">
+                               <button onclick="generateDetails('${x.orderId}'); openModal3();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">View Details</button>
+                           </li>
+                       </ul>
+                   </td>
+                   </tr>
+                   `
+                }
+            }).join("")
+        }
+}
+generateOrders();
+//orders selected onchange
+function selectedStatus(id, element){
+    let totalOrder_records= new Array;
+        totalOrder_records=JSON.parse(sessionStorage.getItem("totalOrders"))?JSON.parse(sessionStorage.getItem("totalOrders")):[];
+    let user_records=new Array();
+        user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
+        let order_records= new Array;
+        order_records=JSON.parse(sessionStorage.getItem("Orders"))?JSON.parse(sessionStorage.getItem("Orders")):[];
+    let search=totalOrder_records.find(function(x){
+        return x.orderId === id;
+    })
+    let findUser= user_records.find(function(x){
+        return x.email === search.payerEmail;
+    })
+     let findOrder= findUser.Orders.find(function(x){
+        return x.orderId === search.orderId;
+     })
+        search.status= element.value;
+        findOrder.status=element.value;
+        sessionStorage.setItem("totalOrders",JSON.stringify(totalOrder_records));
+        sessionStorage.setItem("users",JSON.stringify(user_records));
+    }
+//modal for orders
+function generateDetails(id){
+    let totalOrder_records= new Array;
+        totalOrder_records=JSON.parse(sessionStorage.getItem("totalOrders"))?JSON.parse(sessionStorage.getItem("totalOrders")):[];
+    let book_records=new Array();
+        book_records=JSON.parse(sessionStorage.getItem("Books"))?JSON.parse(sessionStorage.getItem("Books")):[];
+    let address= document.getElementById('address-body');
+    let items = document.getElementById('items-body');
+    let total= document.getElementById('total-body');
+    let details= document.getElementById('moreDetails');
+
+    let search=totalOrder_records.find(function(x){
+        return id === x.orderId;
+    })
+    let existingDate= search.date.date;
+    let newdate= new Date(existingDate);
+    newdate.setDate(newdate.getDate()+ 10);
+    let expected= newdate.toLocaleDateString();
+    address.innerHTML=`
+    <p class="fw-bold">${search.payerName}</p>
+    <p class="fw-bold">${search.phone}</p>
+    <p class="fw-bold">${search.shippingAddress.street}, Brgy. ${search.shippingAddress.barangay}, ${search.shippingAddress.city} City, ${search.shippingAddress.province}, ${search.shippingAddress.zipcode}</p>
+    `
+    items.innerHTML=search.items.map(function(x){
+        let findItems=   book_records.find(function(y){
+            return x.id === y.id;
+        })
+        if (findItems.genre != 'sale'){
+            return `
+            <tr class="tr-modal">
+                        <td class="col-10">
+                            <div class="d-flex flex-wrap">
+                                <div>
+                                    <img src="../${findItems.cover}"  alt="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="d-flex flex-wrap">${findItems.title}</div>
+                                    </div>
+                                    <div class="mt-2">${findItems.author}</div>
+                                    <div class="mt-2">&#8369; ${findItems.price}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td  class="col-2">
+                            x ${x.items}
+                        </td>
+                </tr>
+        `
+        }else{
+            return `
+            <tr class="tr-modal">
+                        <td class="col-10">
+                            <div class="d-flex flex-wrap">
+                                <div>
+                                    <img src="../${findItems.cover}"  alt="">
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="d-flex flex-wrap">${findItems.title}</div>
+                                    </div>
+                                    <div class="mt-2">${findItems.author}</div>
+                                    <div class="mt-2">&#8369; ${(findItems.price)-(findItems.price*(findItems.saleprice/100))}  <span><del> &#8369; ${findItems.price}</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td  class="col-2">
+                            x ${x.items}
+                        </td>
+                    </tr>
+        `
+        }
+    }).join("")
+    total.innerHTML=`
+    <div class="product-tot d-flex justify-content-between align-items-center mt-3">
+                          <h6 class="fw-bold">Order Total</h6>
+                          <p class="fw-bold">&#8369; ${search.total}.00</p>
+                      </div>
+                      <div class="product-tot d-flex justify-content-between align-items-center">
+                        <h6 class="fw-bold">Payment Status</h6>
+                        <p class="fw-bold">${search.payment}</p>
+                    </div>
+    `
+    details.innerHTML=`
+    <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Order ID</h6>
+                    <p class="fw-bold">${search.orderId}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Status</h6>
+                    <p class="fw-bold fs-6">${search.status}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Date Placed</h6>
+                    <p class="lead fs-6">${search.date.date}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Expected Delivery</h6>
+                    <p class="lead fs-6">${expected}</p>
+                 </div>
+    `
+}
+function openModal3() {
+    var modal = document.getElementById('staticBackdrop3');
+    var modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+}
 //template literals for newsletter
 function generateNewsletter(){
     let newsletter_records= new Array
@@ -203,7 +468,8 @@ function generateNewsletter(){
         return `
         <tr>
                                             <td class="text-center">${y +1}</td>
-                                            <td class="text-center">${x}</td>
+                                            <td class="text-center">${x.email}</td>
+                                            <td class="text-center">${x.date.date}</td>
                                             <td class="d-flex flex-wrap justify-content-center">
                                                 <a type="button" class="btn btn-remove">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -558,3 +824,5 @@ document.getElementById("newpassword").addEventListener("input",function(){
     document.getElementById("error-message5").classList.remove("error-print");
     document.getElementById("infieldError5").classList.remove("in-field-invalid");
 });
+
+
