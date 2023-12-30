@@ -96,6 +96,7 @@ function saveMessage(){
         "name": name,
         "email": email,
         "message": message,
+        "type": 'unread',
         "time":time,
     })
     sessionStorage.setItem("Messages", JSON.stringify(message_records));

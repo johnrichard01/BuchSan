@@ -146,8 +146,6 @@ function realtimeCheck(){
             message.innerHTML="Password does not match.";
             message.style.color="red";
         }
-        
-        
     }
 };
 //save data for session storage
@@ -231,6 +229,56 @@ function closePopup(){
     document.getElementById("overlayWhole").classList.remove("overlay");
     document.getElementById("miniFooter").style.visibility="visible";
 }
+function adminOne(){
+    //set admin accounts
+    let admin_records=new Array();
+    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
+    // Check if the data already exists in the array
+    var newData = {
+        "name": "jessica Pam Velasquez",
+        "username": "pam",
+        "email": "pam@buchsan.com",
+        "type": "main",
+        "password": "johnric2J",
+        "profilepicture":"images/profile-picture.png"
+    };
 
+    var newDataExists = admin_records.some(function (admin) {
+        return admin.username === newData.username && admin.email === newData.email;
+    });
+
+    if (!newDataExists) {
+        // Data doesn't exist, so push it into the array
+        admin_records.push(newData);
+        sessionStorage.setItem("admins",JSON.stringify(admin_records));
+    }
+}
+
+// Repeat the process for the second set of data
+function adminTwo(){
+    let admin_records=new Array();
+    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
+
+   let newData = {
+        "name": "John Richard Vidal Sumagui",
+        "username": "Richard",
+        "email": "richard@buchsan.com",
+        "type": "main",
+        "password": "johnric2J",
+        "profilepicture":"../images/profile-picture.png"
+    };
+    
+   let newDataExists = admin_records.some(function (admin) {
+        return admin.username === newData.username && admin.email === newData.email;
+    });
+    
+    if (!newDataExists) {
+        // Data doesn't exist, so push it into the array
+        admin_records.push(newData);
+        sessionStorage.setItem("admins",JSON.stringify(admin_records));
+    }
+}
+adminOne();
+adminTwo();
     
 

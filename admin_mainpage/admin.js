@@ -27,6 +27,8 @@ function buttonActive(id){
         clicked.classList.add('btn-section-active')
     }
 }
+
+
 function removeActive(){
     let buttonArray= ['usersButton', 'adminButton','orderButton', 'booksButton','newsButton', 'messagesButton'];
     buttonArray.forEach(function(x){
@@ -111,41 +113,442 @@ function generateSectionUsers(){
     let sectionUser= document.getElementById('usersBody');
     let user_records=new Array();
     user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
-    sectionUser.innerHTML += user_records.map(function(x){
-        return ` 
-        <tr>
-            <td class="text-center">${x.name}</td>
-            <td class="text-center">${x.username}</td>
-            <td class="text-center">${x.email}</td>
-            <td class="d-flex flex-wrap justify-content-center"><button class="btn btn-remove">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+    if (user_records.length === 0){
+        sectionUser.innerHTML= `
+        <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="img-fluid bi bi-person-fill-slash" viewBox="0 0 16 16">
+                    <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465m-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4"/>
                 </svg>
-            </button></td>
-        </tr>`
-    }).join("")
+            </div>
+        </div>`
+    }else {
+        sectionUser.innerHTML += user_records.map(function(x){
+            
+            return ` 
+            <tr>
+                <td class="text-center">${x.name}</td>
+                <td class="text-center">${x.username}</td>
+                <td class="text-center">${x.email}</td>
+                <td  class="text-center dropdown-center">
+                    <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                    </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-orders">
+                    <li>
+                        <button onclick="resetModal('${x.email}');realtimeEvent();openModal6();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">Reset Password</button>
+                    </li>
+                    <li>
+                        <button onclick="deleteUserConfirmation(event,'${x.email}')"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">Delete</button>
+                    </li>
+                </ul>
+                </td>
+            </tr>`
+        }).join("")
+    }
 }
 generateSectionUsers();
+//modal for password reset
+function resetModal(email){
+    let modal = document.getElementById('modalReset')
+    modal.innerHTML=`
+    <div class="container d-flex flex-wrap justify-content-center">
+                        <form class="form" novalidate>
+                            <div class="ing-group d-flex flex-wrap justify-content-center">
+                                <div class="in-field" id="resetPassword1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="newuserpassword" placeholder="New Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                    
+                                </div>
+                                    <div class="error-message" id="reseterror1">
+                                    </div>
+                                <div class="in-field" id="resetPassword2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="confirmuserpassword" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                </div>
+                                    <p id="message"></p>
+                                    <div class="error-message" id="reseterror2">
+                                    </div>
+                                    <div class="error-message" id="validateuserMessage">
+                                    </div>
+                                <div class="row w-100 mt-4">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn btn-update fw-bold w-50" onclick=" validateReset('${email}');" >Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+    `
+    document.getElementById("newuserpassword").addEventListener("input",realtimeReset);
+    document.getElementById("confirmuserpassword").addEventListener("input",realtimeReset);
+    document.getElementById("newuserpassword").addEventListener("input",function(){
+        document.getElementById('reseterror1').innerHTML=""
+        document.getElementById('reseterror1').classList.remove('error-print');
+        document.getElementById('resetPassword1').classList.remove('in-field-invalid')
+    });
+}
+
+//for deleting user
+function deleteUser(email){
+    
+    let user_records=new Array();
+    user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
+
+    let filter= user_records.filter(function(x){
+        return x.email !== email ;
+    })
+    sessionStorage.setItem("users", JSON.stringify(filter));
+}
+function deleteUserConfirmation(event, email){
+    let sectionUser= document.getElementById('usersBody');
+    let result =confirm('are you sure ?');
+    if (result === false){
+        console.log('canceled')
+        event.preventDefault();
+    }else{
+        deleteUser(email);
+        let existingRows = sectionUser.querySelectorAll('tr');
+        for (let i = existingRows.length - 1; i > 0; i--) {
+            existingRows[i].parentNode.removeChild(existingRows[i]);
+        }
+        generateSectionUsers();
+    }
+}
+function openModal6() {
+    let modal = document.getElementById('staticBackdrop6');
+    let modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+}
+//validation for reset password
+function space(input) {
+    return /^\s*$/.test(input);
+}
+function isValidPassword(password) {
+    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return passwordRegex.test(password);
+}
+function passwordsMatch(password, confirmPassword) {   
+    return password === confirmPassword;
+}
+
+function validateReset(email){
+    let isValid = true;
+    let newpass= document.getElementById('newuserpassword').value;
+    let confirmnew= document.getElementById('confirmuserpassword').value;
+
+    if (!isValidPassword(newpass)){
+        document.getElementById('reseterror1').innerHTML="Please enter a valid password"
+        document.getElementById('reseterror1').classList.add('error-print');
+        document.getElementById('resetPassword1').classList.add('in-field-invalid')
+        isValid= false;
+    } if (newpass === ""){
+        document.getElementById('reseterror1').innerHTML="Please enter a password"
+        document.getElementById('reseterror1').classList.add('error-print');
+        document.getElementById('resetPassword1').classList.add('in-field-invalid')
+        isValid= false;
+    }  if (confirmnew === ""){
+        document.getElementById('reseterror2').innerHTML="Please enter a the same password"
+        document.getElementById('reseterror2').classList.add('error-print');
+        document.getElementById('reseterror2').style.color="red"
+        document.getElementById('resetPassword2').classList.add('in-field-invalid')
+        isValid= false;
+    }if (confirmnew === ""){
+        document.getElementById('reseterror2').innerHTML="Please enter the same password"
+        document.getElementById('reseterror2').classList.add('error-print');
+        document.getElementById('reseterror2').style.color="red";
+        document.getElementById('resetPassword2').classList.add('in-field-invalid')
+        isValid= false;
+    } if (isValid){
+        
+        resetPassword(email);
+    }
+}
+function realtimeReset(){
+    document.getElementById("reseterror2").classList.remove("error-print");
+    document.getElementById("resetPassword2").classList.remove("in-field-invalid");
+    let newpassword= document.getElementById('newuserpassword').value;
+    let confirmpassword= document.getElementById('confirmuserpassword').value;
+    if (newpassword.trim() ==="" && confirmpassword.trim()===""){
+        
+    }else{
+        if (newpassword.trim() === confirmpassword.trim()){
+            document.getElementById('reseterror2').innerHTML="Password match"
+            document.getElementById('reseterror2').classList.add("error-print")
+            document.getElementById('reseterror2').style.color="green";
+        }else{
+            document.getElementById('reseterror2').innerHTML="Password does not match"
+            document.getElementById('reseterror2').classList.add("error-print")
+            document.getElementById('resetPassword2').classList.add("in-field-invalid")
+            document.getElementById('reseterror2').style.color="red";
+        }
+    }
+}
+function clearReset(){
+  document.getElementById('newuserpassword').value="";
+  document.getElementById('confirmuserpassword').value="";
+  document.getElementById('reseterror2').classList.remove("error-print")
+  document.getElementById('reseterror1').classList.remove("error-print")
+  document.getElementById('resetPassword1').classList.remove('in-field-invalid')
+  document.getElementById('resetPassword2').classList.remove('in-field-invalid')
+}
+
+
+//for restting password
+function resetPassword(email){
+    let newpassword= document.getElementById('newuserpassword').value;
+    let confirmpassword= document.getElementById('confirmuserpassword').value;
+
+    let user_records=new Array();
+    user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
+    
+    let search = user_records.find(function(x){
+        return x.email === email;
+    })
+    search.password= newpassword;
+    sessionStorage.setItem('users', JSON.stringify(user_records));
+    document.getElementById('confirmuserpassword').value="";
+    document.getElementById('newuserpassword').value="";
+    document.getElementById('reseterror2').innerHTML="Succesfully Changed"
+    document.getElementById('reseterror2').classList.add('error-print');
+    document.getElementById('reseterror2').style.color="green";
+    setTimeout(function(){
+        document.getElementById('reseterror2').innerHTML=""
+        document.getElementById('reseterror2').classList.remove('error-print');
+    }, 2000)
+}
+//adding user
+function openModal7() {
+    let modal = document.getElementById('staticBackdrop7');
+    let modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+}
 //admin template literals
 function generateSectionAdmins(){
     let sectionAdmin= document.getElementById('adminBody');
     let admin_records=new Array();
-    admin_records= JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[]
-    sectionAdmin.innerHTML += admin_records.map(function(x){
-        return ` 
-        <tr>
-            <td class="text-center">${x.name}</td>
-            <td class="text-center">${x.username}</td>
-            <td class="text-center">${x.email}</td>
-            <td class="d-flex flex-wrap justify-content-center"><button class="btn btn-remove">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+    admin_records= JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
+    if (admin_records.length===0){
+        return sectionAdmin.innerHTML =
+        `
+        <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-person-fill-slash" viewBox="0 0 16 16">
+                    <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465m-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4"/>
                 </svg>
-            </button></td>
-        </tr>`
-    }).join("")
+            </div>
+        </div>`
+    }else{
+        return sectionAdmin.innerHTML += admin_records.map(function(x){
+            
+            return ` 
+            <tr>
+                <td class="text-center">${x.name}</td>
+                <td class="text-center">${x.username}</td>
+                <td class="text-center">${x.email}</td>
+                <td  class="text-center dropdown-center">
+                        <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu dropdown-orders">
+                        <li>
+                            <button onclick="resetModalAdmin('${x.email}');realtimeAdmin();openModal8();"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">Reset Password</button>
+                        </li>
+                        <li>
+                            <button onclick="deleteAdminConfirmation(event, '${x.email}')"  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">Delete</button>
+                        </li>
+                    </ul>
+            </tr>`
+        }).join("")
+    }
+    
 }
 generateSectionAdmins();
+function openModal8() {
+    let modal = document.getElementById('staticBackdrop8');
+    let modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+}
+//for resetting admin password
+function resetModalAdmin(email){
+    let modal = document.getElementById('modalResetAdmin')
+    modal.innerHTML=`
+    <div class="container d-flex flex-wrap justify-content-center">
+                        <form class="form" novalidate>
+                            <div class="ing-group d-flex flex-wrap justify-content-center">
+                                <div class="in-field" id="resetPasswordAdmin1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="newuserpasswordAdmin" placeholder="New Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                    
+                                </div>
+                                    <div class="error-message" id="reseterrorAdmin1">
+                                    </div>
+                                <div class="in-field" id="resetPasswordAdmin2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="confirmuserpasswordAdmin" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                </div>
+                                    <p id="message"></p>
+                                    <div class="error-message" id="reseterrorAdmin2">
+                                    </div>
+                                    <div class="error-message" id="validateuserMessage">
+                                    </div>
+                                <div class="row w-100 mt-4">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn btn-update fw-bold w-50" onclick=" validateResetAdmin('${email}');" >Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+    `
+    document.getElementById("newuserpasswordAdmin").addEventListener("input",realtimeResetAdmin);
+    document.getElementById("confirmuserpasswordAdmin").addEventListener("input",realtimeResetAdmin);
+    document.getElementById("newuserpasswordAdmin").addEventListener("input",function(){
+        document.getElementById('reseterrorAdmin1').innerHTML=""
+        document.getElementById('reseterrorAdmin1').classList.remove('error-print');
+        document.getElementById('resetPasswordAdmin1').classList.remove('in-field-invalid')
+    });
+}
+function validateResetAdmin(email){
+    let isValid = true;
+    let newpass= document.getElementById('newuserpasswordAdmin').value;
+    let confirmnew= document.getElementById('confirmuserpasswordAdmin').value;
+    if (!isValidPassword(newpass)){
+        document.getElementById('reseterrorAdmin1').innerHTML="Please enter a valid password"
+        document.getElementById('reseterrorAdmin1').classList.add('error-print');
+        document.getElementById('resetPasswordAdmin1').classList.add('in-field-invalid')
+        isValid= false;
+    } if (newpass === ""){
+        document.getElementById('reseterrorAdmin1').innerHTML="Please enter a password"
+        document.getElementById('reseterrorAdmin1').classList.add('error-print');
+        document.getElementById('resetPasswordAdmin1').classList.add('in-field-invalid')
+        isValid= false;
+    }  if (confirmnew === ""){
+        document.getElementById('reseterrorAdmin2').innerHTML="Please enter a the same password"
+        document.getElementById('reseterrorAdmin2').classList.add('error-print');
+        document.getElementById('reseterrorAdmin2').style.color="red"
+        document.getElementById('resetPasswordAdmin2').classList.add('in-field-invalid')
+        isValid= false;
+    }if (confirmnew === ""){
+        document.getElementById('reseterrorAdmin2').innerHTML="Please enter the same password"
+        document.getElementById('reseterrorAdmin2').classList.add('error-print');
+        document.getElementById('reseterrorAdmin2').style.color="red";
+        document.getElementById('resetPasswordAdmin2').classList.add('in-field-invalid')
+        isValid= false;
+    } if (isValid){
+        resetPasswordAdmin(email);
+    }
+}
+function realtimeResetAdmin(){
+    document.getElementById("reseterrorAdmin2").classList.remove("error-print");
+    document.getElementById("resetPasswordAdmin2").classList.remove("in-field-invalid");
+    let newpassword= document.getElementById('newuserpasswordAdmin').value;
+    let confirmpassword= document.getElementById('confirmuserpasswordAdmin').value;
+    if (newpassword.trim() ==="" && confirmpassword.trim()===""){
+        
+    }else{
+        if (newpassword.trim() === confirmpassword.trim()){
+            document.getElementById('reseterrorAdmin2').innerHTML="Password match"
+            document.getElementById('reseterrorAdmin2').classList.add("error-print")
+            document.getElementById('reseterrorAdmin2').style.color="green";
+        }else{
+            document.getElementById('reseterrorAdmin2').innerHTML="Password does not match"
+            document.getElementById('reseterrorAdmin2').classList.add("error-print")
+            document.getElementById('resetPasswordAdmin2').classList.add("in-field-invalid")
+            document.getElementById('reseterrorAdmin2').style.color="red";
+        }
+    }
+}
+function clearResetAdmin(){
+  document.getElementById('newuserpasswordAdmin').value="";
+  document.getElementById('confirmuserpasswordAdmin').value="";
+  document.getElementById('reseterrorAdmin2').classList.remove("error-print")
+  document.getElementById('reseterrorAdmin1').classList.remove("error-print")
+  document.getElementById('resetPasswordAdmin1').classList.remove('in-field-invalid')
+  document.getElementById('resetPasswordAdmin2').classList.remove('in-field-invalid')
+}
+
+//for resetting admin password
+function resetPasswordAdmin(email){
+    let newpassword= document.getElementById('newuserpasswordAdmin').value;
+    let confirmpassword= document.getElementById('confirmuserpasswordAdmin').value;
+
+    let admin_records=new Array();
+    admin_records= JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[]
+    
+    let search = admin_records.find(function(x){
+        return x.email === email;
+    })
+    search.password= newpassword;
+    sessionStorage.setItem('admins', JSON.stringify(admin_records));
+    document.getElementById('confirmuserpasswordAdmin').value="";
+    document.getElementById('newuserpasswordAdmin').value="";
+    document.getElementById('reseterrorAdmin2').innerHTML="Succesfully Changed"
+    document.getElementById('reseterrorAdmin2').classList.add('error-print');
+    document.getElementById('reseterrorAdmin2').style.color="green";
+    setTimeout(function(){
+        document.getElementById('reseterrorAdmin2').innerHTML=""
+        document.getElementById('reseterrorAdmin2').classList.remove('error-print');
+    }, 2000)
+}
+//for deleting admin
+function deleteAdmin(email){
+    let admin_records=new Array();
+    admin_records= JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[]
+    let filter= admin_records.filter(function(x){
+        return x.email !== email ;
+    })
+    sessionStorage.setItem("admins", JSON.stringify(filter));
+}
+function deleteAdminConfirmation(event, email){
+    let admin_records=new Array();
+    admin_records= JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[]
+    let currentAdmin= sessionStorage.getItem('email')
+    let sectionUser= document.getElementById('adminBody');
+    let result =confirm('are you sure ?');
+    if (result === false){
+        console.log('canceled')
+        event.preventDefault();
+    }else{
+        let search= admin_records.find(function(x){
+            return currentAdmin === x.email;
+        })
+        if (sessionStorage.getItem('email')=== email ){
+            alert('You are currently using this account! Cannot be deleted!')
+        }else{
+            if (search.type !== 'main'){
+                alert('Only the main admin can delete admin accounts!')
+            }else {
+                deleteAdmin(email);
+                let existingRows = sectionUser.querySelectorAll('tr');
+                for (let i = existingRows.length - 1; i > 0; i--) {
+                    existingRows[i].parentNode.removeChild(existingRows[i]);
+                }
+                generateSectionAdmins();
+            }
+        }
+    }
+}
+// modal for add admin
+function openModal9() {
+    let modal = document.getElementById('staticBackdrop9');
+    let modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
+}
 // template literals for books
 function generateBooks(){
     let book_records=new Array();
@@ -197,11 +600,16 @@ function generateOrders(){
     let totalOrder_records= new Array;
         totalOrder_records=JSON.parse(sessionStorage.getItem("totalOrders"))?JSON.parse(sessionStorage.getItem("totalOrders")):[];
         let orderbody= document.getElementById('adminOrders');
-        let orderNone= document.getElementById('sectionOrders');
         if (totalOrder_records.length === 0){
-            return orderNone.innerHTML=`
-             NOTHING TO SHOW
+            return orderbody.innerHTML=
             `
+            <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z"/>
+                    </svg>
+                </div>
+            </div>`
         }else{
             orderbody.innerHTML+= totalOrder_records.map(function(x,y){
                 if (x.status === 'TO SHIP'){
@@ -463,366 +871,112 @@ function generateNewsletter(){
     let newsletter_records= new Array
     newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
     let newsbody= document.getElementById('newsBody');
-
-    newsbody.innerHTML += newsletter_records.map(function(x,y){
-        return `
-        <tr>
-                                            <td class="text-center">${y +1}</td>
-                                            <td class="text-center">${x.email}</td>
-                                            <td class="text-center">${x.date.date}</td>
-                                            <td class="d-flex flex-wrap justify-content-center">
-                                                <a type="button" class="btn btn-remove">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
+    if (newsletter_records.length===0){
+        newsbody.innerHTML=
         `
-    })
+            <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
+                        <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.314l6.709 3.932L8 8.928l1.291.718L16 5.714V5.4a2 2 0 0 0-1.059-1.765l-6-3.2ZM16 6.873l-5.693 3.337L16 13.372v-6.5Zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516M0 13.373l5.693-3.163L0 6.873v6.5Z"/>
+                    </svg>
+                </div>
+            </div>`
+    }else {
+        newsbody.innerHTML += newsletter_records.map(function(x,y){
+            return `
+            <tr>
+                                                <td class="text-center">${y +1}</td>
+                                                <td class="text-center">${x.email}</td>
+                                                <td class="text-center">${x.date.date}</td>
+                                                <td class="d-flex flex-wrap justify-content-center">
+                                                    <a type="button" class="btn btn-remove" onclick="newsletterConfirmation('${x.email}')">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                            </tr>
+            `
+        }).join("")
+    }
+    
     
 }
 generateNewsletter();
 
+function removeNewsLetter(email){
+    let newsletter_records= new Array
+    newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
 
-//validation for account settings
-function space(input) {
-    return /^\s*$/.test(input);
-}
-function isValidEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-function isValidPassword(password) {
-    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    return passwordRegex.test(password);
-}
-function passwordsMatch(password, confirmPassword) {   
-    return password === confirmPassword;
-}
-function onlyLetters(input) {
-    return /^[a-zA-Z ]+$/.test(input);
-}
-function successPrint(number, changed){
-            document.getElementById("error-message"+number).innerHTML="";
-            document.getElementById("error-message"+number).innerHTML= changed +" successfuly updated"
-            document.getElementById("error-message"+number).classList.add("success-print");
-            document.getElementById("infieldError"+number).classList.add("in-field-success");
-            setTimeout(function(){
-                successRemove(number)
-            }, 3000);
-}
-function successRemove(number){
-    document.getElementById("error-message"+number).innerHTML="";
-    document.getElementById("error-message"+number).classList.remove("success-print");
-    document.getElementById("infieldError"+number).classList.remove("in-field-success");
-}
-
-function validateProfile(event){
-    let fullnameVal = document.getElementById("fullname").value;
-    let usernameVal = document.getElementById("username").value;
-    let emailVal = document.getElementById("email").value;
-    let empty="";
-    let isValid=true;
-
-    if (!onlyLetters(fullnameVal)){
-        event.preventDefault();
-        document.getElementById("error-message1").innerHTML="";
-        document.getElementById("error-message1").innerHTML="Please enter fullname with only letters"
-        document.getElementById("error-message1").classList.add("error-print");
-        document.getElementById("infieldError1").classList.add("in-field-invalid");
-        isValid=false;
-    }if (space(fullnameVal)){
-        event.preventDefault();
-        document.getElementById("error-message1").innerHTML="Please enter a valid fullname"
-        document.getElementById("error-message1").classList.add("error-print");
-        document.getElementById("infieldError1").classList.add("in-field-invalid");
-        isValid=false;
-    }if (fullnameVal==empty){
-        event.preventDefault();
-        document.getElementById("error-message1").innerHTML="Please enter your fullname"
-        document.getElementById("error-message1").classList.add("error-print");
-        document.getElementById("infieldError1").classList.add("in-field-invalid");
-        isValid=false;
-    } if (space(usernameVal)){
-        event.preventDefault();
-        document.getElementById("error-message2").innerHTML="Please enter a valid username"
-        document.getElementById("error-message2").classList.add("error-print");
-        document.getElementById("infieldError2").classList.add("in-field-invalid");
-        isValid=false;
-    } if (usernameVal==empty){
-        event.preventDefault();
-        document.getElementById("error-message2").innerHTML="Please enter a username"
-        document.getElementById("error-message2").classList.add("error-print");
-        document.getElementById("infieldError2").classList.add("in-field-invalid");
-        isValid=false;
-    }if (!isValidEmail(emailVal)){
-        event.preventDefault();
-        document.getElementById("error-message3").innerHTML="Please enter a valid email"
-        document.getElementById("error-message3").classList.add("error-print");
-        document.getElementById("infieldError3").classList.add("in-field-invalid");
-        isValid=false;
-    }if (space(emailVal)){
-        event.preventDefault();
-        document.getElementById("error-message3").innerHTML="Please enter an email"
-        document.getElementById("error-message3").classList.add("error-print");
-        document.getElementById("infieldError3").classList.add("in-field-invalid");
-        isValid=false;
-    }if (emailVal===empty){
-        event.preventDefault();
-        document.getElementById("error-message3").innerHTML="Please enter your email"
-        document.getElementById("error-message3").classList.add("error-print");
-        document.getElementById("infieldError3").classList.add("in-field-invalid");
-        isValid=false;
-    }
-     if(isValid){
-        saveProfile();
-    }
-}
-function saveProfile(){
-    let newname, newusername, newemail;
-    newname=document.getElementById("fullname").value;
-    newusername=document.getElementById("username").value;
-    newemail=document.getElementById("email").value;
-    let oldname=sessionStorage.getItem('name');
-    let oldemail=sessionStorage.getItem('email');
-    let oldusername=sessionStorage.getItem('username');
-    let admin_records=new Array();
-    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
-    let user_records=new Array();
-    user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
-
-    if (newname.toLowerCase() === oldname.toLocaleLowerCase() && newemail.toLowerCase() === oldemail.toLocaleLowerCase() && newusername.toLowerCase() === oldusername.toLocaleLowerCase()){
-        document.getElementById('validateMessage').innerHTML="Nothing changed";
-        document.getElementById('validateMessage').classList.add('error-print');
-        console.log('same');    
-    } if (newname.toLowerCase() !== oldname.toLocaleLowerCase()){
-        let findUser= admin_records.find(function(x){
-            return x.email === oldemail
-        })
-        if (findUser){
-            findUser.name= newname;
-            sessionStorage.setItem("admins",JSON.stringify(admin_records));
-            sessionStorage.setItem('name', newname);
-            successPrint("1","Fullname");
-            
-        }
-    } if (newusername.toLowerCase() !== oldusername.toLocaleLowerCase()){
-        let usernameDupe= admin_records.some(function(x){
-            return x.username.toLowerCase() === newusername.toLowerCase();
-        })
-        if (usernameDupe){
-            document.getElementById("error-message2").innerHTML="";
-            document.getElementById("error-message2").innerHTML="Username already used"
-            document.getElementById("error-message2").classList.add("error-print");
-            document.getElementById("infieldError2").classList.add("in-field-invalid");
-        }else{
-            let usernameDupe= user_records.some(function(x){
-                return x.username.toLowerCase() === newusername.toLowerCase();
-            })
-            if(usernameDupe){
-                document.getElementById("error-message2").innerHTML="";
-                document.getElementById("error-message2").innerHTML="Username already used"
-                document.getElementById("error-message2").classList.add("error-print");
-                document.getElementById("infieldError2").classList.add("in-field-invalid");
-            }else{
-                let findUser= admin_records.find(function(x){
-                    return x.email === oldemail
-                })
-                findUser.username= newusername;
-                sessionStorage.setItem("admins",JSON.stringify(admin_records));
-                sessionStorage.setItem('username', newusername);
-                successPrint("2","Username");
-                generateName();
-            }
-        }
-    } if ( newemail.toLowerCase() !== oldemail.toLocaleLowerCase() ){
-        let emailDupe= admin_records.some(function(x){
-            return x.email.toLowerCase() === newemail.toLowerCase();
-        })
-        if (emailDupe){
-            document.getElementById("error-message3").innerHTML="";
-            document.getElementById("error-message3").innerHTML="email already used"
-            document.getElementById("error-message3").classList.add("error-print");
-            document.getElementById("infieldError3").classList.add("in-field-invalid");
-        }else{
-            let emailDupe= user_records.some(function(x){
-                return x.email.toLowerCase() === newemail.toLowerCase();
-            })
-            if(emailDupe){
-                document.getElementById("error-message3").innerHTML="";
-                document.getElementById("error-message3").innerHTML="email already used"
-                document.getElementById("error-message3").classList.add("error-print");
-                document.getElementById("infieldError3").classList.add("in-field-invalid");
-            }else{
-                let findUser= admin_records.find(function(x){
-                    return x.email === oldemail;
-                })
-                findUser.email= newemail;
-                sessionStorage.setItem("admins",JSON.stringify(admin_records));
-                sessionStorage.setItem('email', newemail);
-                successPrint("3","Email");
-            }
-        }
-
-    }
-}
-document.getElementById('updateProfile').addEventListener("click", validateProfile);
-function validatePassword(event){
-    let oldpassword= document.getElementById('oldpassword').value;
-    let newpassword= document.getElementById('newpassword').value;
-    let confirmpassword= document.getElementById('confirmpassword').value;
-    let empty="";
-    let isValid=true;
-    if (!isValidPassword(oldpassword)){
-        event.preventDefault();
-        document.getElementById("error-message4").innerHTML="";
-        document.getElementById("error-message4").innerHTML="Please enter a valid password"
-        document.getElementById("error-message4").classList.add("error-print");
-        document.getElementById("infieldError4").classList.add("in-field-invalid");
-        isValid=false;
-    }   if (oldpassword === empty){
-        event.preventDefault();
-        document.getElementById("error-message4").innerHTML="";
-        document.getElementById("error-message4").innerHTML="Please enter your password"
-        document.getElementById("error-message4").classList.add("error-print");
-        document.getElementById("infieldError4").classList.add("in-field-invalid");
-        isValid=false;
-    }   if (!isValidPassword(newpassword)){
-        event.preventDefault();
-        document.getElementById("error-message5").innerHTML="";
-        document.getElementById("error-message5").innerHTML="Please enter a valid password"
-        document.getElementById("error-message5").classList.add("error-print");
-        document.getElementById("infieldError5").classList.add("in-field-invalid");
-        isValid=false;
-    }   if (newpassword === empty){
-        event.preventDefault();
-        document.getElementById("error-message5").innerHTML="";
-        document.getElementById("error-message5").innerHTML="Please enter your password"
-        document.getElementById("error-message5").classList.add("error-print");
-        document.getElementById("infieldError5").classList.add("in-field-invalid");
-        isValid=false;
-    }   if (confirmpassword === empty){
-        event.preventDefault();
-        document.getElementById("error-message6").innerHTML="";
-        document.getElementById("error-message6").innerHTML="Please enter your password"
-        document.getElementById("error-message6").classList.add("error-print");
-        document.getElementById("infieldError6").classList.add("in-field-invalid");
-        isValid=false;
-    }   if(confirmpassword!==newpassword){
-        event.preventDefault();
-        isValid=false;
-    }   if (isValid) {
-        savePassword();
-    }
-}
-
-function savePassword(){
-    let oldpassword= document.getElementById('oldpassword').value;
-    let newpassword= document.getElementById('newpassword').value;
-    let confirmpassword= document.getElementById('confirmpassword').value;
-    let email = sessionStorage.getItem('email');
-    let admin_records=new Array();
-    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
-    let findUser= admin_records.find(function(x){
-        return x.email === email;
+    let filter= newsletter_records.filter(function(x){
+        return email !== x.email;
     })
-    if(findUser){
-       if (findUser.password === oldpassword){
-            if(newpassword === findUser.password){
-                document.getElementById("error-message5").innerHTML="";
-                document.getElementById("error-message5").innerHTML="Same as your previous password"
-                document.getElementById("error-message5").classList.add("error-print");
-                document.getElementById("infieldError5").classList.add("in-field-invalid");
-            }else{
-                findUser.password= newpassword;
-                sessionStorage.setItem("admins",JSON.stringify(admin_records));
-                message.innerHTML="";
-                document.getElementById('validatepassMessage').innerHTML="";
-                document.getElementById('validatepassMessage').innerHTML="Succesfully changed password";
-                document.getElementById('validatepassMessage').classList.add('success-print');
-                document.getElementById("infieldError4").classList.add("in-field-success");
-                document.getElementById("infieldError5").classList.add("in-field-success");
-                document.getElementById("infieldError6").classList.add("in-field-success");
-            setTimeout(function(){
-                document.getElementById('validatepassMessage').innerHTML="";
-                document.getElementById('validatepassMessage').classList.remove('success-print');
-                document.getElementById("infieldError4").classList.remove("in-field-success");
-                document.getElementById("infieldError5").classList.remove("in-field-success");
-                document.getElementById("infieldError6").classList.remove("in-field-success");
-                document.getElementById('oldpassword').value="";
-                document.getElementById('newpassword').value="";
-                document.getElementById('confirmpassword').value="";
-            }, 3000);
-            }
-            
-       }else{
-        document.getElementById("error-message4").innerHTML="";
-        document.getElementById("error-message4").innerHTML="Wrong password"
-        document.getElementById("error-message4").classList.add("error-print");
-        document.getElementById("infieldError4").classList.add("in-field-invalid");
-       }
-    }
-
+    sessionStorage.setItem('Subscribers', JSON.stringify(filter));
 }
-function realtimeCheck(){
-    document.getElementById("error-message6").classList.remove("error-print");
-    document.getElementById("infieldError6").classList.remove("in-field-invalid");
-    let oldpassword= document.getElementById('oldpassword').value;
-    let newpassword= document.getElementById('newpassword').value;
-    let confirmpassword= document.getElementById('confirmpassword').value;
-    let message= document.getElementById("message");
-
-    if (newpassword.trim() === "" && confirmpassword.trim() === "") {
-        
-        document.getElementById("error-message5").innerHTML="Please enter a password";
-        document.getElementById("error-message5").classList.add("error-print");
-        document.getElementById("infieldError5").classList.add("in-field-invalid");
-    }
-    else if(newpassword===confirmpassword){
-        message.innerHTML="Password match.";
-        message.style.color="green";
-    } else {
-        if(document.getElementById("infieldError6").classList.contains("in-field-invalid")){
-            console.log("true");
-        }else{
-            document.getElementById("infieldError6").classList.add("in-field-invalid");
-            message.innerHTML="Password does not match.";
-            message.style.color="red";
+function newsletterConfirmation(email){
+    let message= document.getElementById('newsBody');
+    let result =confirm('are you sure?');
+    if (result === false){
+        console.log('canceled')
+        event.preventDefault();
+    }else{
+        removeNewsLetter(email);
+        let existingRows = message.querySelectorAll('tr');
+        for (let i = existingRows.length - 1; i > 0; i--) {
+            existingRows[i].parentNode.removeChild(existingRows[i]);
         }
+        generateNewsletter();
     }
-};
+}
 
+var myOffcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasScrolling'));
+myOffcanvas.show();
+// function generate admin profile settings
+function generateProfileSettings(){
+    let container = document.getElementById('adminProfile')
+    let name = sessionStorage.getItem('name')
+    let uname = sessionStorage.getItem('username')
+    let email= sessionStorage.getItem('email')
 
-document.getElementById('updatePassword').addEventListener("click", validatePassword);
-document.getElementById("confirmpassword").addEventListener("input",realtimeCheck);
-document.getElementById("newpassword").addEventListener("input",realtimeCheck);
-
-
-
-
-document.getElementById("fullname").addEventListener("input",function(){
-    document.getElementById("error-message1").classList.remove("error-print");
-    document.getElementById("infieldError1").classList.remove("in-field-invalid");
-    console.log("why")
-});
-document.getElementById("username").addEventListener("input",function(){
-    document.getElementById("error-message2").classList.remove("error-print");
-    document.getElementById("infieldError2").classList.remove("in-field-invalid");
-
-});
-document.getElementById("email").addEventListener("input",function(){
-    document.getElementById("error-message3").classList.remove("error-print");
-    document.getElementById("infieldError3").classList.remove("in-field-invalid");
-
-});
-document.getElementById("oldpassword").addEventListener("input",function(){
-    document.getElementById("error-message4").classList.remove("error-print");
-    document.getElementById("infieldError4").classList.remove("in-field-invalid");
-});
-document.getElementById("newpassword").addEventListener("input",function(){
-    document.getElementById("error-message5").classList.remove("error-print");
-    document.getElementById("infieldError5").classList.remove("in-field-invalid");
-});
-
-
+    container.innerHTML=`
+    <form class="form" novalidate>
+                                                        <div class="ing-group d-flex flex-wrap justify-content-center">
+                                                            <div class="in-field" id="infieldError1">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
+                                                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                                                  </svg>
+                                                                
+                                                                <input type="text" class="in-box" id="fullname" value="${name}" placeholder="Full name" required>
+                                                            </div>
+                                                                <div class="error-message" id="error-message1">
+                                                                </div>
+                                                            
+                                                            <div class="in-field" id="infieldError2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
+                                                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                                                  </svg>
+                                                                <input type="text" class="in-box" id="username" value="${uname}" placeholder="Username" required>
+                                                            </div>
+                                                                <div class="error-message" id="error-message2">
+                                                                </div>
+                                                            <div class="in-field" id="infieldError3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-envelope-at-fill input-icon" viewBox="0 0 16 16">
+                                                                    <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                                                                    <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                                                                  </svg>
+                                                                <input type="email" class="in-box" id="email"  value="${email}" placeholder="email" required>
+                                                            </div>
+                                                                <div class="error-message" id="error-message3">
+                                                                </div>
+                                                                <div class="error-message" id="validateMessage">
+                                                                </div>
+                                                            <div class="row w-100 mt-2">
+                                                                <div class="d-flex justify-content-center">
+                                                                    <button type="button" class="btn btn-update fw-bold w-50" id="updateProfile">Update</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+    `
+}
+generateProfileSettings();

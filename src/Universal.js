@@ -8,6 +8,7 @@ function adminOne(){
         "name": "jessica Pam Velasquez",
         "username": "pam",
         "email": "pam@buchsan.com",
+        "type": "main",
         "password": "johnric2J",
         "profilepicture":"images/profile-picture.png"
     };
@@ -32,6 +33,7 @@ function adminTwo(){
         "name": "John Richard Vidal Sumagui",
         "username": "Richard",
         "email": "richard@buchsan.com",
+        "type": "main",
         "password": "johnric2J",
         "profilepicture":"../images/profile-picture.png"
     };

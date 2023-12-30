@@ -12,47 +12,64 @@
     <title>Admin</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="div-divider"></div>
-        <div class="row pt-5">
-            <div class="container button-container col-2 d-flex flex-wrap justify-content-center align-items-start align-content-start">
-                <div class="row col-8 d-flex justify-content-center mb-3">
-                    <div class="flex-column mb-4 text-center col-12">
-                        <a href="#" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" class="admin-logo text-decoration-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" width="6rem" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="6rem" preserveAspectRatio="xMidYMid meet" version="1.0"><path d="M 312.980469 248.332031 C 310.695312 256.019531 303.863281 261.449219 295.859375 262.003906 C 249.910156 265.191406 212.242188 285.839844 196.039062 296.148438 L 196.039062 185.515625 C 196.039062 184.605469 195.894531 183.722656 195.625 182.894531 C 251.8125 128.527344 347.066406 133.511719 347.066406 133.511719 Z M 193.785156 296.421875 C 193.785156 299.90625 190.953125 302.738281 187.46875 302.738281 C 183.984375 302.738281 181.15625 299.90625 181.15625 296.421875 L 181.15625 185.515625 C 181.15625 182.023438 183.984375 179.199219 187.46875 179.199219 C 190.953125 179.199219 193.785156 182.023438 193.785156 185.515625 Z M 178.902344 185.515625 L 178.902344 296.148438 C 162.699219 285.839844 125.03125 265.191406 79.082031 262.003906 C 71.078125 261.449219 64.246094 256.019531 61.960938 248.332031 L 27.875 133.511719 C 27.875 133.511719 123.125 128.527344 179.3125 182.894531 C 179.046875 183.722656 178.902344 184.605469 178.902344 185.515625 Z M 183.214844 178.085938 C 183 178.207031 182.792969 178.339844 182.585938 178.480469 C 170.578125 165.984375 135.902344 136.316406 73.082031 130.765625 C 67.261719 130.25 62.136719 126.699219 59.625 121.421875 L 55.140625 112.003906 C 55.140625 112.003906 140.273438 121.589844 183.214844 178.085938 Z M 179.804688 165.632812 C 179.804688 165.632812 154.492188 131.609375 96.746094 117.492188 C 89.867188 115.808594 84.839844 109.90625 84.246094 102.851562 C 114.347656 110.265625 155.746094 127.175781 179.804688 165.632812 Z M 176.003906 147.953125 C 176.953125 149.519531 177.277344 150.402344 177.277344 150.402344 C 176.867188 149.574219 176.441406 148.765625 176.003906 147.953125 C 172.625 142.371094 161.257812 127.949219 127.960938 112.597656 C 122.394531 110.027344 118.707031 104.582031 118.390625 98.460938 L 118.109375 93 C 138.027344 105.097656 163.035156 123.929688 176.003906 147.953125 Z M 319.796875 112.003906 L 315.316406 121.421875 C 312.800781 126.699219 307.683594 130.25 301.859375 130.765625 C 239.035156 136.316406 204.359375 165.984375 192.351562 178.480469 C 192.152344 178.339844 191.9375 178.207031 191.726562 178.085938 C 234.667969 121.589844 319.796875 112.003906 319.796875 112.003906 Z M 290.691406 102.851562 C 290.101562 109.90625 285.070312 115.808594 278.199219 117.492188 C 220.445312 131.609375 195.132812 165.632812 195.132812 165.632812 C 219.191406 127.175781 260.59375 110.265625 290.691406 102.851562 Z M 198.933594 147.953125 C 211.902344 123.929688 236.910156 105.097656 256.828125 93 L 256.546875 98.460938 C 256.234375 104.582031 252.546875 110.027344 246.984375 112.597656 C 213.679688 127.949219 202.316406 142.371094 198.933594 147.953125 C 198.5 148.765625 198.074219 149.574219 197.664062 150.402344 C 197.664062 150.402344 197.988281 149.519531 198.933594 147.953125 Z M 187.46875 -0.03125 C 83.914062 -0.03125 -0.03125 83.914062 -0.03125 187.46875 C -0.03125 291.023438 83.914062 374.96875 187.46875 374.96875 C 291.023438 374.96875 374.96875 291.023438 374.96875 187.46875 C 374.96875 83.914062 291.023438 -0.03125 187.46875 -0.03125 " fill-opacity="1" fill-rule="nonzero"/></svg>
-                            BuchSan
-                        </a>
-                    </div>
-                </div>
-                <div class="row col-12">
-                    <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg btn-section-active" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" id="usersButton">Users</a>
-                    </div>
-                    <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionAdmin'); buttonActive('adminButton')" id="adminButton">Admins</a>
-                    </div>
-                    <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionBooks'); buttonActive('booksButton')" id="booksButton">Books</a>
-                    </div>
-                    <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionOrder'); buttonActive('orderButton')" id="orderButton">Orders</a>
-                    </div>
-                    <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionNews'); buttonActive('newsButton')" id="newsButton">Newsletter</a>
-                    </div>
-                    <div class="nav-div d-flex justify-content-center mb-3">
-                        <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionMessages'); buttonActive('messagesButton')" id="messagesButton">Messages</a>
-                    </div>
+    <div class=" offcanvas offcanvas-start custom-offcanvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="button-container d-flex flex-wrap justify-content-center align-items-start align-content-start">
+            <div class="row col-8 d-flex justify-content-center mb-3">
+                <div class="flex-column mb-4 text-center col-12">
+                    <a href="#" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" class="admin-logo text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" width="6rem" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="6rem" preserveAspectRatio="xMidYMid meet" version="1.0"><path d="M 312.980469 248.332031 C 310.695312 256.019531 303.863281 261.449219 295.859375 262.003906 C 249.910156 265.191406 212.242188 285.839844 196.039062 296.148438 L 196.039062 185.515625 C 196.039062 184.605469 195.894531 183.722656 195.625 182.894531 C 251.8125 128.527344 347.066406 133.511719 347.066406 133.511719 Z M 193.785156 296.421875 C 193.785156 299.90625 190.953125 302.738281 187.46875 302.738281 C 183.984375 302.738281 181.15625 299.90625 181.15625 296.421875 L 181.15625 185.515625 C 181.15625 182.023438 183.984375 179.199219 187.46875 179.199219 C 190.953125 179.199219 193.785156 182.023438 193.785156 185.515625 Z M 178.902344 185.515625 L 178.902344 296.148438 C 162.699219 285.839844 125.03125 265.191406 79.082031 262.003906 C 71.078125 261.449219 64.246094 256.019531 61.960938 248.332031 L 27.875 133.511719 C 27.875 133.511719 123.125 128.527344 179.3125 182.894531 C 179.046875 183.722656 178.902344 184.605469 178.902344 185.515625 Z M 183.214844 178.085938 C 183 178.207031 182.792969 178.339844 182.585938 178.480469 C 170.578125 165.984375 135.902344 136.316406 73.082031 130.765625 C 67.261719 130.25 62.136719 126.699219 59.625 121.421875 L 55.140625 112.003906 C 55.140625 112.003906 140.273438 121.589844 183.214844 178.085938 Z M 179.804688 165.632812 C 179.804688 165.632812 154.492188 131.609375 96.746094 117.492188 C 89.867188 115.808594 84.839844 109.90625 84.246094 102.851562 C 114.347656 110.265625 155.746094 127.175781 179.804688 165.632812 Z M 176.003906 147.953125 C 176.953125 149.519531 177.277344 150.402344 177.277344 150.402344 C 176.867188 149.574219 176.441406 148.765625 176.003906 147.953125 C 172.625 142.371094 161.257812 127.949219 127.960938 112.597656 C 122.394531 110.027344 118.707031 104.582031 118.390625 98.460938 L 118.109375 93 C 138.027344 105.097656 163.035156 123.929688 176.003906 147.953125 Z M 319.796875 112.003906 L 315.316406 121.421875 C 312.800781 126.699219 307.683594 130.25 301.859375 130.765625 C 239.035156 136.316406 204.359375 165.984375 192.351562 178.480469 C 192.152344 178.339844 191.9375 178.207031 191.726562 178.085938 C 234.667969 121.589844 319.796875 112.003906 319.796875 112.003906 Z M 290.691406 102.851562 C 290.101562 109.90625 285.070312 115.808594 278.199219 117.492188 C 220.445312 131.609375 195.132812 165.632812 195.132812 165.632812 C 219.191406 127.175781 260.59375 110.265625 290.691406 102.851562 Z M 198.933594 147.953125 C 211.902344 123.929688 236.910156 105.097656 256.828125 93 L 256.546875 98.460938 C 256.234375 104.582031 252.546875 110.027344 246.984375 112.597656 C 213.679688 127.949219 202.316406 142.371094 198.933594 147.953125 C 198.5 148.765625 198.074219 149.574219 197.664062 150.402344 C 197.664062 150.402344 197.988281 149.519531 198.933594 147.953125 Z M 187.46875 -0.03125 C 83.914062 -0.03125 -0.03125 83.914062 -0.03125 187.46875 C -0.03125 291.023438 83.914062 374.96875 187.46875 374.96875 C 291.023438 374.96875 374.96875 291.023438 374.96875 187.46875 C 374.96875 83.914062 291.023438 -0.03125 187.46875 -0.03125 " fill-opacity="1" fill-rule="nonzero"/></svg>
+                        BuchSan
+                    </a>
                 </div>
             </div>
-            
-            <div class="container col-9">
-                    <div class="row">
-                        <div class="col">
-                            <h1 class="fw-bold display-4 dashboard-title">Dashboard</h1>
+            <div class="row col-12">
+                <div class="nav-div d-flex justify-content-center mb-3">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg btn-section-active" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" id="usersButton">Users</a>
+                </div>
+                <div class="nav-div d-flex justify-content-center mb-3">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionAdmin'); buttonActive('adminButton')" id="adminButton">Admins</a>
+                </div>
+                <div class="nav-div d-flex justify-content-center mb-3">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionBooks'); buttonActive('booksButton')" id="booksButton">Books</a>
+                </div>
+                <div class="nav-div d-flex justify-content-center mb-3">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionOrder'); buttonActive('orderButton')" id="orderButton">Orders</a>
+                </div>
+                <div class="nav-div d-flex justify-content-center mb-3">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionNews'); buttonActive('newsButton')" id="newsButton">Newsletter</a>
+                </div>
+                <div class="nav-div mess-main d-flex justify-content-center">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionMessages'); buttonActive('messagesButton')" id="messagesButton">Messages</a>
+                    <div class="mess-counter" id="messCounter">0</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row pt-3">
+                        <div class="col-9 col-lg d-flex flex-wrap">
+                            <button class="btn btn-menubuchsan" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                                </svg>
+                            </button>
+                            <div class="dashboard-title-container">
+                                <a href="#" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" class="fw-bold display-5 dashboard-title text-decoration-none">
+                                    Dashboard
+                                </a>
+                            </div>
+                            
                         </div>
-                        <div class="col admin-profile">
-                            <div class=" col-lg dropdown d-flex flex-wrap justify-content-end me-5 align-items-center order-0 order-xl-3">
+                        <div class="col-3 col-lg  admin-profile">
+                            <div class="dropdown d-flex flex-wrap justify-content-end me-0 me-lg-5 align-items-center order-0 order-xl-3">
                                 <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle profile-display" id="profile-display" data-bs-toggle="dropdown" aria-expanded="false">
 
                                 </a>
@@ -74,46 +91,75 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row w-100">
-                        <div class="container-fluid bg-body-tertiary section-container">
+                </div>  
+            </div>
+            <div class="container col-12 col-lg-10">
+                    <div class="row main-box w-100">
+                        <div class="container-fluid section-container">
                             <section class="section-body section-active" id="sectionUser">
-                                <div class="container table-container  scrollable-div">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Users</h1>
+                               </div>
+                                <div class="container table-container  scrollable-div" id="usersNothing">
                                     <table class="w-100" id="usersBody">
                                         <tr class="header-sticky">
                                             <th class="text-center">Fullname</th>
                                             <th class="text-center">Username</th>
                                             <th class="text-center">Email</th>
-                                            <th class="iremoves text-center">REMOVE</th>
+                                            <th class="iremoves text-center">Actions</th>
                                         </tr>
                                     </table>
+                                    <button class="floating-button d-flex flex-wrap align-items-center justify-content-center" onclick="openModal7();">
+                                        <div class="button-div">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                                            </svg>
+                                        </div>
+                                    </button>
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionAdmin">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Admins</h1>
+                               </div>
                                 <div class="container scrollable-div">
                                     <table class="w-100" id="adminBody">
                                         <tr class="header-sticky">
                                             <th class="text-center">Fullname</th>
                                             <th class="text-center">Username</th>
                                             <th class="text-center">Email</th>
-                                            <th class="iremoves text-center">REMOVE</th>
+                                            <th class="iremoves text-center">Actions</th>
                                         </tr>
                                     </table>
+                                    <button class="floating-button d-flex flex-wrap align-items-center justify-content-center" onclick="openModal9();">
+                                        <div class="button-div">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                                            </svg>
+                                        </div>
+                                    </button>
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionBooks">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Books</h1>
+                               </div>
                                 <div class="container scrollable-div">
                                     <table class="w-100 books-body" id="booksBody">
                                         <tr class="header-sticky">
-                                            <th class="text-center">NO.</th>
-                                            <th class="text-center">ITEM</th>
-                                            <th class="text-center">PRICE</th>
-                                            <th class="text-center">RATING</th>
-                                            <th class="iremoves text-center">REMOVE</th>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">Item</th>
+                                            <th class="text-center">Price</th>
+                                            <th class="text-center">Rating</th>
+                                            <th class="iremoves text-center">Actions</th>
                                         </tr>
                                     </table>
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionOrder">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Orders</h1>
+                               </div>
                                 <div class="container">
                                     <div class="container scrollable-div">
                                         <table class="w-100" id="adminOrders">
@@ -157,6 +203,9 @@
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionNews">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Newsletter</h1>
+                               </div>
                                 <div class="container scrollable-div">
                                     <table class="w-100" id="newsBody">
                                         <tr  class="header-sticky">
@@ -170,30 +219,42 @@
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionMessages">
-                                <div class="containe scrollable-divr">
-                                    <table class="w-100" id="adminBody">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Messages</h1>
+                               </div>
+                                <div class="containe scrollable-div">
+                                    <table class="w-100" id="adminMessage">
                                         <tr  class="header-sticky">
-                                            <th class="text-center">Fullname</th>
-                                            <th class="text-center">Username</th>
+                                            <th class="text-center">Date, Time</th>
+                                            <th class="text-center">Name</th>
                                             <th class="text-center">Email</th>
-                                            <th class="iremoves text-center">REMOVE</th>
+                                            <th class="iremoves text-center">Actions</th>
                                         </tr>
-                                        <tr>
-                                            <td class="text-center">John Richard Vidal Sumagui</td>
-                                            <td class="text-center">Merakpay</td>
+                                        <!-- <tr class="message-unread">
+                                            <td class="text-center">12/12/2023</td>
+                                            <td class="text-center">Richard</td>
                                             <td class="text-center">richard01@gmai.com</td>
-                                            <td class="d-flex flex-wrap justify-content-center">
-                                                <a type="button" class="btn btn-remove">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                                                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
-                                                    </svg>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                            <td  class="text-center dropdown-center">
+                                                <button class="btn orders-action dropdown-toggle" data-bs-toggle="dropdown">
+                                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                                       <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                                                       <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                                                   </svg>
+                                               </button>
+                                               <ul class="dropdown-menu dropdown-orders">
+                                                   <li class="">
+                                                       <button onclick=""  class="orders-hover dropdown-item d-flex justify-content-center fw-bold">View Mesage</button>
+                                                   </li>
+                                               </ul>
+                                           </td>
+                                        </tr> -->
                                     </table>
                                 </div>
                             </section>
                             <section  class="section-body" id="sectionSettings">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Account settings</h1>
+                               </div>
                                 <div class="container">
                                     <div >
                                         <div class="row">
@@ -205,45 +266,8 @@
                                         <div class="" id="section1">
                                             <section class="bg-body-tertiary accountsettingscontainer account-body account-active" id="sectionProfile">
                                                 <h1 class="fw-bold text-center section-title">Profile</h1>
-                                                <div class="container d-flex flex-wrap justify-content-center">
-                                                    <form class="form" novalidate>
-                                                        <div class="ing-group d-flex flex-wrap justify-content-center">
-                                                            <div class="in-field" id="infieldError1">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
-                                                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                                                                  </svg>
-                                                                
-                                                                <input type="text" class="in-box" id="fullname" value="${fullname}" placeholder="Full name" required>
-                                                            </div>
-                                                                <div class="error-message" id="error-message1">
-                                                                </div>
-                                                            
-                                                            <div class="in-field" id="infieldError2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
-                                                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                                                                  </svg>
-                                                                <input type="text" class="in-box" id="username" value="${username}" placeholder="Username" required>
-                                                            </div>
-                                                                <div class="error-message" id="error-message2">
-                                                                </div>
-                                                            <div class="in-field" id="infieldError3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-envelope-at-fill input-icon" viewBox="0 0 16 16">
-                                                                    <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
-                                                                    <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
-                                                                  </svg>
-                                                                <input type="email" class="in-box" id="email"  value="${email}" placeholder="email" required>
-                                                            </div>
-                                                                <div class="error-message" id="error-message3">
-                                                                </div>
-                                                                <div class="error-message" id="validateMessage">
-                                                                </div>
-                                                            <div class="row w-100 mt-2">
-                                                                <div class="d-flex justify-content-center">
-                                                                    <button type="button" class="btn btn-update fw-bold w-50" id="updateProfile">Update</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
+                                                <div class="container d-flex flex-wrap justify-content-center" id="adminProfile">
+                                                    
                                                 </div>
                                             </section>
                                         </div>
@@ -324,27 +348,248 @@
                    </div>
                    <table class="w-100  td-modal" id="items-body">
                    </table>
-               </div>
-               <div class="tot-box mt-3">
+                </div>
+                <div class="tot-box mt-3">
                    <div class="tot-label fw-bold d-flex flex-wrap align-items-center">
                          &nbsp; To Pay &nbsp;
                    </div>
                    <div class="td-modal" id="total-body">
                        
                    </div>
-               </div>
-               <div class="payment-box mt-3  td-modal" id="moreDetails">
+                </div>
+            <div class="payment-box mt-3  td-modal" id="moreDetails">
                   
-             </div>
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-           </div>
-         </div>
-       </div>
+            </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
      </div>
- </div>
+     <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel4">Message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalMessage">
+                    <!-- <form novalidate>
+                        <div class="in-group">
+                            <div class="input-field">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="input-icon bi bi-people-fill" viewBox="0 0 16 16">
+                                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                                  </svg>
+                                <input class="contactusName in-box" type="text" placeholder="Name" readonly>
+                            </div>
+                                
+                            <div class="input-field ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="input-icon bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                    <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+                                    <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                                  </svg>
+                                <input class="contactusEmail in-box" type="email" placeholder="Email" readonly>
+                            </div>
+                                
+                            <div class="input-field">
+                                <textarea class="contactusTMessage in-box"  placeholder="Type your message here" id="" cols="30" rows="4"></textarea>  
+                            </div>
+                                
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-reply d-flex flex-wrap align-items-center" data-bs-dismiss="modal" onclick="openModal5();" >
+                            Reply &nbsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" fill="currentColor" class="bi bi-reply" viewBox="0 0 16 16">
+                                <path d="M6.598 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.74 8.74 0 0 0-1.921-.306 7.404 7.404 0 0 0-.798.008h-.013l-.005.001h-.001L7.3 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L2.614 8.254a.503.503 0 0 0-.042-.028.147.147 0 0 1 0-.252.499.499 0 0 0 .042-.028zM7.8 10.386c.068 0 .143.003.223.006.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96v-.667z"/>
+                              </svg>
+                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel4">Reply</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalReply">
+                    
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel6" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel4">Reset Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="clearReset()" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalReset">
+                    
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="modal fade" id="staticBackdrop7" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel7" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel4">Add User</h1>
+                    <button type="button" class="btn-close" onclick="clearAdduser();" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalReset">
+                    <div class="container">
+                        <form class="w-100" novalidate>
+                            <div class="ing-group d-flex flex-wrap justify-content-center">
+                                <div class="in-field" id="addinfield1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                      </svg>
+                                    <input type="text" name="Full name" autocomplete="Full-name" class="in-box" id="addfullname" placeholder="Full name" required>
+                                </div>
+                                    <div class="error-message" id="adderror1">
+                                    </div>
+                                <div class="in-field" id="addinfield2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                      </svg>
+                                    <input type="text" class="in-box" id="addusername" name="username" placeholder="Username"  autocomplete="user-name" required>
+                                </div>
+                                    <div class="error-message" id="adderror2">
+                                    </div>
+                                <div class="in-field" id="addinfield3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-envelope-at-fill input-icon" viewBox="0 0 16 16">
+                                        <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                                        <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                                      </svg>
+                                    <input type="email" class="in-box" id="addemail" placeholder="email" required>
+                                </div>
+                                    <div class="error-message" id="adderror3">
+                                    </div>
+                                <div class="in-field" id="addinfield4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="addpassword" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                </div>
+                                    <div class="error-message" id="adderror4">
+                                        
+                                    </div>
+                                <div class="in-field" id="addinfield5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="addconfirmpassword" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                </div>
+                                    <div class="error-message col-12 text-center" id="adderror5">
+                                    </div>
+                                    <div class="d-flex flex-wrap justify-content-center w-50 mb-3">
+                                        <button type="button" class="btn btn-confirmadd fw-bold" onclick="validateAddUser()" >Confirm</button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="modal fade" id="staticBackdrop8" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel8" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel4">Reset Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="clearResetAdmin()" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalResetAdmin">
+
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="modal fade" id="staticBackdrop9" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel9" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold w-100 text-center" id="staticBackdropLabel4">Add Admin</h1>
+                    <button type="button" class="btn-close" onclick="clearAddAdmin();" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalReset">
+                    <div class="container">
+                        <form class="w-100" novalidate>
+                            <div class="ing-group d-flex flex-wrap justify-content-center">
+                                <div class="in-field" id="addinfieldAdmin1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                      </svg>
+                                    <input type="text" name="Full name" autocomplete="Full-name" class="in-box" id="addfullnameAdmin" placeholder="Full name" required>
+                                </div>
+                                    <div class="error-message" id="adderrorAdmin1">
+                                    </div>
+                                <div class="in-field" id="addinfieldAdmin2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-person-fill input-icon" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                      </svg>
+                                    <input type="text" class="in-box" id="addusernameAdmin" name="username" placeholder="Username"  autocomplete="user-name" required>
+                                </div>
+                                    <div class="error-message" id="adderrorAdmin2">
+                                    </div>
+                                <div class="in-field" id="addinfieldAdmin3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-envelope-at-fill input-icon" viewBox="0 0 16 16">
+                                        <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                                        <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z"/>
+                                      </svg>
+                                    <input type="email" class="in-box" id="addemailAdmin" placeholder="email" required>
+                                </div>
+                                    <div class="error-message" id="adderrorAdmin3">
+                                    </div>
+                                <div class="in-field" id="addinfieldAdmin4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="addpasswordAdmin" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                </div>
+                                    <div class="error-message" id="adderrorAdmin4">
+                                        
+                                    </div>
+                                <div class="in-field" id="addinfieldAdmin5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75rem" height="1.75rem" fill="currentColor" class="bi bi-shield-lock-fill input-icon" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                      </svg>
+                                    <input type="password" class="in-box" id="addconfirmpasswordAdmin" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                </div>
+                                    <div class="error-message col-12 text-center" id="adderrorAdmin5">
+                                    </div>
+                                    <div class="d-flex flex-wrap justify-content-center w-50 mb-3">
+                                        <button type="button" class="btn btn-confirmadd fw-bold" onclick="validateAddAdmin()" >Confirm</button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("dH8_95ENItDcsi9Oy");
+    })();
+    </script>
     <script src="admin.js"></script>
+    <script src="accountsettings.js"></script>
+    <script src="messages.js"></script>
+    <script src="adduser.js"></script>
+    <script src="addAdmin.js"></script>
 </body>
 </html>
