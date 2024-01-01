@@ -110,21 +110,27 @@ document.getElementById("logOut").addEventListener("click",logOut);
 
 //generate section for users
 function generateSectionUsers(){
-    let sectionUser= document.getElementById('usersBody');
     let user_records=new Array();
-    user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[]
-    if (user_records.length === 0){
-        sectionUser.innerHTML= `
-        <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="img-fluid bi bi-person-fill-slash" viewBox="0 0 16 16">
-                    <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465m-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4"/>
-                </svg>
-            </div>
-        </div>`
-    }else {
+    user_records= JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[];
+    let sectionUser= document.getElementById('usersBody');
+    let nothingContainer = document.querySelector('.remove-container1');
+    if (user_records.length===0){
+        document.getElementById('headerUser').classList.add('header-hide');
+         sectionUser.innerHTML+=
+        `
+        <div class="container nothing-container remove-container1 d-flex flex-wrap align-items-center justify-content-center">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-person-fill-slash" viewBox="0 0 16 16">
+                <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465m-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4"/>
+            </svg>
+        </div>
+    </div>`
+    }else{
+        document.getElementById('headerUser').classList.remove('header-hide');
+        if(nothingContainer){
+            nothingContainer.remove();
+        }
         sectionUser.innerHTML += user_records.map(function(x){
-            
             return ` 
             <tr>
                 <td class="text-center">${x.name}</td>
@@ -335,10 +341,12 @@ function generateSectionAdmins(){
     let sectionAdmin= document.getElementById('adminBody');
     let admin_records=new Array();
     admin_records= JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
+    let nothingContainer = document.querySelector('.remove-container2');
     if (admin_records.length===0){
-        return sectionAdmin.innerHTML =
+        document.getElementById('headerAdmin').classList.add('header-hide');
+        return sectionAdmin.innerHTML +=
         `
-        <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+        <div class="container nothing-container remove-container2 d-flex flex-wrap align-items-center justify-content-center">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-person-fill-slash" viewBox="0 0 16 16">
                     <path d="M13.879 10.414a2.501 2.501 0 0 0-3.465 3.465zm.707.707-3.465 3.465a2.501 2.501 0 0 0 3.465-3.465m-4.56-1.096a3.5 3.5 0 1 1 4.949 4.95 3.5 3.5 0 0 1-4.95-4.95ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4"/>
@@ -346,8 +354,11 @@ function generateSectionAdmins(){
             </div>
         </div>`
     }else{
-        return sectionAdmin.innerHTML += admin_records.map(function(x){
-            
+        document.getElementById('headerAdmin').classList.remove('header-hide');
+        if(nothingContainer){
+            nothingContainer.remove();
+        }
+         sectionAdmin.innerHTML += admin_records.map(function(x){
             return ` 
             <tr>
                 <td class="text-center">${x.name}</td>
@@ -600,10 +611,12 @@ function generateOrders(){
     let totalOrder_records= new Array;
         totalOrder_records=JSON.parse(sessionStorage.getItem("totalOrders"))?JSON.parse(sessionStorage.getItem("totalOrders")):[];
         let orderbody= document.getElementById('adminOrders');
+        let nothingContainer=document.querySelector('.remove-container4');
         if (totalOrder_records.length === 0){
-            return orderbody.innerHTML=
+            document.getElementById('headerOrder').classList.add('header-hide');
+            return orderbody.innerHTML+=
             `
-            <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+            <div class="container nothing-container remove-container4 d-flex flex-wrap align-items-center justify-content-center">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z"/>
@@ -611,6 +624,10 @@ function generateOrders(){
                 </div>
             </div>`
         }else{
+            document.getElementById('headerOrder').classList.remove('header-hide');
+            if(nothingContainer){
+                nothingContainer.remove();
+            }
             orderbody.innerHTML+= totalOrder_records.map(function(x,y){
                 if (x.status === 'TO SHIP'){
                     return`
@@ -871,10 +888,12 @@ function generateNewsletter(){
     let newsletter_records= new Array
     newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
     let newsbody= document.getElementById('newsBody');
+    let nothingContainer=document.querySelector('.remove-container3');
     if (newsletter_records.length===0){
-        newsbody.innerHTML=
+        document.getElementById('headerNews').classList.add('header-hide');
+         return newsbody.innerHTML+=
         `
-            <div class="container nothing-container d-flex flex-wrap align-items-center justify-content-center">
+            <div class="container nothing-container remove-container3 d-flex flex-wrap align-items-center justify-content-center">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
                         <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.314l6.709 3.932L8 8.928l1.291.718L16 5.714V5.4a2 2 0 0 0-1.059-1.765l-6-3.2ZM16 6.873l-5.693 3.337L16 13.372v-6.5Zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516M0 13.373l5.693-3.163L0 6.873v6.5Z"/>
@@ -882,6 +901,10 @@ function generateNewsletter(){
                 </div>
             </div>`
     }else {
+        document.getElementById('headerNews').classList.remove('header-hide');
+        if(nothingContainer){
+            nothingContainer.remove();
+        }
         newsbody.innerHTML += newsletter_records.map(function(x,y){
             return `
             <tr>

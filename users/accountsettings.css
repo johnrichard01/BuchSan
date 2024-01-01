@@ -6,6 +6,25 @@
     font-family:'Lucida Sans';
     color:#f77f00;
 }
+th{
+    text-align:left;
+    padding:10px;
+    color:white;
+    background:#f77f00;
+}
+
+td{
+    padding:10px;
+}
+td img{
+    width:90px;
+    margin-right:10px;
+    
+}
+tr{ 
+    border: 1px solid #f77f00;
+    background-color: #f5f7fa;
+}
 .page-title::after{
     content:"";
     background: #f77f00;
@@ -102,8 +121,8 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 .orders-container{
-    border: 1px solid #f77f00;
     max-height: 50vh;
+    min-height: 50vh;
     position: relative;
     overflow: auto;
 }
@@ -166,4 +185,8 @@ input[type="number"]::-webkit-outer-spin-button {
     position: relative;
     border: 3px solid #f77f00;
     padding: 20px;
+}
+.nothing-container{
+    height: 50vh;
+    color: #eaeaea;
 }

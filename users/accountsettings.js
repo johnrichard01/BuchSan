@@ -803,8 +803,14 @@ function generateOrders(){
     let orderbody= document.getElementById('generateOrderBody');
     let orderNone= document.getElementById('sectionOrders');
     if (order_records.length === 0){
-        return orderNone.innerHTML=`
-         NOTHING TO SHOW
+        return orderNone.innerHTML =`
+        <div class="container nothing-container remove-container4 d-flex flex-wrap align-items-center justify-content-center">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20rem" height="20rem" fill="currentColor" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z"/>
+            </svg>
+        </div>
+        </div>
         `
     }else{
         orderbody.innerHTML+= order_records.map(function(x){
@@ -921,7 +927,27 @@ function generateDetails(id){
                         <p class="fw-bold">${search.payment}</p>
                     </div>
     `
-    details.innerHTML=`
+    if(search.status === 'CANCELED'){
+       return details.innerHTML=`
+        <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Order ID</h6>
+                    <p class="fw-bold">${search.orderId}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Status</h6>
+                    <p class="fw-bold fs-6">${search.status}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Date Placed</h6>
+                    <p class="lead fs-6">${search.date.date}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Expected Delivery</h6>
+                    <p class="lead fs-6">CANCELED</p>
+                 </div>
+    `
+    }else{
+        details.innerHTML=`
     <div class=" d-flex justify-content-between align-items-center">
                     <h6 class="fw-bold">Order ID</h6>
                     <p class="fw-bold">${search.orderId}</p>
@@ -939,4 +965,5 @@ function generateDetails(id){
                     <p class="lead fs-6">${expected}</p>
                  </div>
     `
+    }
 }

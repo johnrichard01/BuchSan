@@ -359,7 +359,6 @@ tr{
 .nothing-container{
     height: 60vh;
     color: #eaeaea;
-    
 }
 .btn-menubuchsan{
     color: #f77f00;
@@ -371,7 +370,9 @@ tr{
 .custom-offcanvas{
     max-width: 250px;
 }
-
+.header-hide{
+    display: none;
+}
 @media(max-width:992px){
     .dashboard-title{
         font-size: 1.75rem;
