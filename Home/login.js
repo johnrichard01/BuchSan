@@ -32,7 +32,7 @@ function saveData(){
         sessionStorage.setItem("username", current_admin.username);
         sessionStorage.setItem("email", current_admin.email);
         sessionStorage.setItem("profilepicture", current_admin.profilepicture);
-        window.location.replace("../admin_mainpage/admin.html");
+        window.location.href="../admin_mainpage/admin.html";
     }else if(matchedUser){
         let current_user=user_records.filter(function(v){
             return v.email===email && v.password===password;
@@ -45,7 +45,7 @@ function saveData(){
         sessionStorage.setItem("Cart", JSON.stringify(current_user.Cart||[]));
         sessionStorage.setItem("Orders", JSON.stringify(current_user.Orders||[]));
         sessionStorage.setItem("Address", JSON.stringify(current_user.Address||[]));
-        window.location.replace("../user_mainpage/user.html");
+        window.location.href="../user_mainpage/user.html";
         
     } else {
         document.getElementById("error-message").classList.add("error-print");
@@ -118,3 +118,31 @@ function adminTwo(){
 }
 adminOne();
 adminTwo();
+
+function replacePage(){
+    let user_records=new Array();
+    user_records=JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[];
+    let admin_records=new Array();
+    admin_records = JSON.parse(sessionStorage.getItem("admins"))?JSON.parse(sessionStorage.getItem("admins")):[];
+    let email=sessionStorage.getItem('email');
+    if (email === null){
+
+        console.log('dont replace')
+        return
+    }else{
+        let find= user_records.find(function(x){
+            return x.email === email;
+        })
+        if (find){
+            window.location.replace('../user_mainpage/user.html')
+        }else{
+            let find= admin_records.find(function(x){
+                return x.email === email;
+            })
+            if (find){
+                window.location.replace('../admin_mainpage/admin.html')
+            }
+        }
+    }
+ }
+ replacePage();
