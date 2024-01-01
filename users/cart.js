@@ -386,8 +386,8 @@ generateTotalforModal();
         return actions.order.create({
             purchase_units:[{
                 amount: {
-                    // value: totalPrice + shipping,
-                    value: '1',
+                    value: totalPrice + shipping,
+                    // value: '1',
                 },
                 shipping:{
                     name:{
