@@ -207,7 +207,7 @@ document.getElementById('addpasswordAdmin').addEventListener('input', function()
     document.getElementById('adderrorAdmin4').classList.remove('error-print')
     document.getElementById('addinfieldAdmin4').classList.remove('in-field-invalid')
 });
-
+window.onunload = function(){};
 
 
 
