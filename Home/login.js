@@ -146,3 +146,4 @@ function replacePage(){
     }
  }
  replacePage();
+ window.onunload = function(){};
