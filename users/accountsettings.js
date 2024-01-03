@@ -15,7 +15,6 @@ function buttonActive(id){
     let buttonArray= ['profileButton', 'passwordButton', 'addressButton','ordersButton'];
     buttonArray.forEach(function(x){
         let button= document.getElementById(x);
-        console.log(button);
         if (button.classList.contains('btn-section-active')){
             button.classList.remove('btn-section-active')
         }else{
@@ -787,7 +786,6 @@ function addressSaveSuccess(){
 //for success page
 function successRedirect(){
 let prev=document.referrer.slice(-12);
-console.log(prev)
     if (prev === 'success.html'){
         sectionReveal('sectionOrders'); 
         buttonActive('ordersButton');

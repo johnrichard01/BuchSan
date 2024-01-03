@@ -9,7 +9,7 @@ function adminOne(){
         "username": "pam",
         "email": "pam@buchsan.com",
         "type": "main",
-        "password": "johnric2J",
+        "password": "ricjohn10",
         "profilepicture":"images/profile-picture.png"
     };
 
@@ -34,7 +34,7 @@ function adminTwo(){
         "username": "Richard",
         "email": "richard@buchsan.com",
         "type": "main",
-        "password": "johnric2J",
+        "password": "ricjohn10",
         "profilepicture":"../images/profile-picture.png"
     };
     
