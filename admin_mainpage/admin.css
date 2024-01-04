@@ -373,6 +373,35 @@ tr{
 .header-hide{
     display: none;
 }
+.home-container{
+    height: 60vh;
+    margin-top: 50px;
+}
+.box-container{
+    width: 400px;
+    height: 250px;
+    border: 2px solid #f77f00;
+    border-radius: 10px;
+    box-shadow:5px 8px 10px -1px rgba(17,17,17,0.75);
+}
+.home-title{
+    position: relative;
+    color: #f77f00;
+}
+.home-title::before{
+    content: "";
+    width: 100px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #f77f00;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box-counter{
+    color: #f77f00;
+}
 @media(max-width:992px){
     .dashboard-title{
         font-size: 1.75rem;

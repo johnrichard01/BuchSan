@@ -12,7 +12,7 @@ function sectionReveal(id) {
 }
 
 function buttonActive(id){
-    let buttonArray= ['usersButton', 'adminButton','orderButton', 'booksButton', 'newsButton', 'messagesButton'];
+    let buttonArray= ['usersButton', 'adminButton','orderButton', 'booksButton', 'newsButton', 'messagesButton','homeButton'];
     buttonArray.forEach(function(x){
         let button= document.getElementById(x);
         if (button.classList.contains('btn-section-active')){
@@ -226,6 +226,7 @@ function deleteUserConfirmation(event, email){
             existingRows[i].parentNode.removeChild(existingRows[i]);
         }
         generateSectionUsers();
+        generateHome();
     }
 }
 function openModal6() {
@@ -978,6 +979,7 @@ function removeNewsLetter(email){
         return email !== x.email;
     })
     sessionStorage.setItem('Subscribers', JSON.stringify(filter));
+    generateHome();
 }
 function newsletterConfirmation(email){
     let message= document.getElementById('newsBody');
@@ -1075,3 +1077,26 @@ function replacePage(){
     }
  }
  replacePage();
+
+ function generateHome(){
+    let total=document.getElementById('totalMoney')
+    let users= document.getElementById('totalUsers')
+    let orders= document.getElementById('totalOrders')
+    let subs= document.getElementById('totalSubs')
+    let totalSum=0;
+    let user_records=new Array();
+    user_records=JSON.parse(sessionStorage.getItem("users"))?JSON.parse(sessionStorage.getItem("users")):[];
+    let newsletter_records= new Array
+    newsletter_records=JSON.parse(sessionStorage.getItem("Subscribers"))?JSON.parse(sessionStorage.getItem("Subscribers")):[];
+    let totalOrder_records= new Array;
+    totalOrder_records=JSON.parse(sessionStorage.getItem("totalOrders"))?JSON.parse(sessionStorage.getItem("totalOrders")):[];
+
+    for( let i=0; i < totalOrder_records.length; i++){
+        totalSum += totalOrder_records[i].total;
+    }
+    total.innerHTML='&#8369; '+totalSum+'.00';
+    users.innerHTML=user_records.length;
+    orders.innerHTML=totalOrder_records.length;
+    subs.innerHTML=newsletter_records.length;
+ }
+ generateHome();

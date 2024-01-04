@@ -30,7 +30,10 @@
             </div>
             <div class="row col-12">
                 <div class="nav-div d-flex justify-content-center mb-3">
-                    <a href="#" class="text-decoration-none admin-nav btn btn-lg btn-section-active" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" id="usersButton">Users</a>
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg btn-section-active" onclick="sectionReveal('sectionHome'); buttonActive('homeButton')" id="homeButton">Home</a>
+                </div>
+                <div class="nav-div d-flex justify-content-center mb-3">
+                    <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionUser'); buttonActive('usersButton')" id="usersButton">Users</a>
                 </div>
                 <div class="nav-div d-flex justify-content-center mb-3">
                     <a href="#" class="text-decoration-none admin-nav btn btn-lg" onclick="sectionReveal('sectionAdmin'); buttonActive('adminButton')" id="adminButton">Admins</a>
@@ -97,7 +100,42 @@
             <div class="container col-12 col-lg-10">
                     <div class="row main-box w-100">
                         <div class="container-fluid section-container">
-                            <section class="section-body section-active" id="sectionUser">
+                            <section class="section-body section-active" id="sectionHome">
+                                <div>
+                                    <h1 class="fw-bold text-center mb-4 display-6 section-titles">Home</h1>
+                               </div>
+                                <div class="container table-container home-container">
+                                    <div class="d-flex flex-wrap justify-content-around mb-0 mb-lg-5">
+                                        <div class="box-container  d-flex flex-wrap justify-content-center align-items-center mb-4 mb-lg-0">
+                                            <div class="box-counter col-12 fw-bold display-4 d-flex justify-content-center" id="totalMoney">0</div>
+                                            <div class="col-12 text-center">
+                                                <h1 class="fw-bold display-6 home-title">TOTAL</h1>
+                                            </div>
+                                        </div>
+                                        <div class="box-container  d-flex flex-wrap justify-content-center align-items-center mb-4 mb-lg-0">
+                                            <div class="box-counter col-12 fw-bold display-4 d-flex justify-content-center" id="totalUsers">0</div>
+                                            <div class="col-12 text-center">
+                                                <h1 class="fw-bold display-6 home-title">USERS</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap justify-content-around">
+                                        <div class="box-container  d-flex flex-wrap justify-content-center align-items-center mb-4 mb-lg-0">
+                                            <div class="box-counter col-12 fw-bold display-4 d-flex justify-content-center" id="totalOrders">0</div>
+                                            <div class="col-12 text-center">
+                                                <h1 class="fw-bold display-6 home-title">ORDERS</h1>
+                                            </div>
+                                        </div>
+                                        <div class="box-container  d-flex flex-wrap justify-content-center align-items-center mb-4 mb-lg-0">
+                                            <div class="box-counter col-12 fw-bold display-4 d-flex justify-content-center" id="totalSubs">0</div>
+                                            <div class="col-12 text-center">
+                                                <h1 class="fw-bold display-6 home-title">SUBSCRIBERS</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="section-body" id="sectionUser">
                                 <div>
                                     <h1 class="fw-bold text-center mb-4 display-6 section-titles">Users</h1>
                                </div>

@@ -172,7 +172,7 @@ function saveAddUser(){
             existingRows[i].parentNode.removeChild(existingRows[i]);
         }
         generateSectionUsers();
-        
+        generateHome();
     }
 }
 function realtimeEvent(){
