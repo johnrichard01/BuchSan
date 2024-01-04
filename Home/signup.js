@@ -244,7 +244,7 @@ function adminOne(){
     };
 
     var newDataExists = admin_records.some(function (admin) {
-        return admin.username === newData.username && admin.email === newData.email;
+        return admin.email === newData.email;
     });
 
     if (!newDataExists) {
@@ -269,7 +269,7 @@ function adminTwo(){
     };
     
    let newDataExists = admin_records.some(function (admin) {
-        return admin.username === newData.username && admin.email === newData.email;
+        return admin.email === newData.email;
     });
     
     if (!newDataExists) {

@@ -189,3 +189,11 @@ body{
         padding-bottom: 1000px;
     }
 }
+@media(max-height: 668px){
+    body{
+        height: 125vh;
+    }
+    .form-box{
+        margin-top: 50px;
+    }
+}

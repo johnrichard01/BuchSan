@@ -859,7 +859,49 @@ function generateDetails(id){
                         <p class="fw-bold">${search.payment}</p>
                     </div>
     `
-    details.innerHTML=`
+    if (search.status === 'COMPLETED'){
+        details.innerHTML=
+        `
+    <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Order ID</h6>
+                    <p class="fw-bold">${search.orderId}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Status</h6>
+                    <p class="fw-bold fs-6">${search.status}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Date Placed</h6>
+                    <p class="lead fs-6">${search.date.date}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Expected Delivery</h6>
+                    <p class="lead fs-6">COMPLETED</p>
+                 </div>
+    `
+    }else if (search.status === 'CANCELED'){
+        details.innerHTML=
+        `
+    <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Order ID</h6>
+                    <p class="fw-bold">${search.orderId}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Status</h6>
+                    <p class="fw-bold fs-6">${search.status}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Date Placed</h6>
+                    <p class="lead fs-6">${search.date.date}</p>
+                 </div>
+                 <div class=" d-flex justify-content-between align-items-center">
+                    <h6 class="fw-bold">Expected Delivery</h6>
+                    <p class="lead fs-6">CANCELED</p>
+                 </div>
+    `
+    }else{
+        details.innerHTML=
+        `
     <div class=" d-flex justify-content-between align-items-center">
                     <h6 class="fw-bold">Order ID</h6>
                     <p class="fw-bold">${search.orderId}</p>
@@ -877,6 +919,7 @@ function generateDetails(id){
                     <p class="lead fs-6">${expected}</p>
                  </div>
     `
+    }
 }
 function openModal3() {
     var modal = document.getElementById('staticBackdrop3');

@@ -124,3 +124,19 @@ body{
     background-color: #d26e04;
     color: #f5f7fa;
 }
+@media(max-height: 668px){
+    body{
+        height: 110vh;
+    }
+    .form-box{
+        margin-top: 5px;
+    }
+}
+@media(max-height: 764px){
+    body{
+        height: 110vh;
+    }
+    .form-box{
+        margin-top: 5px;
+    }
+}

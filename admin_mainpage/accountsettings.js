@@ -92,6 +92,7 @@ function validateProfile(event){
     }
 }
 function saveProfile(){
+    let sectionAdmin= document.getElementById('adminBody');
     let newname, newusername, newemail;
     newname=document.getElementById("fullname").value;
     newusername=document.getElementById("username").value;
@@ -116,6 +117,11 @@ function saveProfile(){
             findUser.name= newname;
             sessionStorage.setItem("admins",JSON.stringify(admin_records));
             sessionStorage.setItem('name', newname);
+            let existingRows = sectionAdmin.querySelectorAll('tr');
+                for (let i = existingRows.length - 1; i > 0; i--) {
+                    existingRows[i].parentNode.removeChild(existingRows[i]);
+                }
+            generateSectionAdmins();
             successPrint("1","Fullname");
             
         }
@@ -145,7 +151,12 @@ function saveProfile(){
                 sessionStorage.setItem("admins",JSON.stringify(admin_records));
                 sessionStorage.setItem('username', newusername);
                 successPrint("2","Username");
+                let existingRows = sectionAdmin.querySelectorAll('tr');
+                for (let i = existingRows.length - 1; i > 0; i--) {
+                    existingRows[i].parentNode.removeChild(existingRows[i]);
+                }
                 generateName();
+                generateSectionAdmins();
             }
         }
     } if ( newemail.toLowerCase() !== oldemail.toLocaleLowerCase() ){
@@ -173,10 +184,14 @@ function saveProfile(){
                 findUser.email= newemail;
                 sessionStorage.setItem("admins",JSON.stringify(admin_records));
                 sessionStorage.setItem('email', newemail);
+                let existingRows = sectionAdmin.querySelectorAll('tr');
+                for (let i = existingRows.length - 1; i > 0; i--) {
+                    existingRows[i].parentNode.removeChild(existingRows[i]);
+                }
+                generateSectionAdmins();
                 successPrint("3","Email");
             }
         }
-
     }
 }
 document.getElementById('updateProfile').addEventListener("click", validateProfile);
