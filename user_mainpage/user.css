@@ -379,6 +379,9 @@ body{
     font-size: medium;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.testimonial-bg{
+    margin-bottom: 100px;
+}
 @media(max-height: 668px){
     .testimonial-bg{
         margin-bottom: 150px;

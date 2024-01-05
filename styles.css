@@ -316,7 +316,9 @@
     margin-bottom:15px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.testimonial-bg{
+    margin-bottom: 100px;
+}
 .authorbio{
     text-decoration: none;
     color:#f77f00;
